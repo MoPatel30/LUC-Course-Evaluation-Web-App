@@ -1,0 +1,47 @@
+[
+
+    {
+        "student": "Larry",
+        "Course" : "Intro to Psychology",
+        "Professor" : "Mr. Frued",
+        "About" : "Big emphasis on social psychology and how humans behave on a social level. Great job describing advanced ideas."
+
+    },
+        
+
+    {
+        "student": "Jerry",
+        "Course" : "Calculus II",
+        "Professor" : "Mr. Newton",
+        "About" : "Makes the most advanced topics feel easy. Learn a lot of integrals and ways to approach. "
+
+    },
+
+
+    {
+        "student": "Harry",
+        "Course" : "Biology",
+        "Professor" : "Mr. Mendel",
+        "About" : "A lot of labs, so if you like labs then you are in for a treat."
+
+    },
+
+
+    {
+        "student": "Barry",
+        "Course" : "Neuroscience",
+        "Professor" : "Mr. Aang",
+        "About" : "Learn about how the brian functions. Not a lot of tests. Easy class for people who can pick up quickly."
+
+    },
+
+
+    {
+        "student": "Gary",
+        "Course" : "Global History Since 1500",
+        "Professor" : "Mr. Durant",
+        "About" : "Great class. Very smart guy. Learn a lot about how to world migrated to the western hemisphere and how America came to be."
+
+    }
+
+]
