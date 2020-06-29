@@ -49,48 +49,78 @@ export class GiveReview extends React.Component{
             student : null,
             course : null,
             professor : null,
-            review : null
+            review : null,
+            comp: null
         }
 
  
 
     }
 
-    operation(e){
-        e.preventDefault()
-        
+    
+
+
+    showone = (event) => {
+        event.preventDefault()
         this.setState({
-            student : document.getElementById("student").value,
-            course :  document.getElementById("course").value,
-            professor :  document.getElementById("professor").value,
-            reveiw :  document.getElementById("review").value,
-            comp: null
-        })
-
-        this.setState({
-            comp: <Tester student = {this.state.student} course = {this.state.course} professor = {this.state.professor} review = {this.state.review} />
-        })
-
-
-
+            student : "hi"
+        })        
     }
 
+    mySubmit = (event) => {
+        event.preventDefault()
+        this.setState({
+            comp: <Tester student = {this.state.student} course = {this.state.course} professor = {this.state.professor} review = {this.state.review} /> 
+        })
+
+    }
 
     render(){
         return(
             <div>
-                <form>
-                    <input id = "student" type = 'text' placeholder = "Student Name"></input>
-                    
-                    <input id = "course" type = 'text' placeholder = "Professor Name"></input>
 
-                    <input id = "professor" type = 'text' placeholder = "Course Name"></input>
-                    
-                    <input id = "review" type = 'text' placeholder = "Course Review"></input>
+                <form onSubmit={this.mySubmit}>
+                    <input 
+                        placeholder = "Student Name"
+                        type='text' 
+                        value = {this.state.student}
+                        onChange= {e => this.setState({student: e.target.value})}
+                    />
 
-                    <button type = 'submit' onClick = {() => this.operation()}>Submit</button>
+                    <input 
+                        placeholder = "Professor Name"
+                        type='text' 
+                        value = {this.state.professor}
+                        onChange= {e => this.setState({professor: e.target.value})}
+                    />
+
+                    <input 
+                        placeholder = "Course Name"
+                        type='text' 
+                        value = {this.state.course}
+                        onChange= {e => this.setState({course: e.target.value})}
+                    />
+
+                    <input 
+                        placeholder = "Course Review"
+                        type='text' 
+                        value = {this.state.review}
+                        onChange= {e => this.setState({review: e.target.value})}
+                    />
+
+                    <button type="submit" onclick={e => this.showone(e)}>Submit</button>
                 </form>
+                
+              
+                
+                <p>{this.state.comp}</p>
 
+
+       
+
+
+            
+             
                
 
 
