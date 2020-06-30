@@ -13,7 +13,7 @@ ReactDOM.render(<App />, document.getElementById('root'));
 
 
 
-ReactDOM.render(<Test />, document.getElementById('test'));
+ReactDOM.render(<Test /> , document.getElementById('test'));
 
 ReactDOM.render(<Tester />, document.getElementById('tester'));
 
