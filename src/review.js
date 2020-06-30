@@ -44,7 +44,7 @@ export class Test extends React.Component{
            
             <div>
              
-                <p>{this.state.comps}</p>
+                <p style = {{border: "3px solid maroon"}}>{this.state.comps}</p>
             
                 
 
