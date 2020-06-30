@@ -2,6 +2,20 @@
   text-align: center;
 }
 
+.siteTitle{
+  position: relative;
+  font-size: 40px;
+  bottom: 100px;
+  color: gold;
+}
+.topHeader{
+  position: fixed;
+  background: white;
+  height: 100px;
+  top: 0px;
+  width:100%;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -26,6 +40,13 @@
 
 .App-link {
   color: #61dafb;
+}
+#loyolaLogo{
+  position: relative;
+  max-width:100%;
+  height:100%;
+  left: 40em;
+  top: 0em;
 }
 
 @keyframes App-logo-spin {
