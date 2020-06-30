@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import {App} from './App';
-import DropdownExampleMultipleSearchSelection from './dropdown'
+
 import {Review, Reviewer, Test, Tester, GiveReview} from './review'
 import * as serviceWorker from './serviceWorker';
 
