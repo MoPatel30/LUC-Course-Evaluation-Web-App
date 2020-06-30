@@ -3,6 +3,8 @@ import './App.css';
 import Logo from './loyolaPicture.png'
 
 
+
+
 export class App extends React.Component{
   render(){
     return(

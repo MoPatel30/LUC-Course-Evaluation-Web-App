@@ -1,7 +1,7 @@
 import React from 'react';
 import ReviewerData from './reviews.json';
 import { render } from '@testing-library/react';
-
+import './review.css';
 
 var temp = [['Kevin',"Phil 274",'Mr. Kant','Thought-provoking class with hard exams.'], ['Zeshan','Chem 101','Mrs. Curie','Interesting Labs. Detailed lab reports required per lab. Easy final.'], ['Mo Patel','Theo 107','Mr. God','Opens up mind to other religions. Changed how I thought about religion in general.'],['Mo larya','COMP 264','Mr. Klingensmith','Super chill class, makes assembly easy, learn linux, git and vim to a good extent.'], ['Michael','Math 163','Mr. Newton','Hard class, lots of material, A lot of integrals and derivatives. Tests are pretty hard. ']]
 
@@ -13,11 +13,6 @@ export class Test extends React.Component{
             comps: []
         }
     }
-    change(revs){
-        this.setState({
-            comps: revs
-        })
-    }
 
     render(){
         for(let idx = 0; idx < temp.length; idx++){    
@@ -28,7 +23,7 @@ export class Test extends React.Component{
 
             let temp2 = [student, course, professor, review]
 
-            let compOne = <Tester student = {temp2[0]} course = {temp2[1]} professor = {temp2[2]} review = {temp2[3]} />
+            let compOne = <Tester id = "review" student = {temp2[0]} course = {temp2[1]} professor = {temp2[2]} review = {temp2[3]} />
             var temp3 = this.state.comps
             temp3.push(compOne)
 
@@ -44,7 +39,8 @@ export class Test extends React.Component{
            
             <div>
              
-                <p style = {{border: "3px solid maroon"}}>{this.state.comps}</p>
+                <p>{this.state.comps}</p>
+                <p>{temp3}</p>
             
                 
 
@@ -88,8 +84,6 @@ export class GiveReview extends React.Component{
     }
 
     
-
-
     showone = (event) => {
         event.preventDefault()
              
@@ -97,7 +91,6 @@ export class GiveReview extends React.Component{
 
     mySubmit = (event) => {
         event.preventDefault()
-        
         this.setState({
             comp: <Tester student = {this.state.student} course = {this.state.course} professor = {this.state.professor} review = {this.state.review} /> 
         })
@@ -147,14 +140,7 @@ export class GiveReview extends React.Component{
               
                 
                 <p>{this.state.comp}</p>
-
-
-       
-
-
-            
-             
-               
+         
 
 
             </div>
@@ -164,6 +150,7 @@ export class GiveReview extends React.Component{
 
 
 }
+
 
 
 
