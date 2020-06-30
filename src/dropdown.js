@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-/*
+
 
 import faker from 'faker'
 import _ from 'lodash'
@@ -28,7 +28,7 @@ const DropdownExampleMultipleSearchSelection = () => (
 export default DropdownExampleMultipleSearchSelection
 
 
-*/
+
 export class DropdownOne extends React.Component{
     constructor(){
         super()
