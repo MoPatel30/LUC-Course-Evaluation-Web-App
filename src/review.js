@@ -39,8 +39,8 @@ export class Test extends React.Component{
            
             <div>
              
-                <p>{this.state.comps}</p>
-                <p>{temp3}</p>
+                <p style = {{fontFamily: "Open Sans Condensed", fontSize: "18px", border: "3px solid maroon"}}>{this.state.comps}</p>
+             
             
                 
 

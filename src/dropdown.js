@@ -3,7 +3,6 @@ import React from 'react';
 
 
 
-
 export class DropdownOne extends React.Component{
     constructor(){
         super()
@@ -11,7 +10,6 @@ export class DropdownOne extends React.Component{
 
         }
     }
-
 
 
     render(){
