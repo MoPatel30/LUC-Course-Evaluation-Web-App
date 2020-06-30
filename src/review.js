@@ -39,7 +39,7 @@ export class Test extends React.Component{
            
             <div>
              
-                <p style = {{color: 'yellow'}}>{this.state.comps}</p>
+                <p>{this.state.comps}</p>
                 <p>{temp3}</p>
             
                 
