@@ -8,25 +8,14 @@ import Logo from './loyolaPicture.png'
 export class App extends React.Component{
   render(){
     return(
-      <div>
+      <div id = "header">
         
-        <div className = 'mainHeader'>
-          <img id = 'loyolaLogo' src = {Logo} alt='Loyola Logo' />
-          <h1 className= 'siteTitle'> LUC Course Evaluation Web-App </h1>
-        </div>
-      
-      
-      
+       
+        <h1 id = 'siteTitle'> <b><u> LUC Course Evaluation Web-App </u></b> </h1>
+       
+        <img id = "luc-img" src = {'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQrmV8I7SnC92JrArc6JUQVoB9_OXjbBWWs0w&usqp=CAU'} />
       
       </div>
-
-    
-
-
-
-
-
-
 
 
 

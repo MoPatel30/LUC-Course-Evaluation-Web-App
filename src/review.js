@@ -39,8 +39,8 @@ export class Test extends React.Component{
            
             <div>
              
-                <p style = {{color: 'yellow'}}>{this.state.comps}</p>
-                <p>{temp3}</p>
+                <p style = {{fontFamily: "Open Sans Condensed", fontSize: "18px"}}>{this.state.comps}</p>
+             
             
                 
 
@@ -52,17 +52,20 @@ export class Test extends React.Component{
 
 
 
+
+
 export class Tester extends React.Component{
-    render(){
+    render(){    
         return(
-            <div>
-                <p>Student Name: {this.props.student}</p>
-                <p>Course Name: {this.props.course}</p>
-                <p>Professor Name: {this.props.professor}</p>
-                <p>Course Review: {this.props.review}</p>
-                
+            <div id = "review-block-style">
+                <p style = {{position: "relative", left: "1rem", fontSize: "1rem"}}><b>Student Name: </b> {this.props.student}</p>
+                <p style = {{position: "relative", left: "1rem", fontSize: "1rem"}}><b>Course Name: </b> {this.props.course}</p>
+                <p style = {{position: "relative", left: "1rem", fontSize: "1rem"}}><b>Professor Name: </b> {this.props.professor}</p>
+                <p style = {{position: "relative", left: "1rem", fontSize: "1rem"}}><b>Course Review </b> {this.props.review}</p>
+                    
             </div>
         )
+        
     }
 }
 
@@ -76,7 +79,7 @@ export class GiveReview extends React.Component{
             course : null,
             professor : null,
             review : null,
-            comp: null
+            comp: []
         }
 
  
@@ -89,57 +92,82 @@ export class GiveReview extends React.Component{
              
     }
 
+
+ 
+
+
     mySubmit = (event) => {
         event.preventDefault()
+        if((this.state.student === "") & (this.state.professor === "") & (this.state.course === "") & (this.state.review === "")){
+            return
+        }
+        
+        let currentReview = <Tester student = {this.state.student} course = {this.state.course} professor = {this.state.professor} review = {this.state.review} /> 
+        
+        //this.state.comp.push(currentReview)
+        this.state.comp.unshift(currentReview)
+
         this.setState({
-            comp: <Tester student = {this.state.student} course = {this.state.course} professor = {this.state.professor} review = {this.state.review} /> 
+            student: '',
+            professor: '',
+            course: '',
+            review: '',
         })
+
+        return
+    
 
     }
 
     render(){
         return(
             <div>
+                   
 
-                <form onSubmit={this.mySubmit}>
-                    <input 
-                        placeholder = "Student Name"
-                        type='text' 
-                        value = {this.state.student}
-                        onChange= {e => this.setState({student: e.target.value})}
-                    />
-      
+                <div id = "review-form">
+                    <form onSubmit={this.mySubmit}>
+                        <input 
+                            placeholder = "Student Name"
+                            type='text' 
+                            value = {this.state.student}
+                            onChange= {e => this.setState({student: e.target.value})}
+                        />
+        
 
-                    <input 
-                        placeholder = "Course Name"
-                        type='text' 
-                        value = {this.state.course}
-                        onChange= {e => this.setState({course: e.target.value})}
-                    />
-
-
-                    <input 
-                        placeholder = "Professor Name"
-                        type='text' 
-                        value = {this.state.professor}
-                        onChange= {e => this.setState({professor: e.target.value})}
-                    />
+                        <input 
+                            placeholder = "Course Name"
+                            type='text' 
+                            value = {this.state.course}
+                            onChange= {e => this.setState({course: e.target.value})}
+                        />
 
 
-                    <input 
-                        placeholder = "Course Review"
-                        type='text' 
-                        value = {this.state.review}
-                        onChange= {e => this.setState({review: e.target.value})}
-                    />
+                        <input 
+                            placeholder = "Professor Name"
+                            type='text' 
+                            value = {this.state.professor}
+                            onChange= {e => this.setState({professor: e.target.value})}
+                        />
 
 
-                    <button type="submit" onclick={e => this.showone(e)}>Submit</button>
-                </form>
+                        <input 
+                            placeholder = "Course Review"
+                            type='text' 
+                            value = {this.state.review}
+                            onChange= {e => this.setState({review: e.target.value})}
+                        />
+
+
+                        <button style = {{position: "relative", left: "50px"}} type="submit" onclick={e => this.showone(e)}>Submit</button>
+                    </form>
+                </div>
+                
+
+                <p>{this.state.comp}</p>
                 
               
                 
-                <p>{this.state.comp}</p>
+       
          
 
 
