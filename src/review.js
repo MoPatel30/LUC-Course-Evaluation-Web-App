@@ -126,6 +126,7 @@ export class GiveReview extends React.Component{
 
                 <div id = "review-form">
                     <form onSubmit={this.mySubmit}>
+                        <br /><br /><br />
                         <input 
                             placeholder = "Student Name"
                             type='text' 
