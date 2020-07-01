@@ -98,12 +98,24 @@ export class GiveReview extends React.Component{
 
     mySubmit = (event) => {
         event.preventDefault()
+        if((this.state.student === "") & (this.state.professor === "") & (this.state.course === "") & (this.state.review === "")){
+            return
+        }
         
         let currentReview = <Tester student = {this.state.student} course = {this.state.course} professor = {this.state.professor} review = {this.state.review} /> 
         
-        this.state.comp.push(currentReview)
-        this.state.comp.reverse()
+        //this.state.comp.push(currentReview)
+        this.state.comp.unshift(currentReview)
+
+        this.setState({
+            student: '',
+            professor: '',
+            course: '',
+            review: '',
+        })
+
         return
+    
 
     }
 
@@ -149,6 +161,7 @@ export class GiveReview extends React.Component{
                         <button style = {{position: "relative", left: "50px"}} type="submit" onclick={e => this.showone(e)}>Submit</button>
                     </form>
                 </div>
+                
 
                 <p>{this.state.comp}</p>
                 
