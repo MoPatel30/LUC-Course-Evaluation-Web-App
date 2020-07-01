@@ -58,10 +58,10 @@ export class Tester extends React.Component{
     render(){    
         return(
             <div id = "review-block-style">
-                <p style = {{position: "relative", left: "1rem", fontSize: "1rem"}}>Student Name: {this.props.student}</p>
-                <p style = {{position: "relative", left: "1rem", fontSize: "1rem"}}>Course Name: {this.props.course}</p>
-                <p style = {{position: "relative", left: "1rem", fontSize: "1rem"}}>Professor Name: {this.props.professor}</p>
-                <p style = {{position: "relative", left: "1rem", fontSize: "1rem"}}>Course Review: {this.props.review}</p>
+                <p style = {{position: "relative", left: "1rem", fontSize: "1rem"}}><b>Student Name: </b> {this.props.student}</p>
+                <p style = {{position: "relative", left: "1rem", fontSize: "1rem"}}><b>Course Name: </b> {this.props.course}</p>
+                <p style = {{position: "relative", left: "1rem", fontSize: "1rem"}}><b>Professor Name: </b> {this.props.professor}</p>
+                <p style = {{position: "relative", left: "1rem", fontSize: "1rem"}}><b>Course Review </b> {this.props.review}</p>
                     
             </div>
         )
