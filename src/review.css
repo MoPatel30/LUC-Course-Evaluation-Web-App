@@ -2,3 +2,20 @@
     border: 3px solid maroon;
     font-size: 24px;
 }
+
+
+#review-form{
+   width: 100px;
+   position: relative; 
+   left: 650px;
+   top: 00px;
+}
+
+#review-block-style{
+    border: 3px solid black;
+    width: 50%;
+    height: 50%;
+    overflow: auto;
+    margin-bottom: 1.5rem;
+    margin-left: 22.5rem;
+}
