@@ -102,6 +102,7 @@ export class GiveReview extends React.Component{
         let currentReview = <Tester student = {this.state.student} course = {this.state.course} professor = {this.state.professor} review = {this.state.review} /> 
         
         this.state.comp.push(currentReview)
+        this.state.comp.reverse()
         return
 
     }
