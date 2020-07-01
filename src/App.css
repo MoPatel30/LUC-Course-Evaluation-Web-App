@@ -61,6 +61,7 @@ li.dropdown {
 }
 .mainHeader{
   position: fixed;
+  font-family: "Optima";
   background: white;
   height: 70px;
   top: 0px;
