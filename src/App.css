@@ -3,18 +3,53 @@
 }
 
 .siteTitle{
+  animation-name: introFade;
+  animation-duration: 3s;
   position: relative;
-  font-size: 40px;
+  font-size: 38px;
   bottom:100px;
   color: gold;
+  left: 3em;
 }
 .mainHeader{
   position: fixed;
-  background:  white;
+  background: white;
   height: 100px;
   top: 0px;
   width:100%;
 }
+.courseHead{
+  animation-name: introFade;
+  animation-duration: 4s;
+  position: relative;
+  color: gold;
+  font-size: 35px;
+  left: 750px;
+  bottom: 165px;
+  text-decoration: none;
+}
+.profHead{
+  animation-name: introFade;
+  animation-duration: 4.5s;
+  position: relative;
+  color: gold;
+  font-size: 35px;
+  left: 960px;
+  bottom: 205px;
+  text-decoration: none;
+}
+.contactHead{
+  animation-name: introFade;
+  animation-duration: 5s;
+  position: relative;
+  color: gold;
+  font-size: 35px;
+  left: 1190px;
+  bottom:245px;
+  text-decoration: none;
+}
+.contactHead:hover{
+  transform: scale(1.3);}
 
 .App-logo {
   height: 40vmin;
@@ -45,8 +80,16 @@
   position: relative;
   max-width:100%;
   height:100%;
-  left: 40em;
+  left: 0em;
   top: 0em;
+}
+#middleLine{
+  border-left: 3px solid gold;
+  height: 100px;
+  position: absolute;
+  left: 50%;
+  margin-left: -3px;
+  top: 0;
 }
 
 @keyframes App-logo-spin {
@@ -57,3 +100,12 @@
     transform: rotate(360deg);
   }
 }
+@keyframes introFade{
+  0%{
+    color:white;
+    }
+  100%{
+    color:gold;
+  }
+  }
+
