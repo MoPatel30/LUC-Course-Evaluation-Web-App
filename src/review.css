@@ -1,5 +1,10 @@
 
 
+.submissionForm{
+    background: antiquewhite;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
 #review{
     border: 3px solid maroon;
     font-size: 24px;
@@ -7,11 +12,24 @@
 
 
 #review-form{
+    background: whitesmoke;
     width: 100px;
     position: relative; 
-    left: 650px;
+    left: 425px;
     top: 125px;
-  
+    border-radius: 25px;
+    border: 3px solid black;
+    width: 600px;
+}
+#submitButton{
+    position: relative;
+    background: ;
+    border-color: rgb(42, 196, 42);
+     left: 475px;
+     bottom: 45px;
+     width: 100px;
+     height: 40px;
+     border-radius: 25px;
 }
 
 #review-block-style{
