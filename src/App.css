@@ -22,7 +22,9 @@ li a, .courseHead {
 }
 
 li a:hover, .dropdown:hover .courseHead {
-  background-color: maroon;
+  background-color: antiquewhite;
+  color: #434343;
+  
 }
 
 li.dropdown {
@@ -31,7 +33,9 @@ li.dropdown {
 
 .dropdown-content {
   display: none;
-  position: absolute;
+ 
+  position: relative;
+  left: 210px;
   background-color: #f9f9f9;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
@@ -56,7 +60,7 @@ li.dropdown {
   position: relative;
   font-size: 38px;
   bottom:90px;
-  color: gold;
+  color: #434343;
   left: 3em;
 }
 .mainHeader{
@@ -72,7 +76,9 @@ li.dropdown {
   animation-name: introFade;
   animation-duration: 4s;
   position: relative;
-  color: gold;
+  top: 8px;
+  left: 210px;
+  color: #434343;
   font-size: 35px;
   
   text-decoration: none;
@@ -81,7 +87,9 @@ li.dropdown {
   animation-name: introFade;
   animation-duration: 4.5s;
   position: relative;
-  color: gold;
+  top: 8px;
+  left: 210px;
+  color: #434343;
   font-size: 35px;
   text-decoration: none;
 }
@@ -89,7 +97,9 @@ li.dropdown {
   animation-name: introFade;
   animation-duration: 5s;
   position: relative;
-  color: gold;
+  top: 8px;
+  left: 210px;
+  color: #434343;
   font-size: 35px;
   text-decoration: none;
 }
@@ -108,7 +118,7 @@ li.dropdown {
   top: 0em;
 }
 #middleLine{
-  border-left: 3px solid gold;
+  border-left: 3px solid #434343;
   height: 70px;
   position: absolute;
   left: 50%;
@@ -120,6 +130,6 @@ li.dropdown {
     color:white;
     }
   100%{
-    color:gold;
+    color:#434343;
   }
   }

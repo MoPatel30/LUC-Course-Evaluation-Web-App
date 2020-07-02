@@ -39,7 +39,7 @@ export class Test extends React.Component{
            
             <div>
              
-                <p style = {{fontFamily: "Open Sans Condensed", fontSize: "18px"}}>{this.state.comps}</p>
+                <p style = {{fontFamily: "Open Sans Condensed", fontSize: "1rem", position: "relative", top: "150px"}}>{this.state.comps}</p>
              
             
                 
@@ -123,48 +123,53 @@ export class GiveReview extends React.Component{
         return(
             <div>
                    
+                <div>
+                    <div id = "review-form" style = {{border: "3px solid black", width: "200px"}}>
+                        <p style = {{fontSize: '1.25rem', fontFamily: "Open Sans Condensed", textAlign: "center"}}><u>Course Review Form</u></p>
+                        <form onSubmit={this.mySubmit}>
+                            <input 
+                                style = {{position: "relative", left: "15px"}}
+                                placeholder = "Student Name (Optional)"
+                                type='text' 
+                                value = {this.state.student}
+                                onChange= {e => this.setState({student: e.target.value})}
+                            />
+            
 
-                <div id = "review-form">
-                    <form onSubmit={this.mySubmit}>
-                        <br /><br /><br />
-                        <input 
-                            placeholder = "Student Name"
-                            type='text' 
-                            value = {this.state.student}
-                            onChange= {e => this.setState({student: e.target.value})}
-                        />
-        
-
-                        <input 
-                            placeholder = "Course Name"
-                            type='text' 
-                            value = {this.state.course}
-                            onChange= {e => this.setState({course: e.target.value})}
-                        />
-
-
-                        <input 
-                            placeholder = "Professor Name"
-                            type='text' 
-                            value = {this.state.professor}
-                            onChange= {e => this.setState({professor: e.target.value})}
-                        />
+                            <input 
+                                style = {{position: "relative", left: "15px"}}
+                                placeholder = "Course Name"
+                                type='text' 
+                                value = {this.state.course}
+                                onChange= {e => this.setState({course: e.target.value})}
+                            />
 
 
-                        <input 
-                            placeholder = "Course Review"
-                            type='text' 
-                            value = {this.state.review}
-                            onChange= {e => this.setState({review: e.target.value})}
-                        />
+                            <input 
+                                style = {{position: "relative", left: "15px"}}
+                                placeholder = "Professor Name (Optional)"
+                                type='text' 
+                                value = {this.state.professor}
+                                onChange= {e => this.setState({professor: e.target.value})}
+                            />
 
 
-                        <button style = {{position: "relative", left: "50px"}} type="submit" onclick={e => this.showone(e)}>Submit</button>
-                    </form>
+                            <input 
+                                style = {{position: "relative", left: "15px"}}
+                                placeholder = "Course Review"
+                                type='text' 
+                                value = {this.state.review}
+                                onChange= {e => this.setState({review: e.target.value})}
+                            />
+
+
+                            <button style = {{position: "relative", left: "69px", top: '-5px'}} type="submit" onclick={e => this.showone(e)}>Submit</button>
+                        </form>
+                    </div>
                 </div>
                 
 
-                <p>{this.state.comp}</p>
+                <p style = {{position: 'relative', top: '150px'}}>{this.state.comp}</p>
                 
               
                 
