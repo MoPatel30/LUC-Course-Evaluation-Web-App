@@ -3,7 +3,9 @@ import ReviewerData from './reviews.json';
 import { render } from '@testing-library/react';
 import './review.css';
 
-var temp = [['Kevin',"Phil 274",'Mr. Kant','Thought-provoking class with hard exams.'], ['Zeshan','Chem 101','Mrs. Curie','Interesting Labs. Detailed lab reports required per lab. Easy final.'], ['Mo Patel','Theo 107','Mr. God','Opens up mind to other religions. Changed how I thought about religion in general.'],['Mo larya','COMP 264','Mr. Klingensmith','Super chill class, makes assembly easy, learn linux, git and vim to a good extent.'], ['Michael','Math 163','Mr. Newton','Hard class, lots of material, A lot of integrals and derivatives. Tests are pretty hard. ']]
+
+
+export var temp = [['Kevin',"Phil 274",'Mr. Kant','Thought-provoking class with hard exams.'], ['Zeshan','Chem 101','Mrs. Curie','Interesting Labs. Detailed lab reports required per lab. Easy final.'], ['Mo Patel','Theo 107','Mr. God','Opens up mind to other religions. Changed how I thought about religion in general.'],['Mo larya','COMP 264','Mr. Klingensmith','Super chill class, makes assembly easy, learn linux, git and vim to a good extent.'], ['Michael','Math 163','Mr. Newton','Hard class, lots of material, A lot of integrals and derivatives. Tests are pretty hard. ']]
 
 
 export class Test extends React.Component{
@@ -127,7 +129,7 @@ export class GiveReview extends React.Component{
                         <p style = {{fontSize: '1.25rem', fontFamily: "Open Sans Condensed", textAlign: "center"}}><u>Course Review Form</u></p>
                         <form className ='submissionForm' onSubmit={this.mySubmit}>
                             <input 
-                                style = {{position: "relative",left: "15px", width:'140px', padding: '4px 5px'}}
+                                style = {{position: "relative",left: "15px", padding: '4px 5px'}}
                                 placeholder = "Student Name (Optional)"
                                 type='text' 
                                 value = {this.state.student}
@@ -145,7 +147,7 @@ export class GiveReview extends React.Component{
 
                             <br />
                             <input 
-                                style = {{position: "relative", left: "15px", width: '140px',padding: '4px 5px'}}
+                                style = {{position: "relative", left: "15px", padding: '4px 5px'}}
                                 placeholder = "Professor Name (Optional)"
                                 type='text' 
                                 value = {this.state.professor}
@@ -185,6 +187,10 @@ export class GiveReview extends React.Component{
 
 
 }
+
+
+
+
 
 
 
