@@ -136,7 +136,7 @@ export class GiveReview extends React.Component{
             
                             <br />
                             <input 
-                                style = {{position: "relative", left: "15px",padding: '4px 5px'}}
+                                style = {{position: "relative", width:'140px', left: "15px",padding: '4px 5px'}}
                                 placeholder = "Course Name"
                                 type='text' 
                                 value = {this.state.course}
