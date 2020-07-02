@@ -13,7 +13,7 @@ export class App extends React.Component{
          <img id = 'loyolaLogo' src = {Logo} alt='Loyola Logo' />
           <h1 className= 'siteTitle'> LUC Course Evaluation Web-App </h1>
       
-            <ul>
+          <ul>
             <li className='dropdown'>
               <a href='./App.js' className = 'courseHead' >Courses</a>
                 <div className="dropdown-content">

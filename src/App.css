@@ -5,12 +5,12 @@ ul {
   list-style-type: none;
   position: relative;
   margin: 0;
-  padding: 14px 16px;
+  padding: 20px 0 10px 223px;
   background-color: white;
-  width: 675px;
+  width: 600px;
   height: 70px;
-  left: 50%;
-  bottom: 199px;
+  left: 47%;
+  bottom: 205px;
 }
 
 li a, .courseHead {
@@ -33,9 +33,6 @@ li.dropdown {
 
 .dropdown-content {
   display: none;
- 
-  position: relative;
-  left: 210px;
   background-color: #f9f9f9;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
@@ -75,9 +72,6 @@ li.dropdown {
 .courseHead{
   animation-name: introFade;
   animation-duration: 4s;
-  position: relative;
-  top: 8px;
-  left: 210px;
   color: #434343;
   font-size: 35px;
   
@@ -86,9 +80,6 @@ li.dropdown {
 .profHead{
   animation-name: introFade;
   animation-duration: 4.5s;
-  position: relative;
-  top: 8px;
-  left: 210px;
   color: #434343;
   font-size: 35px;
   text-decoration: none;
@@ -96,9 +87,6 @@ li.dropdown {
 .contactHead{
   animation-name: introFade;
   animation-duration: 5s;
-  position: relative;
-  top: 8px;
-  left: 210px;
   color: #434343;
   font-size: 35px;
   text-decoration: none;
