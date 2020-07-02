@@ -109,7 +109,6 @@ export class GiveReview extends React.Component{
                         onChange= {e => this.setState({student: e.target.value})}
                     />
       
-
                     <input 
                         placeholder = "Course Name"
                         type='text' 
@@ -150,7 +149,6 @@ export class GiveReview extends React.Component{
 
 
 }
-
 
 
 
