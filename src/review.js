@@ -52,8 +52,6 @@ export class Test extends React.Component{
 
 
 
-
-
 export class Tester extends React.Component{
     render(){    
         return(
@@ -68,6 +66,7 @@ export class Tester extends React.Component{
         
     }
 }
+
 
 
 

@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
-import Logo from './loyolaPicture.png'
-
+import Logo from './loyolaPicture.png';
 
 
 
@@ -21,6 +20,9 @@ export class App extends React.Component{
                   <a href="#">Philosophy</a>
                   <a href="#">Biology</a>
                   <a href="#">Psychology</a>
+                  <a href="#">Mathematics</a>
+                  <a href="#">Data Science</a>
+               
                 </div>
             </li>
             <li><a href='./App.js' className="profHead">Professors</a></li>
