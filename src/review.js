@@ -3,6 +3,16 @@ import ReviewerData from './reviews.json';
 import { render } from '@testing-library/react';
 import './review.css';
 
+import {
+    Slider,
+    SliderInput,
+    SliderTrack,
+    SliderTrackHighlight,
+    SliderHandle,
+    SliderMarker,
+  } from "@reach/slider";
+  import "@reach/slider/styles.css";
+
 
 
 export var temp = [['Kevin',"Phil 274",'Mr. Kant','Thought-provoking class with hard exams.'], ['Zeshan','Chem 101','Mrs. Curie','Interesting Labs. Detailed lab reports required per lab. Easy final.'], ['Mo Patel','Theo 107','Mr. God','Opens up mind to other religions. Changed how I thought about religion in general.'],['Mo larya','COMP 264','Mr. Klingensmith','Super chill class, makes assembly easy, learn linux, git and vim to a good extent.'], ['Michael','Math 163','Mr. Newton','Hard class, lots of material, A lot of integrals and derivatives. Tests are pretty hard. ']]
@@ -61,8 +71,9 @@ export class Tester extends React.Component{
                 <p style = {{position: "relative", left: "1rem", fontSize: "1rem"}}><b>Student Name: </b> {this.props.student}</p>
                 <p style = {{position: "relative", left: "1rem", fontSize: "1rem"}}><b>Course Name: </b> {this.props.course}</p>
                 <p style = {{position: "relative", left: "1rem", fontSize: "1rem"}}><b>Professor Name: </b> {this.props.professor}</p>
-                <p style = {{position: "relative", left: "1rem", fontSize: "1rem"}}><b>Course Review </b> {this.props.review}</p>
-                    
+                <p style = {{position: "relative", left: "1rem", fontSize: "1rem"}}><b>Course Review: </b> {this.props.review}</p>
+                <p style = {{position: "relative", left: "1rem", fontSize: "1rem"}}><b>Class Difficulty: </b> {this.props.number}</p>
+
             </div>
         )
         
@@ -80,6 +91,7 @@ export class GiveReview extends React.Component{
             course : null,
             professor : null,
             review : null,
+            number : null,
             comp: []
         }
 
@@ -99,11 +111,14 @@ export class GiveReview extends React.Component{
 
     mySubmit = (event) => {
         event.preventDefault()
+        this.setState({
+            number: (document.getElementsByName('slider')).value
+        })
         if((this.state.student === "") & (this.state.professor === "") & (this.state.course === "") & (this.state.review === "")){
             return
         }
         
-        let currentReview = <Tester student = {this.state.student} course = {this.state.course} professor = {this.state.professor} review = {this.state.review} /> 
+        let currentReview = <Tester student = {this.state.student} course = {this.state.course} professor = {this.state.professor} review = {this.state.review} number = {this.state.number} /> 
         
         //this.state.comp.push(currentReview)
         this.state.comp.unshift(currentReview)
@@ -113,6 +128,7 @@ export class GiveReview extends React.Component{
             professor: '',
             course: '',
             review: '',
+            number: ''
         })
 
         return
@@ -138,7 +154,7 @@ export class GiveReview extends React.Component{
             
                             <br />
                             <input 
-                                style = {{position: "relative", width:'140px', left: "15px",padding: '4px 5px'}}
+                                style = {{position: "relative", left: "15px",padding: '4px 5px'}}
                                 placeholder = "Course Name"
                                 type='text' 
                                 value = {this.state.course}
@@ -165,6 +181,20 @@ export class GiveReview extends React.Component{
                             />
                             <br />
 
+
+
+                            <Slider name = "slider" min={0} max={10} defaultValue = {5} />
+                          
+                            
+                            <div>
+                                <SliderInput>
+                                <SliderTrack>
+                                <SliderTrackHighlight />
+                                <SliderMarker value={50} />
+                                <SliderHandle />
+                                </SliderTrack>
+                                </SliderInput>
+                            </div>
 
                             <button id = 'submitButton' type="submit" onclick={e => this.showone(e)}>Submit</button>
                         </form>
