@@ -5,49 +5,85 @@ import './review.css';
 
 
 
-export var temp = [['Kevin',"Phil 274",'Mr. Kant','Thought-provoking class with hard exams.'], ['Zeshan','Chem 101','Mrs. Curie','Interesting Labs. Detailed lab reports required per lab. Easy final.'], ['Mo Patel','Theo 107','Mr. God','Opens up mind to other religions. Changed how I thought about religion in general.'],['Mo larya','COMP 264','Mr. Klingensmith','Super chill class, makes assembly easy, learn linux, git and vim to a good extent.'], ['Michael','Math 163','Mr. Newton','Hard class, lots of material, A lot of integrals and derivatives. Tests are pretty hard. ']]
-
-
-export class Test extends React.Component{
-    constructor(){
-        super()
-        this.state = {
-            comps: []
-        }
+export const people = [
+    {
+    id: 1,
+    student:'Kevin',
+    course:"Phil 274",
+    professor:'Mr. Kant',
+    review:'Thought-provoking class with hard exams.'
+    },
+    {
+        id: 2,
+        student:'Zeshan',
+        course:'Chem 101',
+        professor:'Mrs. Curie',
+        review:'Interesting Labs. Detailed lab reports required per lab. Easy final.'
+    },
+    {
+        id: 3,
+        student:'Mo Patel',
+        course:'Theo 107',
+        professor:'Mr. God',
+        review:'Opens up mind to other religions. Changed how I thought about religion in general.'
+    },
+    {
+        id: 4,
+        student:'Mo larya',
+        course:'COMP 264',
+        professor:'Mr. Klingensmith',
+        review:'Super chill class, makes assembly easy, learn linux, git and vim to a good extent.'
+    },
+    {
+        id: 5,
+        student:'Michael',
+        course:'Math 163',
+        professor:'Mr. Newton',
+        review: 'Hard class, lots of material, A lot of integrals and derivatives. Tests are pretty hard. '
     }
+]
 
-    render(){
-        for(let idx = 0; idx < temp.length; idx++){    
-            let student = temp[idx][0]
-            let course = temp[idx][1]
-            let professor = temp[idx][2]
-            let review = temp[idx][3]
-
-            let temp2 = [student, course, professor, review]
-
-            let compOne = <Tester id = "review" student = {temp2[0]} course = {temp2[1]} professor = {temp2[2]} review = {temp2[3]} />
-            var temp3 = this.state.comps
-            temp3.push(compOne)
-
-            
-
+function searchingFor(term){
+    return function(x){
+        return x.course.toLowerCase().includes(term.toLowerCase()) || !term;
+    }
+}
+export class Test extends React.Component{
+    constructor(props){
+        super(props);
+        this.state = {
+            people: people,
+            term: ''
         }
-     
-      
-    
-
-       
-        return(
-           
-            <div>
-             
-                <p style = {{fontFamily: "Open Sans Condensed", fontSize: "1rem", position: "relative", top: "150px"}}>{this.state.comps}</p>
-             
-            
-                
-
+        this.searchHandler = this.searchHandler.bind(this);
+    }
+    searchHandler(event){
+        this.setState({term: event.target.value})
+    }
+    render() {
+        const {term,people} = this.state;
+        return (
+            <div className='reviewSection'>
+                <form>
+                    <input id="searchBar"
+                            type='text'
+                            onChange ={this.searchHandler}
+                            value={term}
+                            placeholder='Search For Course...'
+                    />
+                </form>
+            {
+                people.filter(searchingFor(term)).map(person => 
+                        <div id= 'review-block-style' key ={person.id}>
+                            <p><strong>Student Name:</strong> {person.student}</p>
+                            <p><strong>Course:</strong> {person.course}</p>
+                            <p><strong>Professor:</strong> {person.professor}</p>
+                            <p><strong>Course Review:</strong>{person.review}</p>
+                        </div>      
+                )
+            }
             </div>
-        )
+        );
     }
 }
 
@@ -138,7 +174,7 @@ export class GiveReview extends React.Component{
             
                             <br />
                             <input 
-                                style = {{position: "relative", width:'140px', left: "15px",padding: '4px 5px'}}
+                                style = {{position: "relative",left: "15px",padding: '4px 5px'}}
                                 placeholder = "Course Name"
                                 type='text' 
                                 value = {this.state.course}

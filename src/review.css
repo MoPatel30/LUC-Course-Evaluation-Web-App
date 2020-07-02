@@ -44,3 +44,16 @@
     margin-bottom: 1.5rem;
     margin-left: 22.5rem;
 }
+#searchBar{
+    position: relative;
+    border-radius: 25px;
+    font-size: 24px;
+    left: 25%;
+    bottom: 50px;
+    width:50%;
+    height: 24px;
+}
+.reviewSection{
+    position: relative;
+    top:200px;
+}
