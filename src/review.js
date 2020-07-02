@@ -106,8 +106,6 @@ export class Tester extends React.Component{
 }
 
 
-
-
 export class GiveReview extends React.Component{
     constructor(){
         super()
