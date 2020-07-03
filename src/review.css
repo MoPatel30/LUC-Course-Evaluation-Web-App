@@ -26,9 +26,9 @@
 
 #submitButton{
     position: relative;
-    border-color: rgb(42, 196, 42);
-    left: 475px;
-    bottom: 45px;
+    border-color: rgb(14, 50, 207);
+    left: 250px;
+    bottom: 20px;
     width: 100px;
     height: 40px;
     border-radius: 25px;
@@ -43,4 +43,27 @@
     overflow: auto;
     margin-bottom: 1.5rem;
     margin-left: 22.5rem;
+    text-indent: 10px;
 }
+#searchBar{
+    position: relative;
+    text-indent: 10px;
+    border-radius: 25px;
+    font-size: 24px;
+    left: 25%;
+    bottom: 50px;
+    width:48%;
+    height: 24px;
+}
+.reviewSection{
+    position: relative;
+    top:200px;
+}
+
+
+
+
+
+
+
+

@@ -3,9 +3,11 @@ import './App.css';
 import Logo from './loyolaPicture.png';
 
 import {Tester} from './review';
+import './review.css'
 
 
 var temp = [['Kevin',"Phil 274",'Mr. Kant','Thought-provoking class with hard exams.'], ['Zeshan','Chem 101','Mrs. Curie','Interesting Labs. Detailed lab reports required per lab. Easy final.'], ['Mo Patel','Theo 107','Mr. God','Opens up mind to other religions. Changed how I thought about religion in general.'],['Mo larya','COMP 264','Mr. Klingensmith','Super chill class, makes assembly easy, learn linux, git and vim to a good extent.'], ['Michael','Math 163','Mr. Newton','Hard class, lots of material, A lot of integrals and derivatives. Tests are pretty hard. ']]
+
 
 
 export class App extends React.Component{
@@ -15,6 +17,7 @@ export class App extends React.Component{
       comp: []
 
     }
+  
   }
 
 
@@ -126,7 +129,10 @@ export class App extends React.Component{
           </ul>
 
           <div>
-            <p>{this.state.comp}</p>
+           
+            <p>{this.state.comp}</p>   
+            
+
           </div>
          
         </div>
