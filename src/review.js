@@ -371,7 +371,7 @@ export class PopUp extends React.Component{
                 </div>
                 </Popup>
 
-                <h1 style = {{fontFamily: "Open Sans Condensed", color: "#434343", fontSize: "2rem", textAlign: "center", position: "relative", top: '125px'}}><u>Recent Student Reviews</u></h1>
+                <h1 style = {{fontFamily: "Open Sans Condensed", color: "whitesmoke", fontSize: "2rem", textAlign: "center", position: "relative", top: '125px'}}><u>Recent Student Reviews</u></h1>
                 
                 <p style = {{position: 'relative', top: '150px'}}>{this.state.comp}</p>
                 
