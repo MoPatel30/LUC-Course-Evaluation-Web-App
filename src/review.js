@@ -320,7 +320,7 @@ export class PopUp extends React.Component{
                     
                         <p style = {{fontSize: '1.25rem', fontFamily: "Open Sans Condensed", textAlign: "center"}}><u>Course Review Form</u></p>
                         <form className ='submissionForm' onSubmit={this.mySubmit}>
-                            <input 
+                            <input
                                 style = {{position: "relative",left: "15px", border: "2px solid #434343", padding: '4px 5px', left: "282px", top: '10px'}}
                                 placeholder = "Student Name (Optional)"
                                 type='text' 
