@@ -21,8 +21,8 @@ li a, .courseHead {
 }
 
 li a:hover, .dropdown:hover .courseHead {
-  background-color: antiquewhite;
-  color: #434343;
+  background-color:lightskyblue;
+  color: whitesmoke;
   
 }
 
@@ -46,7 +46,7 @@ li.dropdown {
   text-align: left;
 }
 
-.dropdown-content a:hover {background-color: #f1f1f1;}
+.dropdown-content a:hover {background-color: lightskyblue;}
 
 .dropdown:hover .dropdown-content { display: block;}
 
