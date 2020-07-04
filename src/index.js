@@ -21,7 +21,7 @@ ReactDOM.render(<Test /> , document.getElementById('test'));
 
 
 
-ReactDOM.render(<PopUp /> , document.getElementById('pop-up'));
+//ReactDOM.render(<PopUp /> , document.getElementById('pop-up'));
 //ReactDOM.render(<Search /> , document.getElementById('search'));
 
 // If you want your app to work offline and load faster, you can change
