@@ -80,7 +80,7 @@
 
 .example_c:hover {
     color: #ffffff !important;
-    background: #434343;
+    background: lightslategray;
     border-color: #434343 !important;
     transition: all 0.4s ease 0s;
     border-radius: 50px;
