@@ -191,7 +191,7 @@ export class GiveReview extends React.Component{
                         <p style = {{fontSize: '1.25rem', fontFamily: "Open Sans Condensed", textAlign: "center"}}><u>Course Review Form</u></p>
                         <form className ='submissionForm' onSubmit={this.mySubmit}>
                             <input 
-                                style = {{position: "relative",left: "15px", padding: '4px 5px', left: "212px", top: '10px'}}
+                                style = {{position: "relative", padding: '4px 5px', left: "212px", top: '10px'}}
                                 placeholder = "Student Name (Optional)"
                                 type='text' 
                                 value = {this.state.student}
@@ -200,7 +200,7 @@ export class GiveReview extends React.Component{
             
                             <br />
                             <input 
-                                style = {{position: "relative",left: "15px",padding: '4px 5px', left: "212px", top: '10px'}}
+                                style = {{position: "relative",padding: '4px 5px', left: "212px", top: '10px'}}
                                 placeholder = "Course Name"
                                 type='text' 
                                 value = {this.state.course}
@@ -209,7 +209,7 @@ export class GiveReview extends React.Component{
 
                             <br />
                             <input 
-                                style = {{position: "relative", left: "15px", padding: '4px 5px', left: "212px", top: '10px'}}
+                                style = {{position: "relative", padding: '4px 5px', left: "212px", top: '10px'}}
                                 placeholder = "Professor Name (Optional)"
                                 type='text' 
                                 value = {this.state.professor}
@@ -219,7 +219,7 @@ export class GiveReview extends React.Component{
                             <br />
                             <br />
                             <textarea 
-                                style = {{position: "relative", left: "15px", height:'200px', width: '400px', left: "100px"}}
+                                style = {{position: "relative", height:'200px', width: '400px', left: "100px"}}
                                 placeholder = "Describe your course experience"
                                 type='text' 
                                 value = {this.state.review}
@@ -321,7 +321,7 @@ export class PopUp extends React.Component{
                         <p style = {{fontSize: '1.25rem', fontFamily: "Open Sans Condensed", textAlign: "center"}}><u>Course Review Form</u></p>
                         <form className ='submissionForm' onSubmit={this.mySubmit}>
                             <input
-                                style = {{position: "relative",left: "15px", border: "2px solid #434343", padding: '4px 5px', left: "282px", top: '10px'}}
+                                style = {{position: "relative",border: "2px solid #434343", padding: '4px 5px', left: "282px", top: '10px'}}
                                 placeholder = "Student Name (Optional)"
                                 type='text' 
                                 value = {this.state.student}
@@ -330,7 +330,7 @@ export class PopUp extends React.Component{
             
                             <br />
                             <input 
-                                style = {{position: "relative",left: "15px", border: "2px solid #434343", padding: '4px 5px', left: "282px", top: '10px'}}
+                                style = {{position: "relative",border: "2px solid #434343", padding: '4px 5px', left: "282px", top: '10px'}}
                                 placeholder = "Course Name"
                                 type='text' 
                                 value = {this.state.course}
@@ -339,7 +339,7 @@ export class PopUp extends React.Component{
 
                             <br />
                             <input 
-                                style = {{position: "relative", left: "15px", border: "2px solid #434343", padding: '4px 5px', left: "282px", top: '10px'}}
+                                style = {{position: "relative",border: "2px solid #434343", padding: '4px 5px', left: "282px", top: '10px'}}
                                 placeholder = "Professor Name (Optional)"
                                 type='text' 
                                 value = {this.state.professor}
