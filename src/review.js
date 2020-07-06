@@ -77,7 +77,7 @@ export class Test extends React.Component{
     render() {
         const {term,people} = this.state;
         return (
-            <div className='reviewSection'>
+            <div>
                 <form>
                     <input  id="searchBar" 
                             type='text'
@@ -86,6 +86,9 @@ export class Test extends React.Component{
                             placeholder='Search For Course...'
                     />
                 </form>
+            
+            <div className='reviewSection'>
+                
             {
                 people.filter(searchingFor(term)).map(person => 
                         <div id= 'review-block-style' key ={person.id}>
@@ -97,6 +100,7 @@ export class Test extends React.Component{
                 )
             }
             </div>
+        </div>
         );
     }
 }
@@ -108,11 +112,11 @@ export class Tester extends React.Component{
     render(){    
         return(
             <div id = "review-block-style">
-                <p style = {{position: "relative", left: "1rem", fontSize: "1rem"}}><b>Student Name: </b> {this.props.student}</p>
-                <p style = {{position: "relative", left: "1rem", fontSize: "1rem"}}><b>Course Name: </b> {this.props.course}</p>
-                <p style = {{position: "relative", left: "1rem", fontSize: "1rem"}}><b>Professor Name: </b> {this.props.professor}</p>
-                <p style = {{position: "relative", left: "1rem", fontSize: "1rem"}}><b>Course Review: </b> {this.props.review}</p>
-                <p style = {{position: "relative", left: "1rem", fontSize: "1rem"}}><b>Class Difficulty: </b> {this.props.number}</p>
+                <p><b>Student Name: </b> {this.props.student}</p>
+                <p><b>Course Name: </b> {this.props.course}</p>
+                <p><b>Professor Name: </b> {this.props.professor}</p>
+                <p><b>Course Review: </b> {this.props.review}</p>
+                <p><b>Class Difficulty: </b> {this.props.number}</p>
 
             </div>
         )
