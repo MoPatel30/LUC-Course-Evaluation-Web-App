@@ -48,18 +48,19 @@
     text-indent: 10px;
     border-radius: 25px;
     font-size: 24px;
-    left: 25%;
-    top:200px;
-    width:48%;
+    left: 60%;
+    bottom:10px;
+    width:35%;
     height: 24px;
 }
 .reviewSection{
     position: fixed;
-    top:300px;
-    overflow: auto;
-    height: 500px;
     display: inline-block;
-    width: 100%;
+    top:200px;
+    left: 70%;
+    overflow-x: scroll;
+    height: 500px;
+    width: 500px;
 }
 
 
