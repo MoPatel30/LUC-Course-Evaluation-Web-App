@@ -101,14 +101,7 @@ export class Tester extends React.Component{
     render(){    
         return(
             <div id = "review-block-style">
-<<<<<<< HEAD
-                <p><b>Student Name: </b> {this.props.student}</p>
-                <p><b>Course Name: </b> {this.props.course}</p>
-                <p><b>Professor Name: </b> {this.props.professor}</p>
-                <p><b>Course Review: </b> {this.props.review}</p>
-                <p><b>Class Difficulty: </b> {this.props.number}</p>
 
-=======
                 <p style = {{position: "relative", left: "1rem", fontSize: "1rem"}}><b>Student Name: </b> {this.props.student}</p>
                 <p style = {{position: "relative", left: "1rem", fontSize: "1rem"}}><b>Course Name: </b> {this.props.course}</p>
                 <p style = {{position: "relative", left: "1rem", fontSize: "1rem"}}><b>Professor Name: </b> {this.props.professor}</p>
@@ -117,7 +110,6 @@ export class Tester extends React.Component{
                 <p style = {{position: "relative", left: "1rem", fontSize: "1rem"}}><b>Overall Class Experience: </b> {this.props.number}</p>
                 <p style = {{position: "relative", left: "1rem", fontSize: "1rem"}}><b>Would you recommend taking this course?: </b> {this.props.recommend}</p>
                 <p style = {{position: "relative", left: "1rem", fontSize: "1rem"}}><b>Textbook/3rd party platform usage: </b> {this.props.textbook}</p>
->>>>>>> 1861a8a867cc7dba9b39bdcf93a26d8923752929
             </div>
         )
         
@@ -233,12 +225,8 @@ export class GiveReview extends React.Component{
 
                 
 
-<<<<<<< HEAD
                             
 
-=======
-                           
->>>>>>> 1861a8a867cc7dba9b39bdcf93a26d8923752929
                             <button id = 'submitButton' type="submit" onclick={e => this.showone(e)}>Submit</button>
                         </form>
                     </div>
@@ -367,8 +355,6 @@ export class PopUp extends React.Component{
                             <br />
 
 
-<<<<<<< HEAD
-=======
                             <select id = "rec-drop" class = "select">
                                 <option value = 'No Response'>Select</option>
                                 <option value = 'Yes'>Yes</option>
@@ -384,7 +370,6 @@ export class PopUp extends React.Component{
 
 
 
->>>>>>> 1861a8a867cc7dba9b39bdcf93a26d8923752929
                            
             
                             <div class="button_cont" align="center"><button style = {{position: "relative",top: "-15px", width: "175px", height: "75px"}} class="example_c"  type="submit" onclick={e => this.showone(e)}><b>Submit Review</b></button></div>
