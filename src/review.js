@@ -7,17 +7,6 @@ import './review.css';
 import Popup from "reactjs-popup";
  
 
-import {
-    Slider,
-    SliderInput,
-    SliderTrack,
-    SliderTrackHighlight,
-    SliderHandle,
-    SliderMarker,
-  } from "@reach/slider";
-  import "@reach/slider/styles.css";
-
-
 
 export const people = [
     {
@@ -113,7 +102,9 @@ export class Tester extends React.Component{
                 <p style = {{position: "relative", left: "1rem", fontSize: "1rem"}}><b>Professor Name: </b> {this.props.professor}</p>
                 <p style = {{position: "relative", left: "1rem", fontSize: "1rem"}}><b>Course Review: </b> {this.props.review}</p>
                 <p style = {{position: "relative", left: "1rem", fontSize: "1rem"}}><b>Class Difficulty: </b> {this.props.number}</p>
-
+                <p style = {{position: "relative", left: "1rem", fontSize: "1rem"}}><b>Overall Class Experience: </b> {this.props.number}</p>
+                <p style = {{position: "relative", left: "1rem", fontSize: "1rem"}}><b>Would you recommend taking this course?: </b> {this.props.recommend}</p>
+                <p style = {{position: "relative", left: "1rem", fontSize: "1rem"}}><b>Textbook/3rd party platform usage: </b> {this.props.textbook}</p>
             </div>
         )
         
@@ -227,11 +218,9 @@ export class GiveReview extends React.Component{
                             />
                             <br />
 
+                
 
-                            <Slider name = "difficulty-level" min={0} max={10} defaultValue = {5} style = {{position: 'relative', left: "125px"}} />
-
-                            <Slider name = "ovr-experience" min={0} max={10} defaultValue = {5} style = {{position: 'relative', left: "125px", bottom: '15px'}} />
-
+                           
                             <button id = 'submitButton' type="submit" onclick={e => this.showone(e)}>Submit</button>
                         </form>
                     </div>
@@ -292,8 +281,10 @@ export class PopUp extends React.Component{
         if((this.state.student === "") & (this.state.professor === "") & (this.state.course === "") & (this.state.review === "")){
             return
         }
+        let recommend = document.getElementById("rec-drop").value
+        let textbook = document.getElementById("textbook-drop").value
         
-        let currentReview = <Tester student = {this.state.student} course = {this.state.course} professor = {this.state.professor} review = {this.state.review} number = {this.state.difficulty} /> 
+        let currentReview = <Tester student = {this.state.student} course = {this.state.course} professor = {this.state.professor} review = {this.state.review} number = {this.state.difficulty} recommend = {recommend} textbook = {textbook} /> 
         
         //this.state.comp.push(currentReview)
         this.state.comp.unshift(currentReview)
@@ -358,10 +349,22 @@ export class PopUp extends React.Component{
                             <br />
 
 
-                            <Slider name = "difficulty-level" min={0} max={10} defaultValue = {5} style = {{position: 'relative', left: "200px"}} />
+                            <select id = "rec-drop" class = "select">
+                                <option value = 'No Response'>Select</option>
+                                <option value = 'Yes'>Yes</option>
+                                <option value = "No">No</option>
+                            </select>
 
-                            <Slider name = "ovr-experience" min={0} max={10} defaultValue = {5} style = {{position: 'relative', left: "200px", bottom: '15px'}} />
+                            <select id = "textbook-drop" class = "select">
+                                <option value = 'No Response'>Select</option>
+                                <option value = 'Yes'>Yes</option>
+                                <option value = "No">No</option>
+                            </select>
 
+
+
+
+                           
             
                             <div class="button_cont" align="center"><button style = {{position: "relative",top: "-15px", width: "175px", height: "75px"}} class="example_c"  type="submit" onclick={e => this.showone(e)}><b>Submit Review</b></button></div>
                         </form>
