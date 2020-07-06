@@ -56,15 +56,72 @@ export class Test extends React.Component{
         super(props);
         this.state = {
             people: people,
-            term: ''
+            term: '',
+            course: ''
         }
         this.searchHandler = this.searchHandler.bind(this);
     }
     searchHandler(event){
         this.setState({term: event.target.value})
     }
+
+
+    showChem(event){
+        event.preventDefault()
+        this.setState({
+            course: "Chem 101"
+        })
+      
+    }
+
+    showPhil(event){
+        event.preventDefault()
+        this.setState({
+            course: "Phil 274"
+        })
+      
+    }
+
+    showComp(event){
+        event.preventDefault()
+        this.setState({
+            course: "COMP 264"
+        })
+      
+    }
+
+    showTheo(event){
+        event.preventDefault()
+        this.setState({
+            course: "Theo 107"
+        })
+      
+    }
+
+    showMath(event){
+        event.preventDefault()
+        this.setState({
+            course: "Math 163"
+        })
+      
+    }
+    
     render() {
         const {term,people} = this.state;
+        var temp = []
+        if(this.state.course !== ""){
+        temp = []
+
+        for(let i = 0; i < people.length; i++){
+            if(people[i]["course"] === this.state.course){
+                temp.unshift(people[i])
+            }
+        }
+        }
+        else{
+            temp = people
+        }
+
         return (
             <div>
                 <form>
@@ -76,20 +133,37 @@ export class Test extends React.Component{
                     />
                 </form>
             
-            <div className='reviewSection'>
+                <div className='reviewSection'>
+
+          
                 
             {
-                people.filter(searchingFor(term)).map(person => 
-                        <div id= 'review-block-style' key ={person.id}>
-                            <p><strong>Student Name: </strong> {person.student}</p>
-                            <p><strong>Course: </strong> {person.course}</p>
-                            <p><strong>Professor: </strong> {person.professor}</p>
-                            <p><strong>Course Review: </strong>{person.review}</p>
-                        </div>      
+               
+                temp.filter(searchingFor(term)).map(temp => 
+                        <div id= 'review-block-style' key ={temp.id} onClick = {(event) => this.operation(event)}>
+                            <p><strong>Student Name: </strong> {temp.student}</p>
+                            <p><strong>Course: </strong> {temp.course}</p>
+                            <p><strong>Professor: </strong> {temp.professor}</p>
+                            <p><strong>Course Review: </strong>{temp.review}</p>
+                        </div>   
+                      
                 )
+            
+                
             }
+                </div>
+                    <div style = {{display: "inline-flex", width: "100px"}}>
+                        <button style = {{width: "200px", height: "75px"}} class="example_c" onClick = {(event) => this.showChem(event)}><b>Chem 101</b></button>
+                        <button style = {{width: "200px", height: "75px"}} class="example_c" onClick = {(event) => this.showMath(event)}><b>Math 163</b></button>
+                        <button style = {{width: "200px", height: "75px"}} class="example_c" onClick = {(event) => this.showPhil(event)}><b>Phil 274</b></button>
+                        <button style = {{width: "200px", height: "75px"}} class="example_c" onClick = {(event) => this.showTheo(event)}><b>Theo 107</b></button>
+                        <button style = {{width: "200px", height: "75px"}} class="example_c" onClick = {(event) => this.showComp(event)}><b>Comp 264</b></button>
+                    </div>
+                    <h1 style = {{fontSize: "100px"}}>{this.state.test}</h1>  
+
+                      
+
             </div>
-        </div>
         );
     }
 }
