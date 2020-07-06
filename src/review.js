@@ -7,17 +7,6 @@ import './review.css';
 import Popup from "reactjs-popup";
  
 
-import {
-    Slider,
-    SliderInput,
-    SliderTrack,
-    SliderTrackHighlight,
-    SliderHandle,
-    SliderMarker,
-  } from "@reach/slider";
-  import "@reach/slider/styles.css";
-
-
 
 export const people = [
     {
@@ -112,12 +101,23 @@ export class Tester extends React.Component{
     render(){    
         return(
             <div id = "review-block-style">
+<<<<<<< HEAD
                 <p><b>Student Name: </b> {this.props.student}</p>
                 <p><b>Course Name: </b> {this.props.course}</p>
                 <p><b>Professor Name: </b> {this.props.professor}</p>
                 <p><b>Course Review: </b> {this.props.review}</p>
                 <p><b>Class Difficulty: </b> {this.props.number}</p>
 
+=======
+                <p style = {{position: "relative", left: "1rem", fontSize: "1rem"}}><b>Student Name: </b> {this.props.student}</p>
+                <p style = {{position: "relative", left: "1rem", fontSize: "1rem"}}><b>Course Name: </b> {this.props.course}</p>
+                <p style = {{position: "relative", left: "1rem", fontSize: "1rem"}}><b>Professor Name: </b> {this.props.professor}</p>
+                <p style = {{position: "relative", left: "1rem", fontSize: "1rem"}}><b>Course Review: </b> {this.props.review}</p>
+                <p style = {{position: "relative", left: "1rem", fontSize: "1rem"}}><b>Class Difficulty: </b> {this.props.number}</p>
+                <p style = {{position: "relative", left: "1rem", fontSize: "1rem"}}><b>Overall Class Experience: </b> {this.props.number}</p>
+                <p style = {{position: "relative", left: "1rem", fontSize: "1rem"}}><b>Would you recommend taking this course?: </b> {this.props.recommend}</p>
+                <p style = {{position: "relative", left: "1rem", fontSize: "1rem"}}><b>Textbook/3rd party platform usage: </b> {this.props.textbook}</p>
+>>>>>>> 1861a8a867cc7dba9b39bdcf93a26d8923752929
             </div>
         )
         
@@ -231,9 +231,14 @@ export class GiveReview extends React.Component{
                             />
                             <br />
 
+                
 
+<<<<<<< HEAD
                             
 
+=======
+                           
+>>>>>>> 1861a8a867cc7dba9b39bdcf93a26d8923752929
                             <button id = 'submitButton' type="submit" onclick={e => this.showone(e)}>Submit</button>
                         </form>
                     </div>
@@ -294,8 +299,10 @@ export class PopUp extends React.Component{
         if((this.state.student === "") & (this.state.professor === "") & (this.state.course === "") & (this.state.review === "")){
             return
         }
+        let recommend = document.getElementById("rec-drop").value
+        let textbook = document.getElementById("textbook-drop").value
         
-        let currentReview = <Tester student = {this.state.student} course = {this.state.course} professor = {this.state.professor} review = {this.state.review} number = {this.state.difficulty} /> 
+        let currentReview = <Tester student = {this.state.student} course = {this.state.course} professor = {this.state.professor} review = {this.state.review} number = {this.state.difficulty} recommend = {recommend} textbook = {textbook} /> 
         
         //this.state.comp.push(currentReview)
         this.state.comp.unshift(currentReview)
@@ -360,6 +367,24 @@ export class PopUp extends React.Component{
                             <br />
 
 
+<<<<<<< HEAD
+=======
+                            <select id = "rec-drop" class = "select">
+                                <option value = 'No Response'>Select</option>
+                                <option value = 'Yes'>Yes</option>
+                                <option value = "No">No</option>
+                            </select>
+
+                            <select id = "textbook-drop" class = "select">
+                                <option value = 'No Response'>Select</option>
+                                <option value = 'Yes'>Yes</option>
+                                <option value = "No">No</option>
+                            </select>
+
+
+
+
+>>>>>>> 1861a8a867cc7dba9b39bdcf93a26d8923752929
                            
             
                             <div class="button_cont" align="center"><button style = {{position: "relative",top: "-15px", width: "175px", height: "75px"}} class="example_c"  type="submit" onclick={e => this.showone(e)}><b>Submit Review</b></button></div>
