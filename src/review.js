@@ -228,9 +228,7 @@ export class GiveReview extends React.Component{
                             <br />
 
 
-                            <Slider name = "difficulty-level" min={0} max={10} defaultValue = {5} style = {{position: 'relative', left: "125px"}} />
-
-                            <Slider name = "ovr-experience" min={0} max={10} defaultValue = {5} style = {{position: 'relative', left: "125px", bottom: '15px'}} />
+                            
 
                             <button id = 'submitButton' type="submit" onclick={e => this.showone(e)}>Submit</button>
                         </form>
@@ -358,10 +356,7 @@ export class PopUp extends React.Component{
                             <br />
 
 
-                            <Slider name = "difficulty-level" min={0} max={10} defaultValue = {5} style = {{position: 'relative', left: "200px"}} />
-
-                            <Slider name = "ovr-experience" min={0} max={10} defaultValue = {5} style = {{position: 'relative', left: "200px", bottom: '15px'}} />
-
+                           
             
                             <div class="button_cont" align="center"><button style = {{position: "relative",top: "-15px", width: "175px", height: "75px"}} class="example_c"  type="submit" onclick={e => this.showone(e)}><b>Submit Review</b></button></div>
                         </form>
