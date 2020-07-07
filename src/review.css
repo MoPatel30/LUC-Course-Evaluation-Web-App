@@ -65,7 +65,33 @@
     width: 100%;
 }
 
+#question-text{
+    font-size: 18px;
+    font-family: Open Sans Condensed;
+    text-indent: 175px;
+}
 
+#rec-drop{
+    position: relative;
+    left: 530px;
+    top: -48px;
+}
+
+#textbook-drop{
+    position: relative;
+    left: 465px;
+    top: -48px;
+
+}
+
+.course-comp{
+    width: 400px;
+    height: 400px;
+    background-color: whitesmoke;
+    border: 3px solid #434343;
+    border-radius: 25px;
+
+}
 
 
 /* For "review a course" button*/

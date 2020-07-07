@@ -8,7 +8,7 @@ import Popup from "reactjs-popup";
  
 
 
-export const people = [
+export var people = [
     {
         id: 1,
         student:'Kevin',
@@ -57,69 +57,49 @@ export class Test extends React.Component{
         this.state = {
             people: people,
             term: '',
-            course: ''
+            course: '',
+            tester: ''
         }
         this.searchHandler = this.searchHandler.bind(this);
     }
+
+
     searchHandler(event){
         this.setState({term: event.target.value})
     }
 
 
-    showChem(event){
+
+    showClass(event, course){
         event.preventDefault()
         this.setState({
-            course: "Chem 101"
+            course: course
         })
-      
     }
 
-    showPhil(event){
+    operation(event){
         event.preventDefault()
         this.setState({
-            course: "Phil 274"
+            tester: ""
         })
-      
     }
 
-    showComp(event){
-        event.preventDefault()
-        this.setState({
-            course: "COMP 264"
-        })
-      
-    }
 
-    showTheo(event){
-        event.preventDefault()
-        this.setState({
-            course: "Theo 107"
-        })
-      
-    }
 
-    showMath(event){
-        event.preventDefault()
-        this.setState({
-            course: "Math 163"
-        })
-      
-    }
-    
     render() {
         const {term,people} = this.state;
-        var temp = []
+        var selectedCourse = []
         if(this.state.course !== ""){
-        temp = []
+        selectedCourse = []
 
         for(let i = 0; i < people.length; i++){
             if(people[i]["course"] === this.state.course){
-                temp.unshift(people[i])
+                selectedCourse.unshift(people[i])
             }
         }
         }
         else{
-            temp = people
+            selectedCourse = people
         }
 
         return (
@@ -135,17 +115,35 @@ export class Test extends React.Component{
             
                 <div className='reviewSection'>
 
+
+           
+            {
+            /*  
+            people.filter(searchingFor(term)).map(people => 
+                <div className = "course-comp" value = {people.course} id = {people.course} onClick = {(event) => this.showClass(event, document.getElementById(people.course).value)}>
+                    <h1>{people.course} </h1>
+                    <h5>Difficulty Rating: 7/10</h5>
+                    <h5>Average Score: 4.4/5.0</h5>
+
+                </div>  
+                      
+                )
+            
+            */ 
+            }
+            
+
           
                 
             {
                
-                temp.filter(searchingFor(term)).map(temp => 
-                        <div id= 'review-block-style' key ={temp.id} onClick = {(event) => this.operation(event)}>
-                            <p><strong>Student Name: </strong> {temp.student}</p>
-                            <p><strong>Course: </strong> {temp.course}</p>
-                            <p><strong>Professor: </strong> {temp.professor}</p>
-                            <p><strong>Course Review: </strong>{temp.review}</p>
-                        </div>   
+               selectedCourse.filter(searchingFor(term)).map(selectedCourse => 
+                    <div id= 'review-block-style' key ={selectedCourse.id} onClick = {(event) => this.operation(event)}>
+                        <p><strong>Student Name: </strong> {selectedCourse.student}</p>
+                        <p><strong>Course: </strong> {selectedCourse.course}</p>
+                        <p><strong>Professor: </strong> {selectedCourse.professor}</p>
+                        <p><strong>Course Review: </strong>{selectedCourse.review}</p>
+                    </div>   
                       
                 )
             
@@ -153,14 +151,15 @@ export class Test extends React.Component{
             }
                 </div>
                     <div style = {{display: "inline-flex", width: "100px"}}>
-                        <button style = {{width: "200px", height: "75px"}} class="example_c" onClick = {(event) => this.showChem(event)}><b>Chem 101</b></button>
-                        <button style = {{width: "200px", height: "75px"}} class="example_c" onClick = {(event) => this.showMath(event)}><b>Math 163</b></button>
-                        <button style = {{width: "200px", height: "75px"}} class="example_c" onClick = {(event) => this.showPhil(event)}><b>Phil 274</b></button>
-                        <button style = {{width: "200px", height: "75px"}} class="example_c" onClick = {(event) => this.showTheo(event)}><b>Theo 107</b></button>
-                        <button style = {{width: "200px", height: "75px"}} class="example_c" onClick = {(event) => this.showComp(event)}><b>Comp 264</b></button>
+                        <button style = {{width: "200px", height: "75px"}} class="example_c" id = "chem101" value = "Chem 101" onClick = {(event) => this.showClass(event, document.getElementById("chem101").value)}><b>Chem 101</b></button>
+                        <button style = {{width: "200px", height: "75px"}} class="example_c" id = "math163" value = "Math 163" onClick = {(event) => this.showClass(event, document.getElementById("math163").value)}><b>Math 163</b></button>
+                        <button style = {{width: "200px", height: "75px"}} class="example_c" id = "phil274" value = "Phil 274" onClick = {(event) => this.showClass(event, document.getElementById("phil274").value)}><b>Phil 274</b></button>
+                        <button style = {{width: "200px", height: "75px"}} class="example_c" id = "theo107" value = "Theo 107" onClick = {(event) => this.showClass(event, document.getElementById("theo107").value)}><b>Theo 107</b></button>
+                        <button style = {{width: "200px", height: "75px"}} class="example_c" id = "comp264" value = "COMP 264" onClick = {(event) => this.showClass(event, document.getElementById("comp264").value)}><b>Comp 264</b></button>
+                        <button style = {{width: "200px", height: "75px"}} class="example_c" id = "allreviews" value = "" onClick = {(event) => this.showClass(event, document.getElementById("allreviews").value)}><b>All Courses</b></button>
                     </div>
-                    <h1 style = {{fontSize: "100px"}}>{this.state.test}</h1>  
 
+                    
                       
 
             </div>
@@ -228,10 +227,11 @@ export class GiveReview extends React.Component{
     mySubmit = (event) => {
         event.preventDefault()
 
+
         if((this.state.student === "") & (this.state.professor === "") & (this.state.course === "") & (this.state.review === "")){
             return
         }
-        
+
         let currentReview = <Tester student = {this.state.student} course = {this.state.course} professor = {this.state.professor} review = {this.state.review} number = {this.state.difficulty} /> 
         
         //this.state.comp.push(currentReview)
@@ -358,11 +358,14 @@ export class PopUp extends React.Component{
     mySubmit = (event) => {
         event.preventDefault()
 
+
         if((this.state.student === "") & (this.state.professor === "") & (this.state.course === "") & (this.state.review === "")){
             return
         }
         let recommend = document.getElementById("rec-drop").value
         let textbook = document.getElementById("textbook-drop").value
+
+
         
         let currentReview = <Tester student = {this.state.student} course = {this.state.course} professor = {this.state.professor} review = {this.state.review} number = {this.state.difficulty} recommend = {recommend} textbook = {textbook} /> 
         
@@ -428,13 +431,15 @@ export class PopUp extends React.Component{
                             />
                             <br />
 
-
+                            <p id = "question-text">Would you recommend taking this course?</p>
                             <select id = "rec-drop" class = "select">
                                 <option value = 'No Response'>Select</option>
                                 <option value = 'Yes'>Yes</option>
                                 <option value = "No">No</option>
                             </select>
 
+
+                            <p id = "question-text">Textbook/3rd party platform usage?</p>
                             <select id = "textbook-drop" class = "select">
                                 <option value = 'No Response'>Select</option>
                                 <option value = 'Yes'>Yes</option>
