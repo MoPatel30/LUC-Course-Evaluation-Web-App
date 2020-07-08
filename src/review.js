@@ -388,7 +388,7 @@ export class PopUp extends React.Component{
     render(){
         return(
             <div>
-                <Popup modal trigger={<div class="button_cont" align="center" style ={{position: "relative", top: "100px"}}><button style = {{width: "200px", height: "75px"}} class="example_c"><b>Review a Course</b></button></div>} position="bottom center">
+                <Popup modal trigger={<div class="button_cont" align="center" style ={{position: "relative", top: "100px", left: "645px", width: "200px"}}><button style = {{width: "200px", height: "75px"}} class="example_c"><b>Review a Course</b></button></div>} position="bottom center">
                 <div>
                     <div>
                     
@@ -405,7 +405,7 @@ export class PopUp extends React.Component{
                             <br />
                             <input 
                                 style = {{position: "relative",border: "2px solid #434343", padding: '4px 5px', left: "282px", top: '10px'}}
-                                placeholder = "Course Name"
+                                placeholder = "Course Name (Phil 274)"
                                 type='text' 
                                 value = {this.state.course}
                                 onChange= {e => this.setState({course: e.target.value})}
