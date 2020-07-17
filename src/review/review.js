@@ -8,7 +8,7 @@ import * as firebase from 'firebase';
 
 
 export var firebaseConfig = {
-  
+   
 };
 
 
@@ -80,13 +80,14 @@ function getCourses(){
 
 }
 
+
 export class Test extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            term: '',
+            term: 'Search for Course...',
             course: '',
-            tester: ''
+            tester: null
             
         }
        
@@ -117,18 +118,20 @@ export class Test extends React.Component{
         })
     }
 
-    operation(event, id, changed){
+    operation(event, id){
         event.preventDefault()
-       
-        if(id !== null){
-            this.setState({
-                tester: <ShowsReviews course = {(id).toLowerCase()}  />,
-            
-            })
-    
-        }
+
+        var chosenCourse = document.getElementById(id).innerHTML.substring(8)
+   
+
+        this.setState({
+            tester: <ShowsReviews course = {(chosenCourse).toLowerCase()}  />
+        })
+        
         
     }
+
+    
 
 
    
@@ -149,8 +152,8 @@ export class Test extends React.Component{
             count = snapshot.val().Count 
 
         })
-
-*/
+        */
+    
 
         return (
             <div>
@@ -166,20 +169,22 @@ export class Test extends React.Component{
 
 
                 <div className='reviewSection'>
+                   
+
                     {
                     
                     selectedCourse.filter(searchingFor(term)).map(selectedCourse => 
-                        <div id = {String(selectedCourse.course)} class= 'review-block-style' key ={selectedCourse.id}  value = {String(selectedCourse.course)} onClick = {(event) => this.operation(event, String(selectedCourse.course))}>
-                            <p value = {selectedCourse.course}><strong>Course: </strong> {(selectedCourse.course).toUpperCase()}</p>
-                            <p>Total Reviews {selectedCourse.count}</p>
+                        <div class = 'review-block-style' key = {selectedCourse.id} value = {String(selectedCourse.course)} onClick = {(event) => this.operation(event, String(selectedCourse.course))}>
+                            <p value = {selectedCourse.course}><strong id = {selectedCourse.course}>Course: {(selectedCourse.course).toUpperCase()}</strong></p>
+                            <p>Total Reviews: {selectedCourse.count}</p>
                             <p>Overall Difficulty: {selectedCourse.difficulty}</p>
                             <p>Overall Rating: {selectedCourse.rating}</p>
                         </div>   
                             
                         )
                     
-                        
-                    }
+                    } 
+                    
                 </div>
 
 

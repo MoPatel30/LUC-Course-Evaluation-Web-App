@@ -12,9 +12,18 @@
     box-shadow: 10px 3px 10px 3px #434343;
     position: relative;
     left: 100px;
+    margin-bottom: -200px; 
+    background-image: url(https://img.freepik.com/free-photo/watercolor-paper-texture_1194-5416.jpg?size=626&ext=jpg);
+   
 
     
 }
 .review-box-style:hover{
-    transform: scale(1.09);
+    transform: scale(1.1);
+   
+    z-index: 2;
+    
+    color: #434343;
+    background-color: lightslategray;
+    
 }

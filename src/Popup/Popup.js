@@ -19,11 +19,11 @@ export class PopUp extends React.Component{
     constructor(){
         super()
         this.state = {
-            student : null,
-            course : null,
-            professor : null,
-            review : null,
-            difficulty : 10,
+            student : "",
+            course : "",
+            professor : "",
+            review : "",
+            difficulty : 5,
             rating: 5,
             comp: [],
          
@@ -43,6 +43,23 @@ export class PopUp extends React.Component{
         num2.set(String(data))
 
     }
+
+    checkStatus(){
+        if(this.state.student === ""){
+            this.setState({
+                student: "Anonymous"
+            })
+        }
+        
+
+        
+        if(this.state.professor === ""){
+            this.setState({
+                professor: "Anonymous"
+            })
+        }
+
+    }
   
  
     mySubmit = (event) => {
@@ -52,13 +69,43 @@ export class PopUp extends React.Component{
             rating: document.getElementById("customRange2").value
         })
 
-        if((this.state.student === "") & (this.state.professor === "") & (this.state.course === "") & (this.state.review === "")){
-            return
-        }
+     
+       
+
+       
         let recommend = document.getElementById("rec-drop").value
         let textbook = document.getElementById("textbook-drop").value
         
+        console.log(recommend)
+        console.log(textbook)
 
+        console.log(this.state.course)
+        console.log(this.state.review)
+
+        var errors = []
+        if(this.state.course === ""){
+            errors.unshift("\n Course Name")
+         
+        }
+        if(this.state.review === ""){
+            errors.push("\n Course Review")
+         
+        }
+        if(String(recommend) === "No Response"){
+            errors.push("\n Course Recommendation")
+         
+        }
+        if(String(textbook) === "No Response"){
+            errors.push("\n Textbook Requirement")
+         
+        }
+
+
+        console.log(errors)
+        if(errors.length !== 0){
+            alert("Missing Fields in Form:" + String(errors))
+            return
+        }
 
 
 
@@ -130,7 +177,7 @@ export class PopUp extends React.Component{
             course: '',
             review: '',
             number: '',
-            difficulty: 10,
+            difficulty: 5,
             rating: 5
         })
 
@@ -143,10 +190,10 @@ export class PopUp extends React.Component{
         return(
             <div>
                 <Popup modal trigger={<div className="buttonDIV" align="center" style ={{position: "relative", top: "100px", left: "645px", width: "200px"}}><button style = {{width: "200px", height: "75px", position: "relative", left: '-400px'}} className="example_c"><b>Review a Course</b></button></div>} position="bottom center">
-                <div style = {{height: '800px', backgroundColor: 'lightskyblue'}}>
+                <div style = {{height: '800px', backgroundColor: '#e12435'}}>
                     <div>
                     
-                        <p style = {{fontSize: '1.25rem', fontFamily: "Open Sans Condensed", textAlign: "center"}}><u>Course Review Form</u></p>
+                        <p style = {{fontSize: '1.25rem', fontFamily: "Open Sans Condensed", textAlign: "center", color: 'white'}}><u>Course Review Form</u></p>
                         <form className ='submissionForm' onSubmit={this.mySubmit}>
                             <input
                                 style = {{position: "relative",border: "2px solid #434343", padding: '4px 5px', left: "282px", top: '10px'}}
@@ -202,16 +249,16 @@ export class PopUp extends React.Component{
 
 
                             <div id = "difficulty-bar">
-                                <label style = {{fontSize: '18px'}} for="customRange2">Course difficulty Rating: </label>
-                                <input type="range" class="custom-range" min="0" max="10" id="customRange" onChange= {e => this.setState({difficulty: e.target.value})}></input>
-                                <p style = {{fontSize: '24px', position: 'relative', left: '360px', top: '-55px'}}>{this.state.difficulty}/10</p>
+                                <label style = {{fontSize: '18px', color: 'white'}} for="customRange2">Course Difficulty Rating: </label>
+                                <input type="range" class="custom-range" min="0" max="5" id="customRange" onChange= {e => this.setState({difficulty: e.target.value})}></input>
+                                <p style = {{fontSize: '24px', position: 'relative', left: '360px', top: '-55px', color: 'white'}}>{this.state.difficulty}/5</p>
                             </div>
 
 
                             <div id = "rating-bar">
-                                <label style = {{fontSize: '18px'}} for="customRange2">Overall Experience Rating: </label>
+                                <label style = {{fontSize: '18px', color: 'white'}} for="customRange2">Overall Experience Rating: </label>
                                 <input type="range" class="custom-range" min="0" max="5" id="customRange2" onChange= {e => this.setState({rating: e.target.value})}></input>
-                                <p style = {{fontSize: '24px', position: 'relative', left: '360px', top: '-55px'}}>{this.state.rating}/5</p>
+                                <p style = {{fontSize: '24px', position: 'relative', left: '360px', top: '-55px', color: 'white'}}>{this.state.rating}/5</p>
                             </div>
 
 

@@ -64,10 +64,21 @@
   <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-analytics.js"></script>
 
   <script>
+
     // Your web app's Firebase configuration
     export var firebaseConfig = {
-   
+    
     };
+
+    var admin = require("firebase-admin");
+
+    var serviceAccount = require("path/to/serviceAccountKey.json");
+
+    admin.initializeApp({
+      credential: admin.credential.cert(serviceAccount),
+      databaseURL: "https://luc-course-evaluator.firebaseio.com"
+    });
+
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
     firebase.analytics();

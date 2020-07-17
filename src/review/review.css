@@ -1,13 +1,13 @@
 
 .submissionForm{
-    background: lightskyblue;
+    background: #e12435;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
 }
 
 
 #review{
-    border: 3px solid maroon;
+    border: 3px solid #e12435;
     font-size: 24px;
 }
 
@@ -40,16 +40,23 @@
     background-color: whitesmoke;
     border: 3px solid #434343;
     border-radius: 25px;
-    height: 45%;
-    min-width: 200px;
+    height: 75%;
+    min-width: 226px;
     text-indent: 10px;
     margin: 8px;
     display: inline-block;
     box-shadow: 10px 3px 10px 3px #434343;
-    
+    position: relative;
+    top: 50px;
+    background-image: url(https://img.freepik.com/free-photo/watercolor-paper-texture_1194-5416.jpg?size=626&ext=jpg); 
+   
+      
 }
+
 .review-block-style:hover{
     transform: scale(1.1);
+    background-color: lightslategray;
+    color: #434343;
 }
 
 
@@ -77,6 +84,8 @@
     overflow-x: scroll;
     overflow-y: hidden;
     white-space: nowrap;
+ 
+    
     
 }   
 

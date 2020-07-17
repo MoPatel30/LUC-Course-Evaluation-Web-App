@@ -18,11 +18,19 @@ export class ShowsReviews extends React.Component{
        this.state = {
            comps : []
        }
-        //this.props.course
+    
+    
+    }
+        
+
+
+    render(){ 
+        
         var temp = this.state.comps
+        temp.length = 0
         let temp2 = firebase.database().ref("/Test Reviews/"  + String(this.props.course).toLowerCase() + "/")
       
-        
+   
         temp2.on('value', function(snapshot) {
 
             snapshot.forEach(function(childRevs){
@@ -36,57 +44,19 @@ export class ShowsReviews extends React.Component{
 
                 let curRecommend = childRevs.val().Textbook_Usage
                 let curTextbook = childRevs.val().Course_Recommend
-
+                
                 temp.unshift(<Tester student = {curStudent} professor = {curProfessor} course = {curCourse} review = {curReview} difficulty = {curDifficulty} rating = {curRating} recommend = {curRecommend} textbook = {curTextbook} />)
                
             })
-            temp.shift()
-            temp.shift()
-
-
-            
-         /*   
-            var reviews = snapshot.val()
-            var keys = Object.keys(reviews)
-            
-            for(let i = 0; i < keys.length; i++){
-                let curStudent = keys[i].val().Student_Name
-                let curProfessor = keys[i].child("Professor_Name").value()
-                let curCourse = keys[i].child("Course_Name").value()
-                let curReview = keys[i].child("Course_Review").value()
-
-                temp.unshift(<Tester student = {curStudent} professor = {curProfessor} course = {curCourse} review = {curReview} />)
-            }*/
-
         })
- 
-       
-       
-        
-
-/*
-        ref.on('value', function(snap){
-
-            snap.forEach(function(childNodes){
-                temp.unshift(childNodes.key())
-                console.log(childNodes.keys())
-              
-
-            })
-        })
-        
-      */
-      
-      
-       
-    }    
-
-
-    render(){    
+            temp.shift()
+            temp.shift()   
 
         return(
             <div style = {{position: 'relative', width: '1200px', overflowY: 'scroll', overflowX: 'hidden', display: "run-in"}}>
-                <h1 style = {{fontSize: "30px", position: 'relative', height: '800px'}}>{this.state.comps}</h1>
+
+                <div style = {{fontSize: "30px", position: 'relative', height: '800px', marginBottom: '-50px',  marginTop: '20px'}}>{this.state.comps}</div>
+                
 
             </div>
 
@@ -107,12 +77,12 @@ export class Tester extends React.Component{
     render(){    
         return(
             <div className = "review-box-style">
-
-                <p style = {{position: "relative", left: "1rem", fontSize: "1rem"}}><b>Student Name: </b> {this.props.student}</p>
+              
+                <label style = {{position: "relative", left: "1rem", fontSize: "1rem"}}><b>Student Name: </b> {this.props.student}</label>
                 <p style = {{position: "relative", left: "1rem", fontSize: "1rem"}}><b>Course Name: </b> {this.props.course}</p>
                 <p style = {{position: "relative", left: "1rem", fontSize: "1rem"}}><b>Professor Name: </b> {this.props.professor}</p>
                 <p style = {{position: "relative", left: "1rem", fontSize: "1rem"}}><b>Course Review: </b> {this.props.review}</p>
-                <p style = {{position: "relative", left: "1rem", fontSize: "1rem"}}><b>Class Difficulty: </b> {this.props.difficulty}/10</p>
+                <p style = {{position: "relative", left: "1rem", fontSize: "1rem"}}><b>Class Difficulty: </b> {this.props.difficulty}/5</p>
                 <p style = {{position: "relative", left: "1rem", fontSize: "1rem"}}><b>Overall Class Experience: </b> {this.props.rating}/5</p>
                 <p style = {{position: "relative", left: "1rem", fontSize: "1rem"}}><b>Would you recommend taking this course?: </b> {this.props.recommend}</p>
                 <p style = {{position: "relative", left: "1rem", fontSize: "1rem"}}><b>Textbook/3rd party platform usage: </b> {this.props.textbook}</p>
