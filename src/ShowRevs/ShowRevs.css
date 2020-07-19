@@ -29,7 +29,47 @@
 }
 
 
-@media only screen and (min-width : 350px) and (max-width: 414px){
+
+/*iPhone X*/
+@media only screen and (min-width : 370px) and (max-width: 380px){
+
+        
+    .review-box-style{
+        font-size: 12px;
+        background-color: whitesmoke;
+        border: 2px solid #434343;
+        border-radius: 15px;
+        height: 50%;
+        width: 300px;
+        text-indent: 10px;
+        margin: 8px;
+        display: block;
+        box-shadow: 5px 2px 5px 2px #434343;
+        position: relative;
+        left: 10px;
+        margin-bottom: -200px; 
+        background-image: url(https://img.freepik.com/free-photo/watercolor-paper-texture_1194-5416.jpg?size=626&ext=jpg);
+
+        
+    }
+
+    .review-box-style:hover{
+        transform: scale(1.1);
+    
+        
+        
+        color: #434343;
+        background-color: lightslategray;
+        
+    }
+
+
+}
+
+
+
+/*iPhone plus. big ones.*/
+@media only screen and (min-width : 410px) and (max-width: 420px){
 
         
     .review-box-style{

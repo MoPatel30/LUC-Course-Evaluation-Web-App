@@ -120,7 +120,7 @@ li.dropdown {
 
 
 /*Iphone X */
-@media only screen and (min-width : 375px) and (max-width: 414px){
+@media only screen and (min-width : 370px) and (max-width: 380px){
   .siteTitle{
     animation-name: introFade;
     animation-duration: 3s;
@@ -143,6 +143,7 @@ li.dropdown {
     content: 'Course Evaluator';
   }
   .mainHeader{
+    position: relative;
     height: 125px;
     width: 375px;
     z-index: 10;
@@ -167,24 +168,57 @@ li.dropdown {
   }
 }
 
-/* Iphone 6/7/8 
-@media only screen and (device-width : 375px) and (device-height : 667px) { 
+
+
+
+/* Iphone 6/7/8 */
+
+@media only screen and (min-width : 410px) and (max-width: 420px){
   .siteTitle{
     animation-name: introFade;
     animation-duration: 3s;
     position: relative;
-    font-size: 65px;
+    font-size: 50px;
+    position: relative;
+    top: -85px;
+    left: 100px;
+    text-indent: 20px;
     bottom:176px;
     color: #434343;
-    left: 2.5em;
+    width: 100px;
+  
   }
+
   .siteTitle span{
     display:none;
   }
+
   .siteTitle:after{
     content: 'Course Evaluator';
   }
+
   .mainHeader{
-    height: 160px;
+    position: relative;
+    height: 125px;
+    width: 414px;
+    z-index: 10;
+  
   }
-}*/
+    
+  #loyolaLogo{
+    position: relative;
+    max-width:50px;
+    height:50px;
+    left: 0px;
+    top: 35px;
+  }
+
+  @keyframes introFade{
+    0%{
+      color:white;
+      }
+    100%{
+      color:#434343;
+    }
+  }
+}
