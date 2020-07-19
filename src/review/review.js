@@ -8,7 +8,7 @@ import * as firebase from 'firebase';
 
 
 export var firebaseConfig = {
-   
+
 };
 
 
@@ -87,7 +87,8 @@ export class Test extends React.Component{
         this.state = {
             term: 'Search for Course...',
             course: '',
-            tester: null
+            tester: null,
+            courseName: ''
             
         }
        
@@ -125,6 +126,7 @@ export class Test extends React.Component{
    
 
         this.setState({
+            courseName: chosenCourse.toUpperCase(),
             tester: <ShowsReviews course = {(chosenCourse).toLowerCase()}  />
         })
         
@@ -157,24 +159,30 @@ export class Test extends React.Component{
 
         return (
             <div>
-                <form>
-                    <input  id="searchBar" 
+                <div className ='searchBar'>
+                    <input  className="searchText" 
                             type='text'
                             onChange ={this.searchHandler}
                             value={term}
                             placeholder='Search For Course...'
                     />
-                </form>
-            
+
+                    <div className ='searchGlass'>
+                    <i className="fa fa-search" aria-hidden="true"></i>
+                    </div>
+
+                </div>
+               
 
 
-                <div className='reviewSection'>
+
+                <div id ='reviewSection'>
                    
 
                     {
                     
                     selectedCourse.filter(searchingFor(term)).map(selectedCourse => 
-                        <div class = 'review-block-style' key = {selectedCourse.id} value = {String(selectedCourse.course)} onClick = {(event) => this.operation(event, String(selectedCourse.course))}>
+                        <div className = 'review-block-style' key = {selectedCourse.id} value = {String(selectedCourse.course)} onClick = {(event) => this.operation(event, String(selectedCourse.course))}>
                             <p value = {selectedCourse.course}><strong id = {selectedCourse.course}>Course: {(selectedCourse.course).toUpperCase()}</strong></p>
                             <p>Total Reviews: {selectedCourse.count}</p>
                             <p>Overall Difficulty: {selectedCourse.difficulty}</p>
@@ -187,8 +195,11 @@ export class Test extends React.Component{
                     
                 </div>
 
+                <div id = "course-tag">
+                    <h1 style = {{ color: 'whitesmoke', textAlign: 'center'}}><u><em>{this.state.courseName}</em></u></h1>
+                </div>
 
-                <div style = {{position: "fixed", top: '100px',left: '700px', width: '800px', overflowX: 'hidden'}}>{this.state.tester}</div>
+                <div id = "reviews-pos">{this.state.tester}</div>
                     
                       
 

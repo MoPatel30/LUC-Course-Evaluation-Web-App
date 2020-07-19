@@ -189,14 +189,14 @@ export class PopUp extends React.Component{
     render(){
         return(
             <div>
-                <Popup modal trigger={<div className="buttonDIV" align="center" style ={{position: "relative", top: "100px", left: "645px", width: "200px"}}><button style = {{width: "200px", height: "75px", position: "relative", left: '-400px'}} className="example_c"><b>Review a Course</b></button></div>} position="bottom center">
-                <div style = {{height: '800px', backgroundColor: '#e12435'}}>
+                <Popup modal trigger={<div className="buttonDIV" align="center" id = "popup-pos"><button id = 'rev-btn' className="example_c"><b>Review a Course</b></button></div>} position="bottom center">
+                <div id = 'popup-size'>
                     <div>
                     
                         <p style = {{fontSize: '1.25rem', fontFamily: "Open Sans Condensed", textAlign: "center", color: 'white'}}><u>Course Review Form</u></p>
                         <form className ='submissionForm' onSubmit={this.mySubmit}>
                             <input
-                                style = {{position: "relative",border: "2px solid #434343", padding: '4px 5px', left: "282px", top: '10px'}}
+                                className = "small-field-pos"
                                 placeholder = "Student Name (Optional)"
                                 type='text' 
                                 value = {this.state.student}
@@ -205,7 +205,7 @@ export class PopUp extends React.Component{
             
                             <br />
                             <input 
-                                style = {{position: "relative",border: "2px solid #434343", padding: '4px 5px', left: "282px", top: '10px'}}
+                                className = "small-field-pos"
                                 placeholder = "Course Name (Phil 274)"
                                 type='text' 
                                 value = {this.state.course}
@@ -214,7 +214,7 @@ export class PopUp extends React.Component{
 
                             <br />
                             <input 
-                                style = {{position: "relative",border: "2px solid #434343", padding: '4px 5px', left: "282px", top: '10px'}}
+                                className = "small-field-pos"
                                 placeholder = "Professor Name (Optional)"
                                 type='text' 
                                 value = {this.state.professor}
@@ -224,7 +224,7 @@ export class PopUp extends React.Component{
                             <br />
                             <br />
                             <textarea 
-                                style = {{position: "relative", left: "172px", border: "2px solid #434343", height:'200px', width: '400px'}}
+                                id = "course-review-pos"
                                 placeholder = "Describe your course experience"
                                 type='text' 
                                 value = {this.state.review}
@@ -232,37 +232,43 @@ export class PopUp extends React.Component{
                             />
                             <br />
 
-                            <p id = "question-text">Would you recommend taking this course?</p>
-                            <select id = "rec-drop" class = "select">
-                                <option value = 'No Response'>Select</option>
-                                <option value = 'Yes'>Yes</option>
-                                <option value = "No">No</option>
-                            </select>
+        
 
+                            <div id = "textbook-pos">
+                                <p id = "question-text">Textbook/3rd party platform usage?</p>
+                                <select id = "textbook-drop" class = "select">
+                                    <option value = 'No Response'>Select</option>
+                                    <option value = 'Yes'>Yes</option>
+                                    <option value = "No">No</option>
+                                </select>
+                            </div>
+                        
 
-                            <p id = "question-text">Textbook/3rd party platform usage?</p>
-                            <select id = "textbook-drop" class = "select">
-                                <option value = 'No Response'>Select</option>
-                                <option value = 'Yes'>Yes</option>
-                                <option value = "No">No</option>
-                            </select>
+                            <div id = "recommend-pos">
+                                <p id = "question-text">Would you recommend taking this course?</p>
+                                <select id = "rec-drop" class = "select">
+                                    <option value = 'No Response'>Select</option>
+                                    <option value = 'Yes'>Yes</option>
+                                    <option value = "No">No</option>
+                                </select>
+                            </div>
 
 
                             <div id = "difficulty-bar">
                                 <label style = {{fontSize: '18px', color: 'white'}} for="customRange2">Course Difficulty Rating: </label>
                                 <input type="range" class="custom-range" min="0" max="5" id="customRange" onChange= {e => this.setState({difficulty: e.target.value})}></input>
-                                <p style = {{fontSize: '24px', position: 'relative', left: '360px', top: '-55px', color: 'white'}}>{this.state.difficulty}/5</p>
+                                <p id = "difficulty-number">{this.state.difficulty}/5</p>
                             </div>
 
 
                             <div id = "rating-bar">
                                 <label style = {{fontSize: '18px', color: 'white'}} for="customRange2">Overall Experience Rating: </label>
                                 <input type="range" class="custom-range" min="0" max="5" id="customRange2" onChange= {e => this.setState({rating: e.target.value})}></input>
-                                <p style = {{fontSize: '24px', position: 'relative', left: '360px', top: '-55px', color: 'white'}}>{this.state.rating}/5</p>
+                                <p id = "difficulty-number">{this.state.rating}/5</p>
                             </div>
 
 
-                            <div class="button_cont" align="center"><button style = {{position: "relative",top: "10px", width: "175px", height: "75px"}} class="example_c"  type="submit" onclick={e => this.showone(e)}><b>Submit Review</b></button></div>
+                            <div class="button_cont" align="center"><button id="submit-pos-size" class="example_c"  type="submit" onclick={e => this.showone(e)}><b>Submit Review</b></button></div>
                        
                         </form>
 
@@ -272,8 +278,6 @@ export class PopUp extends React.Component{
                 </div>
                 </Popup>
 
-                <h1 style = {{fontFamily: "Open Sans Condensed", color: "whitesmoke", fontSize: "2rem", textAlign: "center", position: "relative", top: '125px', left: "-400px" }}><u>Recent Student Reviews</u></h1>
-              
          
             </div>
         )

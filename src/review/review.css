@@ -60,22 +60,9 @@
 }
 
 
-#searchBar{
-    position: relative;
-    text-indent: 10px;
-    border-radius: 25px;
-    font-size: 24px;
-    left: 100px;
-    top: 150px;
-    bottom:10px;
-    width:35%;
-    height: 24px;
-    box-shadow: 10px 3px 10px 3px #434343;
-    
-}
 
 /* Reviews displayed at bottom of screen */
-.reviewSection{
+#reviewSection{
     position: fixed;
     top: 300px;
     height: 350px;
@@ -90,31 +77,157 @@
 }   
 
 
+/* Search Bar */
+.searchBar {
+    position: absolute;
+    top: 250px;
+    left: 350px;
+    transform: translate(-50%, -50%);
+    background: white;
+    height: 40px;
+    border-radius: 40px;
+    padding: 10px;
+   }
+
+   .searchBar:hover > .searchText {
+    width: 240px;
+    padding: 0 6px;
+   }
+
+   .searchBar:hover > .searchGlass {
+    background: #e12435;
+    color: white;
+   }
+
+   .searchGlass{
+    color: #e84118;
+    float: right;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+    color: black;
+    cursor: pointer;
+   }
+
+   .searchGlass > i {
+    font-size: 30px;
+   }
+
+   .searchText {
+    border: none;
+    background: none;
+    outline: none;
+    float: left;
+    padding: 0;
+    color: black;
+    font-size: 16px;
+    transition: 0.4s;
+    line-height: 40px;
+    width: 0px;
+    font-weight: bold;
+   }
+
+   #reviews-pos{
+    position: fixed;
+    top: 125px;
+    left: 700px;
+    width: 800px;
+    overflow-x: hidden;
+   }
+
+   #course-tag{
+    position: relative;
+    left: 825px;
+    top: -65px;
+    width: 600px;
+    font-size: 32px;
+}
+
 
 
 /*Iphone X */
-@media only screen and (device-width : 375px) and (device-height : 812px) and (-webkit-device-pixel-ratio : 3) {
-  
-    /* design of each review box */
-    .review-block-style{
-        font-size: 60px;
-        height: 90%;
-        min-width: 200px;
-        text-indent: 10px;
-        margin: 9px;
-        
-    }
+/*@media only screen and (device-width : 375px) and (device-height : 812px) and (-webkit-device-pixel-ratio : 3) {*/
+@media only screen and (min-width : 350px) and (max-width: 414px){
+   
+
     #searchBar{
         position: relative;
         text-indent: 10px;
         border-radius: 25px;
         font-size: 40px;
         left: 0px;
-        top: 500px;
+        top: 900px;
         bottom:10px;
-        width:812px;
+        width:300px;
         height: 100px;
     }
+        
+    /* Search Bar */
+    .searchBar {
+        position: absolute;
+        top: 200px;
+        left: 185px;
+      
+        transform: translate(-50%, -50%);
+        background: white;
+        height: 40px;
+        border-radius: 40px;
+        padding: 10px;
+    }
+
+    .searchBar:hover > .searchText {
+        width: 240px;
+        padding: 0 6px;
+    }
+
+    .searchBar:hover > .searchGlass {
+        background: #e12435;
+        color: white;
+        position: relative;
+        top: -40px;
+    
+    }
+
+    .searchGlass{
+        color: #e12435;
+        float: right;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.4s;
+        color: black;
+        cursor: pointer;
+    
+    }
+
+    .searchGlass > i {
+        font-size: 30px;
+    
+    }
+
+   .searchText {
+    border: none;
+    background: none;
+    outline: none;
+    float: left;
+    padding: 0;
+    color: black;
+    font-size: 16px;
+    transition: 0.4s;
+    line-height: 40px;
+    width: 0px;
+    font-weight: bold;
+   }
+
     /*Box with 'Courses' */
     .titleBox{
         position: relative;
@@ -127,13 +240,100 @@
         width: 800px;
         margin: 0px -30px;
     }
+
+        
+    #review-form{
+        background: whitesmoke;
+        width: 100px;
+        position: relative; 
+        left: 25px;
+        top: 125px;
+        border-radius: 25px;
+        border: 3px solid black;
+        width: 600px;
+    }
+
+    #course-tag{
+        position: relative;
+        left: 75px;
+        top: -100px;
+        width: 200px;
+        font-size: 18px;
+    }
+
+
+    #submitButton{
+        position: relative;
+        border-color: rgb(14, 50, 207);
+        left: 250px;
+        bottom: 20px;
+        width: 100px;
+        height: 40px;
+        border-radius: 25px;
+    }
+
+
+    
+    /* design of each review box */
+    .review-block-style{
+        font-size: 12px;
+        background-color: whitesmoke;
+        border: 2px solid #434343;
+        border-radius: 5px;
+        height: 150px;
+        min-width: 100px;
+        text-indent: 10px;
+        margin: 8px;
+        display: inline-block;
+        box-shadow: 10px 3px 10px 3px #434343;
+        position: relative;
+        top: 50px;
+    
+        background-image: url(https://img.freepik.com/free-photo/watercolor-paper-texture_1194-5416.jpg?size=626&ext=jpg); 
+    
+        
+    }
+
+    .review-block-style:hover{
+        transform: scale(1.05);
+        background-color: lightslategray;
+        color: #434343;
+    }
+
+
+    /* Reviews displayed at bottom of screen */
+    #reviewSection{
+        position: relative; /* fixed */
+        top: -100px;
+        left: 0px;
+        
+        height: 250px;
+        width: 375px;
+        margin-top: 200px;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        white-space: nowrap;
+       
+    
+    }   
+
+
+    #reviews-pos{
+        position: relative;
+        top: -100px;
+        left: 10px;
+        width: 365px;
+        overflow-x: hidden;
+       }
     
    
 }
 
-/* Iphone 6/7/8 */
+
+
+/* Iphone 6/7/8 
 @media only screen and (device-width : 375px) and (device-height : 667px) { 
-       /*Box with 'Courses' */
+       /*Box with 'Courses' 
        .titleBox{
         position: relative;
         top: 80px;
@@ -153,7 +353,7 @@
         width:650px;
         height: 70px;
     }
-    /* Reviews displayed at bottom of screen */
+    /* Reviews displayed at bottom of screen 
     .reviewSection{
         position: fixed;
         top: 800px;
@@ -171,3 +371,4 @@
         } 
 }
 
+*/

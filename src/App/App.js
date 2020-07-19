@@ -14,7 +14,7 @@ export class App extends React.Component{
         
        <div className = 'mainHeader'>
          <img id = 'loyolaLogo' src = {Logo} alt='Loyola Logo' />
-          <h1 className= 'siteTitle'><span>LUC Course Evaluation Web-App</span> </h1>
+          <h1 className= 'siteTitle'><span>LUC Course Evaluator</span> </h1>
          
         </div>  
 
