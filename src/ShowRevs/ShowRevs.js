@@ -37,7 +37,10 @@ export class ShowsReviews extends React.Component{
                 let curStudent = childRevs.val().Student_Name
                 let curProfessor = childRevs.val().Professor_Name
                 let curCourse = childRevs.val().Course_Name
+
                 let curReview = childRevs.val().Course_Review
+                let curSyllabus = childRevs.val().Course_Syllabus
+            
 
                 let curDifficulty = childRevs.val().Course_Difficulty
                 let curRating = childRevs.val().Course_Rating
@@ -45,7 +48,7 @@ export class ShowsReviews extends React.Component{
                 let curRecommend = childRevs.val().Textbook_Usage
                 let curTextbook = childRevs.val().Course_Recommend
                 
-                temp.unshift(<Tester student = {curStudent} professor = {curProfessor} course = {curCourse} review = {curReview} difficulty = {curDifficulty} rating = {curRating} recommend = {curRecommend} textbook = {curTextbook} />)
+                temp.unshift(<Tester student = {curStudent} professor = {curProfessor} course = {curCourse} review = {curReview} syllabus = {curSyllabus} difficulty = {curDifficulty} rating = {curRating} recommend = {curRecommend} textbook = {curTextbook} />)
                
             })
         })
@@ -77,16 +80,30 @@ export class Tester extends React.Component{
     render(){    
         return(
             <div className = "review-box-style">
+
+                <label id = "review-box-name-tag"><b>Name: {this.props.student}</b></label>
+                <label id = "review-box-course-tag"><b>{this.props.course.toUpperCase()}</b></label>
+
+
+                <div id = "review-box-numbers">
+                    <label id = "review-box-difficulty-tag">Course Difficulty</label>
+                    <p id = "review-box-diff-num-pos"> <b id = "review-box-num-size"> {this.props.difficulty}/5 </b></p>
               
-                <label style = {{position: "relative", left: "1rem", fontSize: "1rem"}}><b>Student Name: </b> {this.props.student}</label>
-                <p style = {{position: "relative", left: "1rem", fontSize: "1rem"}}><b>Course Name: </b> {this.props.course}</p>
-                <p style = {{position: "relative", left: "1rem", fontSize: "1rem"}}><b>Professor Name: </b> {this.props.professor}</p>
-                <p style = {{position: "relative", left: "1rem", fontSize: "1rem"}}><b>Course Review: </b> {this.props.review}</p>
-                <p style = {{position: "relative", left: "1rem", fontSize: "1rem"}}><b>Class Difficulty: </b> {this.props.difficulty}/5</p>
-                <p style = {{position: "relative", left: "1rem", fontSize: "1rem"}}><b>Overall Class Experience: </b> {this.props.rating}/5</p>
-                <p style = {{position: "relative", left: "1rem", fontSize: "1rem"}}><b>Would you recommend taking this course?: </b> {this.props.recommend}</p>
-                <p style = {{position: "relative", left: "1rem", fontSize: "1rem"}}><b>Textbook/3rd party platform usage: </b> {this.props.textbook}</p>
+                    <label id = "review-box-rating-tag">Overall Course Experience</label>
+                    <p id = "review-box-rating-num-pos"> <b id = "review-box-num-size"> {this.props.rating}/5 </b></p>
+                </div>
+
+
+                <p id = "review-box-small-form-pos"><b>Professor Name: </b> {this.props.professor}</p>
+                <p id = "review-box-big-form-pos"><b>Course Review: </b> {this.props.review}</p>
+                
+                <p id = "review-box-big-form-pos"><b>Course Syllabus Breakdown: </b> {this.props.syllabus}</p>
+
+                <p id = "review-box-small-form-pos"><b>Would you recommend taking this course?: </b> {this.props.recommend}</p>
+                <p id = "review-box-small-form-pos"><b>Textbook/3rd party platform usage: </b> {this.props.textbook}</p>
+    
             </div>
+            
         )
         
     }

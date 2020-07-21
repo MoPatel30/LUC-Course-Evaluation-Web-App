@@ -1,13 +1,13 @@
 
 .submissionForm{
-    background: #e12435;
+    background: maroon;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
 }
 
 
 #review{
-    border: 3px solid #e12435;
+    border: 3px solid maroon;
     font-size: 24px;
 }
 
@@ -40,9 +40,9 @@
     background-color: whitesmoke;
     border: 3px solid #434343;
     border-radius: 25px;
-    height: 75%;
+    height: 300px;
     min-width: 226px;
-    text-indent: 10px;
+    text-align: center;
     margin: 8px;
     display: inline-block;
     box-shadow: 10px 3px 10px 3px #434343;
@@ -65,7 +65,7 @@
 #reviewSection{
     position: fixed;
     top: 300px;
-    height: 350px;
+    height: 410px;
     width: 50%;
     margin-top: 200px;
     overflow-x: scroll;
@@ -93,12 +93,12 @@
    }
 
    .searchBar:hover > .searchGlass {
-    background: #e12435;
+    background: maroon;
     color: white;
    }
 
    .searchGlass{
-    color: #e84118;
+    color: maroon;
     float: right;
     width: 40px;
     height: 40px;
@@ -144,7 +144,7 @@
     top: -65px;
     width: 600px;
     font-size: 32px;
-}
+    }
 
 
 
@@ -184,7 +184,7 @@
     }
 
     .searchBar:hover > .searchGlass {
-        background: #e12435;
+        background: maroon;
         color: white;
         position: relative;
         top: -40px;
@@ -192,7 +192,7 @@
     }
 
     .searchGlass{
-        color: #e12435;
+        color: maroon;
         float: right;
         width: 40px;
         height: 40px;
@@ -254,7 +254,7 @@
     #course-tag{
         position: relative;
         left: 75px;
-        top: -100px;
+        top: -175px;
         width: 200px;
         font-size: 18px;
     }
@@ -264,7 +264,7 @@
         position: relative;
         border-color: rgb(14, 50, 207);
         left: 250px;
-        bottom: 20px;
+        
         width: 100px;
         height: 40px;
         border-radius: 25px;
@@ -278,9 +278,9 @@
         background-color: whitesmoke;
         border: 2px solid #434343;
         border-radius: 5px;
-        height: 150px;
-        min-width: 100px;
-        text-indent: 10px;
+        height: 175px;
+        min-width: 150px;
+        text-align: center;
         margin: 8px;
         display: inline-block;
         box-shadow: 10px 3px 10px 3px #434343;
@@ -302,7 +302,7 @@
     /* Reviews displayed at bottom of screen */
     #reviewSection{
         position: relative; /* fixed */
-        top: -100px;
+        top: -200px;
         left: 0px;
         
         height: 250px;
@@ -318,7 +318,7 @@
 
     #reviews-pos{
         position: relative;
-        top: -100px;
+        top: -175px;
         left: 10px;
         width: 365px;
         overflow-x: hidden;
@@ -365,7 +365,7 @@
     }
 
     .searchBar:hover > .searchGlass {
-        background: #e12435;
+        background: maroon;
         color: white;
         position: relative;
         top: -40px;
@@ -373,7 +373,7 @@
     }
 
     .searchGlass{
-        color: #e12435;
+        color: maroon;
         float: right;
         width: 40px;
         height: 40px;
@@ -459,10 +459,11 @@
         background-color: whitesmoke;
         border: 2px solid #434343;
         border-radius: 5px;
-        height: 150px;
-        min-width: 100px;
-        text-indent: 10px;
+        height: 175px;
+        min-width: 150px;
+      
         margin: 8px;
+        text-align: center;
         display: inline-block;
         box-shadow: 10px 3px 10px 3px #434343;
         position: relative;
@@ -485,14 +486,13 @@
         position: relative; /* fixed */
         top: -200px;
         left: 0px;
-        
         height: 250px;
         width: 414px;
+
         margin-top: 200px;
         overflow-x: scroll;
         overflow-y: hidden;
         white-space: nowrap;
-       
     
     }   
 
@@ -503,7 +503,27 @@
         left: 30px;
         width: 365px;
         overflow-x: hidden;
-       }
+    }
     
    
+}
+
+
+
+@media only screen and (min-width : 1920px){
+    #reviews-pos{
+        position: relative;
+        top: -50px;
+        left: 1000px;
+        width: 800px;
+        overflow-x: hidden;
+       }
+
+       #course-tag{
+        position: relative;
+        left: 1125px;
+        top: -25px;
+        width: 600px;
+        font-size: 32px;
+       }
 }

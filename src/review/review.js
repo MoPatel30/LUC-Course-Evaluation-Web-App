@@ -122,7 +122,7 @@ export class Test extends React.Component{
     operation(event, id){
         event.preventDefault()
 
-        var chosenCourse = document.getElementById(id).innerHTML.substring(8)
+        var chosenCourse = document.getElementById(id).innerHTML
    
 
         this.setState({
@@ -183,10 +183,15 @@ export class Test extends React.Component{
                     
                     selectedCourse.filter(searchingFor(term)).map(selectedCourse => 
                         <div className = 'review-block-style' key = {selectedCourse.id} value = {String(selectedCourse.course)} onClick = {(event) => this.operation(event, String(selectedCourse.course))}>
-                            <p value = {selectedCourse.course}><strong id = {selectedCourse.course}>Course: {(selectedCourse.course).toUpperCase()}</strong></p>
-                            <p>Total Reviews: {selectedCourse.count}</p>
-                            <p>Overall Difficulty: {selectedCourse.difficulty}</p>
-                            <p>Overall Rating: {selectedCourse.rating}</p>
+                            <p value = {selectedCourse.course}><u><strong id = {selectedCourse.course}>{(selectedCourse.course).toUpperCase()}</strong></u></p>
+                            
+                            <p style = {{textAlign: 'center'}}>Overall Difficulty </p>
+                            <p style = {{textAlign: 'center'}}><b>{selectedCourse.difficulty}</b></p>
+                            
+                            <p style = {{textAlign: 'center'}}>Overall Rating </p>
+                            <p style = {{textAlign: 'center'}}> <b>{selectedCourse.rating}</b></p>
+
+                            <p style = {{textAlign: 'center'}}> Total Reviews: <b>{selectedCourse.count}</b></p>
                         </div>   
                             
                         )

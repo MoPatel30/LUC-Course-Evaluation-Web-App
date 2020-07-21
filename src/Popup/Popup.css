@@ -108,7 +108,7 @@
     position: relative;
     left: 172px;
     border: 2px solid #434343;
-    height: 200px;
+    height: 150px;
     width: 400px;
 }
 
@@ -118,6 +118,9 @@
     width: 175px;
     height: 75px;
 }
+
+
+
 
 
 
@@ -203,7 +206,7 @@
         height: 75px;
         position: relative;
         left: 240px;
-        top: 1300px;
+        top: 1225px;
         margin-bottom: 50px;
     }
 
@@ -218,10 +221,10 @@
 
      #popup-size{
         position: relative;
-        background-color: #e12435;
-        top: -250px;
+        background-color: maroon;
+        top: -366px;
         left: -80px;
-        height: 300px;
+        height: 100px;
         width: 350px;
     
     }
@@ -241,7 +244,7 @@
         left: 70px;
         top: 10px;
         border: 2px solid #434343;
-        height: 200px;
+        height: 125px;
         width: 200px;
     }
 
@@ -267,19 +270,21 @@
     #rating-bar{
         height: 50px;
         position: relative;
-        left: 12px;
+        left: 5px;
         top: -170px;
     }
 
     #recommend-pos{
         position: relative;
         top: 125px;
+        left: -5px;
 
     }
 
     #textbook-pos{
         position: relative;
         top: 150px;
+        left: -5px;
 
     }
 
@@ -361,10 +366,10 @@
 
      #popup-size{
         position: relative;
-        background-color: #e12435;
-        top: -250px;
+        background-color: maroon;
+        top: -350px;
         left: -80px;
-        height: 300px;
+        height: 50px;
         width: 350px;
     
     }
@@ -375,16 +380,16 @@
         border: 2px solid #434343;
         padding: 4px 5px;
         left: 85px;
-        top: 10px
+        top: -10px
     }
 
 
     #course-review-pos{
         position: relative;
         left: 70px;
-        top: 10px;
+        top: -30px;
         border: 2px solid #434343;
-        height: 200px;
+        height: 100px;
         width: 200px;
     }
 
@@ -393,7 +398,7 @@
         height: 50px;
         position: relative;
         left: 12px;
-        top: -170px;
+        top: -200px;
         margin-bottom: 25px;
 
     }
@@ -410,26 +415,26 @@
     #rating-bar{
         height: 50px;
         position: relative;
-        left: 12px;
-        top: -170px;
+        left: 6px;
+        top: -200px;
     }
 
     #recommend-pos{
         position: relative;
-        top: 125px;
+        top: 80px;
 
     }
 
     #textbook-pos{
         position: relative;
-        top: 150px;
+        top: 120px;
 
     }
 
 
     #submit-pos-size{
         position: relative;
-        top: -10px;
+        top: -65px;
     
         width: 150px;
         height: 75px;
@@ -441,4 +446,97 @@
         
 }
 
+/*desktop*/
+@media only screen and (min-width : 1920px){
+    #popup-size{
+        position: relative;
+        background-color: maroon;
+        top: 0px;
+        left: 100px;
+        height: 1000px;
+        width: 750px;
+    
+    }
 
+    #rev-btn{
+        width: 200px; 
+        height: 75px;
+        position: relative;
+        left: -400px;
+    }
+    
+    
+    #difficulty-bar{
+        height: 50px;
+        position: relative;
+        left: 175px;
+        margin-bottom: 25px;
+        top: -125px;
+    
+    }
+    
+    #difficulty-number{
+        font-size: 24px;
+        position: relative;
+        left: 355px;
+        top: -58px;
+        color: white;
+    }
+    
+    
+    #rating-bar{
+        height: 50px;
+        position: relative;
+        left: 175px;
+        top: -125px;
+    }
+
+    #recommend-pos{
+        position: relative;
+        top: 175px;
+
+    }
+
+    #textbook-pos{
+        position: relative;
+        top: 200px;
+
+    }
+
+    
+    /* pop up */
+    
+    #popup-pos{
+        position: relative;
+        top: 100px;
+        left: 645px;
+        width: 200px;
+    }
+    
+    .small-field-pos{
+        position: relative;
+        border: 2px solid #434343;
+        padding: 4px 5px;
+        left: 282px;
+        top: 10px
+    }
+    
+    
+    #course-review-pos{
+        position: relative;
+        left: 172px;
+        border: 2px solid #434343;
+        height: 150px;
+        width: 400px;
+    }
+    
+    #submit-pos-size{
+        position: relative;
+        top: 100px;
+        width: 175px;
+        height: 75px;
+    }
+    
+
+   
+}

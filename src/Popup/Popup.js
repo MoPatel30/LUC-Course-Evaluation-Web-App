@@ -23,6 +23,7 @@ export class PopUp extends React.Component{
             course : "",
             professor : "",
             review : "",
+            syllabus: "",
             difficulty : 5,
             rating: 5,
             comp: [],
@@ -44,33 +45,34 @@ export class PopUp extends React.Component{
 
     }
 
-    checkStatus(){
+    
+/*
+    checkStatus = (event) => {
         if(this.state.student === ""){
             this.setState({
-                student: "Anonymous"
+                student : "Anonymous"
             })
         }
-        
-
-        
-        if(this.state.professor === ""){
+        if(this.state.professor){
             this.setState({
                 professor: "Anonymous"
             })
         }
-
+        
+        this.mySubmit(event)
     }
+
+*/
   
  
     mySubmit = (event) => {
         event.preventDefault()
 
+
         this.setState({
             rating: document.getElementById("customRange2").value
         })
-
-     
-       
+    
 
        
         let recommend = document.getElementById("rec-drop").value
@@ -82,6 +84,8 @@ export class PopUp extends React.Component{
         console.log(this.state.course)
         console.log(this.state.review)
 
+
+
         var errors = []
         if(this.state.course === ""){
             errors.unshift("\n Course Name")
@@ -89,6 +93,11 @@ export class PopUp extends React.Component{
         }
         if(this.state.review === ""){
             errors.push("\n Course Review")
+         
+        }
+        
+        if(this.state.syllabus === ""){
+            errors.push("\n Course Syllabus Breakdown")
          
         }
         if(String(recommend) === "No Response"){
@@ -144,7 +153,11 @@ export class PopUp extends React.Component{
         temp2.child("Student_Name").set(this.state.student)
         temp2.child("Professor_Name").set(this.state.professor)
         temp2.child("Course_Name").set(this.state.course)
+
         temp2.child("Course_Review").set(this.state.review)
+        
+        temp2.child("Course_Syllabus").set(this.state.syllabus)
+
 
         temp2.child("Textbook_Usage").set(textbook)
         temp2.child("Course_Recommend").set(recommend)
@@ -166,7 +179,7 @@ export class PopUp extends React.Component{
 
 
 */
-        let currentReview = <Tester student = {this.state.student} course = {this.state.course} professor = {this.state.professor} review = {this.state.review} difficulty = {this.state.difficulty} rating = {this.state.rating} recommend = {recommend} textbook = {textbook} /> 
+        let currentReview = <Tester student = {this.state.student} course = {this.state.course} professor = {this.state.professor} review = {this.state.review} syllabus = {this.state.syllabus} difficulty = {this.state.difficulty} rating = {this.state.rating} recommend = {recommend} textbook = {textbook} /> 
         
         //this.state.comp.push(currentReview)
         this.state.comp.unshift(currentReview)
@@ -176,6 +189,7 @@ export class PopUp extends React.Component{
             professor: '',
             course: '',
             review: '',
+            syllabus: '',
             number: '',
             difficulty: 5,
             rating: 5
@@ -229,6 +243,16 @@ export class PopUp extends React.Component{
                                 type='text' 
                                 value = {this.state.review}
                                 onChange= {e => this.setState({review: e.target.value})}
+                            />
+                            <br />
+
+                            <textarea 
+                                id = "course-review-pos"
+                                style = {{height: '100px'}}
+                                placeholder = "Provide a brief course syllabus breakdown (Number of exams, quizzes, and/or papers, Midterm and Final Exam breakdown, etc.)"
+                                type='text' 
+                                value = {this.state.syllabus}
+                                onChange= {e => this.setState({syllabus: e.target.value})}
                             />
                             <br />
 

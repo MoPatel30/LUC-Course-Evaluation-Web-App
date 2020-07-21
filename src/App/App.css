@@ -128,8 +128,9 @@ li.dropdown {
     font-size: 50px;
     position: relative;
     top: -85px;
-    left: 85px;
-    text-indent: 20px;
+    left: 0px;
+    
+    text-align: center;
     bottom:176px;
     color: #434343;
  

@@ -1,10 +1,10 @@
-
+/* tester component css */
 .review-box-style{
     font-size: 20px;
     background-color: whitesmoke;
     border: 3px solid #434343;
     border-radius: 25px;
-    height: 45%;
+    height: fit-content;
     width: 600px;
     text-indent: 10px;
     margin: 8px;
@@ -27,6 +27,67 @@
     background-color: lightslategray;
     
 }
+
+#review-box-name-tag{
+    position: relative;
+    font-size: 2rem;
+}
+
+#review-box-course-tag{
+    position: absolute;
+    left: 415px; 
+    font-size: 2rem;
+    width: 250px;
+}
+
+#review-box-numbers{
+    display: flex;
+    position: relative;
+    top: 20px;
+}
+
+#review-box-difficulty-tag{
+    width: 400px;
+    position: absolute; 
+    left: 75px;
+}
+
+#review-box-diff-num-pos{
+    position: relative;
+    left: 95px;
+}
+
+#review-box-rating-tag{
+    width: 700px;
+    position: absolute;
+    left: 300px;
+}
+
+#review-box-num-size{
+    font-size: 4rem;
+}
+
+#review-box-rating-num-pos{
+    position: relative;
+    left: 250px;
+}
+
+#review-box-small-form-pos{
+    position: relative;
+    left: 50px;
+    font-size: 1rem;
+}
+
+#review-box-big-form-pos{
+    position: relative;
+    left: 50px;
+    font-size: 1rem;
+    width: 500px;
+}
+
+
+
+
 
 
 
@@ -63,6 +124,70 @@
         
     }
 
+    #review-box-name-tag{
+        position: relative;
+        font-size: 1rem;
+    }
+    
+    #review-box-course-tag{
+        position: absolute;
+        left: 200px; 
+        font-size: 1rem;
+        width: 250px;
+    }
+    
+    #review-box-numbers{
+        display: flex;
+        position: relative;
+        top: 20px;
+    }
+    
+    #review-box-difficulty-tag{
+        width: 400px;
+        position: absolute; 
+        left: 15px;
+    }
+    
+    #review-box-diff-num-pos{
+        position: relative;
+        left: 25px;
+    }
+    
+    #review-box-rating-tag{
+        width: 700px;
+        position: absolute;
+        left: 130px;
+       
+    }
+    
+    #review-box-num-size{
+        font-size: 2rem;
+    }
+    
+    #review-box-rating-num-pos{
+        position: relative;
+        left: 105px;
+    }
+    
+    #review-box-small-form-pos{
+        position: relative;
+        left: 20px;
+        width: 250px;
+        font-size: 1rem;
+        text-indent: 0px;
+    }
+    
+    #review-box-big-form-pos{
+        position: relative;
+        left: 20px;
+        font-size: 1rem;
+        width: 250px;
+        text-indent: 0px;
+    
+    }
+
+
+
 
 }
 
@@ -77,7 +202,7 @@
         background-color: whitesmoke;
         border: 2px solid #434343;
         border-radius: 15px;
-        height: 50%;
+        height: fit-content;
         width: 300px;
         text-indent: 10px;
         margin: 8px;
@@ -87,6 +212,7 @@
         left: 10px;
         margin-bottom: -200px; 
         background-image: url(https://img.freepik.com/free-photo/watercolor-paper-texture_1194-5416.jpg?size=626&ext=jpg);
+        
 
         
     }
@@ -100,6 +226,70 @@
         background-color: lightslategray;
         
     }
+
+    #review-box-name-tag{
+        position: relative;
+        font-size: 1rem;
+    }
+    
+    #review-box-course-tag{
+        position: absolute;
+        left: 200px; 
+        font-size: 1rem;
+        width: 250px;
+    }
+    
+    #review-box-numbers{
+        display: flex;
+        position: relative;
+        top: 20px;
+    }
+    
+    #review-box-difficulty-tag{
+        width: 400px;
+        position: absolute; 
+        left: 15px;
+    }
+    
+    #review-box-diff-num-pos{
+        position: relative;
+        left: 25px;
+    }
+    
+    #review-box-rating-tag{
+        width: 700px;
+        position: absolute;
+        left: 130px;
+       
+    }
+    
+    #review-box-num-size{
+        font-size: 2rem;
+    }
+    
+    #review-box-rating-num-pos{
+        position: relative;
+        left: 105px;
+    }
+    
+    #review-box-small-form-pos{
+        position: relative;
+        left: 20px;
+        width: 250px;
+        font-size: 1rem;
+        text-indent: 0px;
+    }
+    
+    #review-box-big-form-pos{
+        position: relative;
+        left: 20px;
+        font-size: 1rem;
+        width: 250px;
+        text-indent: 0px;
+    
+    }
+    
+        
 
 
 }
