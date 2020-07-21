@@ -1,22 +1,31 @@
-
 #question-text{
     font-size: 18px;
     font-family: Open Sans Condensed;
     text-indent: 175px;
-    color: white;
+    color: black;
 }
-
+#textbook-pos{
+    width: 500px;
+    position: relative; 
+    left: 300px;
+    top: -350px;
+   
+}
+#recommend-pos{
+    width: 500px;
+    position: relative; 
+    left: -165px;
+    top: -210px;
+}
 #rec-drop{
     position: relative;
-    left: 530px;
-    top: -48px;
+    left: 495px;
+    top: -47px;
 }
-
 #textbook-drop{
     position: relative;
-    left: 465px;
+    left: 330px;
     top: -48px;
-
 }
 
 .course-comp{
@@ -27,7 +36,6 @@
     border-radius: 25px;
 
 }
-
 
 /* For "review a course" button*/
 .example_c {
@@ -44,7 +52,6 @@
 
 }
 
-
 .example_c:hover {
     color: #ffffff !important;
     background: lightslategray;
@@ -60,34 +67,43 @@
     height: 75px;
     position: relative;
     left: -400px;
+    display: block;
 }
 
+.exit-btn{
+    position: relative;
+    bottom: 935px;
+    width: 10px;
+    top: -590px;
+    left: 700px;
+}
 
 #difficulty-bar{
     height: 50px;
     position: relative;
-    left: 175px;
-    margin-bottom: 25px;
-
+    left: 5px;
+    top: -570px;
+    bottom: 465px;
+    width: 500px;
+    margin-left: 320px;
 }
-
 #difficulty-number{
     font-size: 24px;
     position: relative;
     left: 355px;
-    top: -58px;
-    color: white;
+    top: -55px;
+    color: black;
 }
-
-
 #rating-bar{
     height: 50px;
     position: relative;
-    left: 175px;
+    left: 5px;
+    top: -670px;
+    bottom: 438px;
+    width: 500px;
+    margin-left: 320px;
 }
-
 /* pop up */
-
 #popup-pos{
     position: relative;
     top: 100px;
@@ -99,71 +115,45 @@
     position: relative;
     border: 2px solid #434343;
     padding: 4px 5px;
-    left: 282px;
-    top: 10px
+    left: 10px;
+    top: 50px
 }
 
-
-#course-review-pos{
+.course-review-pos{
     position: relative;
-    left: 172px;
+    left: 10px;
+    top: 25px;
     border: 2px solid #434343;
-    height: 150px;
+    height: 100px;
     width: 400px;
 }
 
 #submit-pos-size{
     position: relative;
-    top: -10px;
+    top: -158px;
+    left: 255px;
     width: 175px;
     height: 75px;
 }
-
-
-
+#questionContainer{
+    width: 0px;
+    height: 0px;
+}
+#courseReviewTitle{
+    position: relative;
+    top: -420px;
+    left: 25px;
+    font-size: 48px;
+    font-family: Open Sans Condensed;
+    text-align: center;
+    color: black;
+}
 
 
 
 /*Iphone X */
 /*@media only screen and (device-width : 375px) and (device-height : 812px) and (-webkit-device-pixel-ratio : 3) {*/
 @media only screen and (min-width : 370px) and (max-width: 380px){
-
-    #studentName{
-        position: relative;
-        border: 2px solid #434343;
-        padding: 4px 5px;
-        left: 70px;
-        top: 10px;
-    }
-    #courseName{
-        position: relative;
-        border: 2px solid #434343;
-        padding: 4px 5px;
-        left: 70px;
-        top: 10px;
-    }
-    #profName{
-        position: relative;
-        border: 2px solid #434343;
-        padding: 4px 5px;
-        left: 70px;
-        top: 10px;
-    }
-    #classDesc{
-        position: relative;
-        left: 0px;
-        border: 2px solid #434343;
-        height:200px;
-        width: 400px;
-    }
-    #submitButton{
-        left: 250px;
-        bottom: 20px;
-        width: 100px;
-        height: 40px;
-        border-radius: 25px;
-    }
-
     /* Reviews displayed at bottom of screen */
     .reviewSection{
         position: fixed; /* fixed */
@@ -171,21 +161,22 @@
         height: 400px;
         width: 375px;
         margin-top: 200px;
-    }   
+    }
     #question-text{
         text-indent: 20px;
+        width: 350px;
     }  
     #rec-drop{
         left: 25px;
         top: -25px;
     }
     #textbook-drop{
-        left: 285px;
+        left: 175px;
         top: -50px;
     }
 
      /*Div for the review course button */
-     .buttonDIV{
+    .buttonDIV{
         text-align: center; 
         position: relative; 
         left: 50px;
@@ -201,24 +192,29 @@
         width: 300px;
     }
 
+    .exit-btn{
+        position: relative;
+        bottom: 935px;
+        width: 10px;
+        top: -595px;
+        left: 323px;
+    }
+
     #rev-btn{
         width: 150px; 
         height: 75px;
         position: relative;
-        left: 240px;
-        top: 1225px;
+        left: 362px;
+        top: -50px;
         margin-bottom: 50px;
     }
-
-     /* pop up */
-
+     /* pop up */  
      #popup-pos{
         position: relative;
         top: 100px;
         left: -250px;
         width: 100%;
-    }
-
+     }
      #popup-size{
         position: relative;
         background-color: maroon;
@@ -228,87 +224,92 @@
         width: 350px;
     
     }
-
-        
+     
     .small-field-pos{
         position: relative;
         border: 2px solid #434343;
         padding: 4px 5px;
         left: 85px;
-        top: 10px
+        top: 50px
     }
 
-
-    #course-review-pos{
+    .course-review-pos{
         position: relative;
         left: 70px;
-        top: 10px;
+        top: 30px;
         border: 2px solid #434343;
         height: 125px;
         width: 200px;
-    }
+    } 
 
-        
     #difficulty-bar{
         height: 50px;
         position: relative;
-        left: 12px;
-        top: -170px;
-        margin-bottom: 25px;
-
+        left: -310px;
+        top: -225px;
+        width: 350px;
+        margin-bottom: 25px; 
     }
-
     #difficulty-number{
         font-size: 24px;
         position: relative;
         left: 150px;
         top: -20px;
-        color: white;
+        width: 30px;
+        color: black;
     }
-
-
     #rating-bar{
         height: 50px;
         position: relative;
-        left: 5px;
-        top: -170px;
-    }
-
+        width: 350px;
+        left: -315px;
+        top: -225px;
+    }  
     #recommend-pos{
         position: relative;
-        top: 125px;
+        width: 350px;
+        top: 75px;
         left: -5px;
-
-    }
-
+    }  
     #textbook-pos{
         position: relative;
-        top: 150px;
+        width: 350px;
+        top: 100px;
         left: -5px;
-
-    }
-
-
+    }  
     #submit-pos-size{
         position: relative;
-        top: -10px;
-    
+        top: 225px;
+        left: 0px;
         width: 150px;
         height: 75px;
         font-size: 12px;
 
+    }         
+    #questionContainer{
+        width: 0px;
+        height: 0px;   
     }
+    #courseReviewTitle{
+        position: relative;
+        top: -450px;
+        left: -40px;
+        width: 400px;
+        font-size: 36px;
+        font-family: Open Sans Condensed;
+        text-align: center;
+        color: black;
+    }
+    #submissionForm{
+        width: 350px;
+        height: 850px;    
+    }   
 
-    
-        
 }
-
-
 
 
 /* Iphone 6/7/8 */
 @media only screen and (min-width : 410px) and (max-width: 420px){
-
      /*Reviews displayed at bottom of screen */
     .reviewSection{
         position: fixed; /* fixed */
@@ -325,7 +326,7 @@
         top: -25px;
     }
     #textbook-drop{
-        left: 285px;
+        left: 175px;
         top: -50px;
     }
 
@@ -346,105 +347,119 @@
         width: 300px;
     }
 
+    .exit-btn{
+        position: relative;
+        bottom: 935px;
+        width: 10px;
+        top: -595px;
+        left: 355px;
+    }
+
     #rev-btn{
         width: 150px; 
         height: 75px;
         position: relative;
-        left: 240px;
-        top: 1225px;
+        left: 370px;
+        top: -50px;
         margin-bottom: 50px;
     }
-
      /* pop up */
-
      #popup-pos{
         position: relative;
         top: 100px;
         left: -250px;
         width: 100%;
-    }
-
+     }
      #popup-size{
         position: relative;
         background-color: maroon;
-        top: -350px;
+        top: -366px;
         left: -80px;
-        height: 50px;
-        width: 350px;
-    
+        height: 100px;
+        width: 350px;    
     }
-
-        
+     
     .small-field-pos{
         position: relative;
         border: 2px solid #434343;
         padding: 4px 5px;
         left: 85px;
-        top: -10px
+        top: 50px
     }
 
-
-    #course-review-pos{
+    .course-review-pos{
         position: relative;
         left: 70px;
-        top: -30px;
+        top: 30px;
         border: 2px solid #434343;
-        height: 100px;
+        height: 125px;
         width: 200px;
     }
-
-        
+      
     #difficulty-bar{
         height: 50px;
         position: relative;
-        left: 12px;
-        top: -200px;
+        left: -300px;
+        top: -225px;
+        width: 350px;
         margin-bottom: 25px;
-
     }
-
     #difficulty-number{
         font-size: 24px;
         position: relative;
         left: 150px;
         top: -20px;
-        color: white;
+        width: 30px;
+        color: black;
     }
-
-
     #rating-bar{
         height: 50px;
         position: relative;
-        left: 6px;
-        top: -200px;
+        width: 350px;
+        left: -300px;
+        top: -225px;
     }
-
     #recommend-pos{
         position: relative;
-        top: 80px;
-
+        width: 400px;
+        top: 75px;
+        left: -5px;
     }
-
     #textbook-pos{
         position: relative;
-        top: 120px;
-
+        width: 400px;
+        top: 100px;
+        left: -5px;
     }
-
-
     #submit-pos-size{
         position: relative;
-        top: -65px;
-    
+        top: 225px;
+        left: -20px;
         width: 150px;
         height: 75px;
-        font-size: 12px;
-
+       font-size: 12px;
+    }       
+    #questionContainer{
+        width: 0px;
+        height: 0px;  
+    }
+    #courseReviewTitle{
+        position: relative;
+        top: -450px;
+        left: -20px;
+        width: 400px;
+        font-size: 36px;
+        font-family: Open Sans Condensed;
+        text-align: center;
+        color: black;
+    }
+    #submissionForm{
+        width: 385px;
+        height: 850px;
     }
 
-    
-        
 }
+
 
 /*desktop*/
 @media only screen and (min-width : 1920px){
@@ -454,58 +469,43 @@
         top: 0px;
         left: 100px;
         height: 1000px;
-        width: 750px;
-    
+        width: 750px;    
     }
-
     #rev-btn{
         width: 200px; 
         height: 75px;
         position: relative;
         left: -400px;
-    }
-    
-    
+    }  
     #difficulty-bar{
         height: 50px;
         position: relative;
         left: 175px;
         margin-bottom: 25px;
-        top: -125px;
-    
-    }
-    
+        top: -125px; 
+    }  
     #difficulty-number{
         font-size: 24px;
         position: relative;
         left: 355px;
         top: -58px;
         color: white;
-    }
-    
-    
+    } 
     #rating-bar{
         height: 50px;
         position: relative;
         left: 175px;
         top: -125px;
     }
-
     #recommend-pos{
         position: relative;
         top: 175px;
-
     }
-
     #textbook-pos{
         position: relative;
         top: 200px;
-
-    }
-
-    
-    /* pop up */
-    
+    } 
+    /* pop up */ 
     #popup-pos{
         position: relative;
         top: 100px;
@@ -520,8 +520,7 @@
         left: 282px;
         top: 10px
     }
-    
-    
+      
     #course-review-pos{
         position: relative;
         left: 172px;
@@ -529,14 +528,11 @@
         height: 150px;
         width: 400px;
     }
-    
     #submit-pos-size{
         position: relative;
         top: 100px;
         width: 175px;
         height: 75px;
     }
-    
-
    
 }

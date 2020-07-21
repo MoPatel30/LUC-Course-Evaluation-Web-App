@@ -8,7 +8,7 @@ import * as firebase from 'firebase';
 
 
 export var firebaseConfig = {
-
+ 
 };
 
 
@@ -94,15 +94,7 @@ export class Test extends React.Component{
        
 
         this.searchHandler = this.searchHandler.bind(this);
-/*
-        const firebase = require('firebase-functions');
-        const admin = require('firebase-admin');
-       
-        //Some database stuff:
 
-        var firebaseRef = firebase.database().ref()
-
-        firebaseRef.child("Test Reviews").value()*/
     }
 
 
@@ -144,17 +136,6 @@ export class Test extends React.Component{
 
         const {term} = this.state;
 
-        
-        //change total rev display to be accurate
-     /*
-        let temp2 = firebase.database().ref("/Test Reviews/"  + String(this.props.course) + "/")
-        let count = 0
-        
-        temp2.on('value', function(snapshot) {
-            count = snapshot.val().Count 
-
-        })
-        */
     
 
         return (
@@ -214,53 +195,3 @@ export class Test extends React.Component{
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-/*
-
-export class DbTester extends React.Component{
-    constructor(){
-        super()
-        this.state = {
-            cent: ""
-
-        }
-    }
-
-
-    operator(event){
-        event.preventDefault()
-        
-        database.ref("/test").set("hello")
-        
-        firebase.database().ref('/test').on('value',(snap)=>{
-            this.setState({
-                cent: String(snap.val())
-            })
-           
-        })
-       
-
-    }
-
-
-    render(){
-        return(
-            <div>
-                <button style = {{width: "200px", height: "75px"}} class="example_c" onClick = {(event) => this.operator(event)}>Test DB</button>
-                <h1 style = {{fontSize: "36px"}}>{this.state.cent}</h1>
-            </div>
-        )
-    }
-}
-
-*/

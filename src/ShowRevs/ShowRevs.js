@@ -101,7 +101,8 @@ export class Tester extends React.Component{
 
                 <p id = "review-box-small-form-pos"><b>Would you recommend taking this course?: </b> {this.props.recommend}</p>
                 <p id = "review-box-small-form-pos"><b>Textbook/3rd party platform usage: </b> {this.props.textbook}</p>
-    
+                <br />
+                
             </div>
             
         )

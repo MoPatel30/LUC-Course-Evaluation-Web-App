@@ -2,8 +2,6 @@ import React from 'react';
 import {Tester} from '../ShowRevs/ShowRevs';
 import './Popup.css';
 
-import Popup from "reactjs-popup";
-
 
 
 var firebase = require('firebase/app');
@@ -32,6 +30,29 @@ export class PopUp extends React.Component{
 
     }
 
+    showForm = () =>  {
+        var x = document.getElementById("submissionForm");
+
+        var y = document.getElementById('rev-btn');
+        if (x.style.display === "none") {
+          x.style.display = "block";
+          y.style.display = 'none';
+        } else {
+          x.style.display = "none";
+        }
+    }
+
+    hideForm = () =>  {
+        var x = document.getElementById("submissionForm");
+        var y = document.getElementById('rev-btn');
+        if (x.style.display === "block") {
+          x.style.display = "none";
+          y.style.display = 'block';
+        } else {
+          x.style.display = "block";
+        }
+    }
+
     
     showone = (event) => {
         event.preventDefault()
@@ -45,25 +66,7 @@ export class PopUp extends React.Component{
 
     }
 
-    
-/*
-    checkStatus = (event) => {
-        if(this.state.student === ""){
-            this.setState({
-                student : "Anonymous"
-            })
-        }
-        if(this.state.professor){
-            this.setState({
-                professor: "Anonymous"
-            })
-        }
-        
-        this.mySubmit(event)
-    }
 
-*/
-  
  
     mySubmit = (event) => {
         event.preventDefault()
@@ -131,15 +134,6 @@ export class PopUp extends React.Component{
         
 
      
-        
- /*
-        
-        let res = num.once('value', (snap) => {
-            let ex = snap.val()
-            let ex2 = Object.keys(ex)
-            num.set(String(ex2[0].value() + 1))
-        })
-        */
         let temp3 = database.ref("/Test Reviews/"  + String(this.state.course).toLowerCase() + "/Course")
         temp3.set((this.state.course).toLowerCase())
 
@@ -203,12 +197,10 @@ export class PopUp extends React.Component{
     render(){
         return(
             <div>
-                <Popup modal trigger={<div className="buttonDIV" align="center" id = "popup-pos"><button id = 'rev-btn' className="example_c"><b>Review a Course</b></button></div>} position="bottom center">
-                <div id = 'popup-size'>
-                    <div>
+                
+                    <div style = {{marginLeft: '10px', marginRight: "25px"}}>
                     
-                        <p style = {{fontSize: '1.25rem', fontFamily: "Open Sans Condensed", textAlign: "center", color: 'white'}}><u>Course Review Form</u></p>
-                        <form className ='submissionForm' onSubmit={this.mySubmit}>
+                        <form id ='submissionForm' onSubmit={this.mySubmit}>
                             <input
                                 className = "small-field-pos"
                                 placeholder = "Student Name (Optional)"
@@ -238,7 +230,7 @@ export class PopUp extends React.Component{
                             <br />
                             <br />
                             <textarea 
-                                id = "course-review-pos"
+                                className = "course-review-pos"
                                 placeholder = "Describe your course experience"
                                 type='text' 
                                 value = {this.state.review}
@@ -247,8 +239,7 @@ export class PopUp extends React.Component{
                             <br />
 
                             <textarea 
-                                id = "course-review-pos"
-                                style = {{height: '100px'}}
+                                className = "course-review-pos"
                                 placeholder = "Provide a brief course syllabus breakdown (Number of exams, quizzes, and/or papers, Midterm and Final Exam breakdown, etc.)"
                                 type='text' 
                                 value = {this.state.syllabus}
@@ -256,10 +247,12 @@ export class PopUp extends React.Component{
                             />
                             <br />
 
+                            <p id = 'courseReviewTitle'><u><em>Course Review Form</em></u></p>
+                            <div id= 'questionContainer'>
         
 
                             <div id = "textbook-pos">
-                                <p id = "question-text">Textbook/3rd party platform usage?</p>
+                                <p id = "question-text">New dropdown here</p>
                                 <select id = "textbook-drop" class = "select">
                                     <option value = 'No Response'>Select</option>
                                     <option value = 'Yes'>Yes</option>
@@ -279,28 +272,33 @@ export class PopUp extends React.Component{
 
 
                             <div id = "difficulty-bar">
-                                <label style = {{fontSize: '18px', color: 'white'}} for="customRange2">Course Difficulty Rating: </label>
+                                <label style = {{fontSize: '18px', color: 'black'}} for="customRange2">Course Difficulty Rating: </label>
                                 <input type="range" class="custom-range" min="0" max="5" id="customRange" onChange= {e => this.setState({difficulty: e.target.value})}></input>
                                 <p id = "difficulty-number">{this.state.difficulty}/5</p>
                             </div>
 
 
                             <div id = "rating-bar">
-                                <label style = {{fontSize: '18px', color: 'white'}} for="customRange2">Overall Experience Rating: </label>
+                                <label style = {{fontSize: '18px', color: 'black'}} for="customRange2">Overall Experience Rating: </label>
                                 <input type="range" class="custom-range" min="0" max="5" id="customRange2" onChange= {e => this.setState({rating: e.target.value})}></input>
                                 <p id = "difficulty-number">{this.state.rating}/5</p>
+                            </div>
                             </div>
 
 
                             <div class="button_cont" align="center"><button id="submit-pos-size" class="example_c"  type="submit" onclick={e => this.showone(e)}><b>Submit Review</b></button></div>
-                       
+                           
+                            <div className='exit-btn'>
+                                <i class="fa fa-times" aria-hidden="true" onClick={this.hideForm}></i>
+                            </div>
                         </form>
 
                     
                     </div>
 
-                </div>
-                </Popup>
+                    <div className="buttonDIV" align="center" id = "popup-pos">
+                        <button id = 'rev-btn' className="example_c" onClick={this.showForm} ><b>Review a Course</b></button>
+                    </div>
 
          
             </div>
@@ -308,11 +306,6 @@ export class PopUp extends React.Component{
     }
 
 }
-
-//<p style = {{position: 'relative', top: '150px'}}>{this.state.comp}</p>
-                
-
-
 
 
 

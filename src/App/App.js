@@ -6,7 +6,6 @@ import '../review/review.css'
 
 
 
-
 export class App extends React.Component{
   render(){
     return(
