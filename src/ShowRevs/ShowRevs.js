@@ -4,7 +4,6 @@ import './ShowRevs.css';
 
 
 
-
 var firebase = require('firebase/app');
 require('firebase/auth');
 require('firebase/database');
@@ -25,12 +24,11 @@ export class ShowsReviews extends React.Component{
 
 
     render(){ 
-        
         var temp = this.state.comps
         temp.length = 0
         let temp2 = firebase.database().ref("/Test Reviews/"  + String(this.props.course).toLowerCase() + "/")
-      
-   
+    
+
         temp2.on('value', function(snapshot) {
 
             snapshot.forEach(function(childRevs){
@@ -45,26 +43,29 @@ export class ShowsReviews extends React.Component{
                 let curDifficulty = childRevs.val().Course_Difficulty
                 let curRating = childRevs.val().Course_Rating
 
-                let curRecommend = childRevs.val().Textbook_Usage
-                let curTextbook = childRevs.val().Course_Recommend
+                let curRecommend = childRevs.val().Course_Recommend
+                let curTags = childRevs.val().Course_Tags
+
+                let curDate = childRevs.val().Submission_Date
                 
-                temp.unshift(<Tester student = {curStudent} professor = {curProfessor} course = {curCourse} review = {curReview} syllabus = {curSyllabus} difficulty = {curDifficulty} rating = {curRating} recommend = {curRecommend} textbook = {curTextbook} />)
-               
+                temp.unshift(<Tester student = {curStudent} professor = {curProfessor} course = {curCourse} review = {curReview} syllabus = {curSyllabus} difficulty = {curDifficulty} rating = {curRating} recommend = {curRecommend} coursetags = {curTags} date = {curDate} />)
+            
             })
         })
             temp.shift()
-            temp.shift()   
-
+            temp.shift()  
+   
+           
         return(
-            <div style = {{position: 'relative', width: '1200px', overflowY: 'scroll', overflowX: 'hidden', display: "run-in"}}>
-
-                <div style = {{fontSize: "30px", position: 'relative', height: '800px', marginBottom: '-50px',  marginTop: '20px'}}>{this.state.comps}</div>
+         
+            <div style = {{fontSize: "30px", position: 'relative', height: '800px', marginBottom: '-50px',  marginTop: '20px'}}>{this.state.comps}</div>
                 
 
-            </div>
+           
 
         )
     }
+
 
 
 }
@@ -100,7 +101,9 @@ export class Tester extends React.Component{
                 <p id = "review-box-big-form-pos"><b>Course Syllabus Breakdown: </b> {this.props.syllabus}</p>
 
                 <p id = "review-box-small-form-pos"><b>Would you recommend taking this course?: </b> {this.props.recommend}</p>
-                <p id = "review-box-small-form-pos"><b>Textbook/3rd party platform usage: </b> {this.props.textbook}</p>
+                <p id = "review-box-small-form-pos"><b>Additional Course Insight: </b> {this.props.coursetags}</p>
+
+                <p id = "review-box-date-pos">{this.props.date}</p>
                 <br />
                 
             </div>

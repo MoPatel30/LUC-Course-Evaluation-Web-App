@@ -63,12 +63,20 @@
     position: relative;
     left: 50px;
     font-size: 1rem;
+    width: 500px;
 }
 #review-box-big-form-pos{
     position: relative;
     left: 50px;
     font-size: 1rem;
     width: 500px;
+}
+#review-box-date-pos{
+    font-size: 32px;
+    color: black;
+    position: relative; 
+    left: 215px;
+    top: 50px;
 }
 
 
@@ -80,7 +88,7 @@
         background-color: whitesmoke;
         border: 2px solid #434343;
         border-radius: 15px;
-        height: 50%;
+        height: fit-content;
         width: 300px;
         text-indent: 10px;
         margin: 8px;
@@ -88,7 +96,6 @@
         box-shadow: 5px 2px 5px 2px #434343;
         position: relative;
         left: 10px;
-        margin-bottom: -200px; 
         background-image: url(https://img.freepik.com/free-photo/watercolor-paper-texture_1194-5416.jpg?size=626&ext=jpg);      
     }
 
@@ -149,6 +156,15 @@
         width: 250px;
         text-indent: 0px;  
     }
+        
+    #review-box-date-pos{
+        font-size: 24px;
+        color: black;
+        position: relative; 
+        width: 200px;
+        left: 75px;
+        top: 40px;
+    }
 
 }
 
@@ -169,7 +185,6 @@
         box-shadow: 5px 2px 5px 2px #434343;
         position: relative;
         left: 10px;
-        margin-bottom: -200px; 
         background-image: url(https://img.freepik.com/free-photo/watercolor-paper-texture_1194-5416.jpg?size=626&ext=jpg);      
     }
 
@@ -195,7 +210,8 @@
         top: 20px;
     }  
     #review-box-difficulty-tag{
-        width: 400px;
+        width: 125px;
+        font-size: 12px;
         position: absolute; 
         left: 15px;
     }
@@ -204,7 +220,8 @@
         left: 25px;
     }  
     #review-box-rating-tag{
-        width: 700px;
+        width: 180px;
+        font-size: 12px;
         position: absolute;
         left: 130px;
        
@@ -229,6 +246,15 @@
         font-size: 1rem;
         width: 250px;
         text-indent: 0px;
+    }
+           
+    #review-box-date-pos{
+        font-size: 24px;
+        color: black;
+        position: relative; 
+        left: 80px;
+        width: 200px;
+        top: 40px;
     }
 
 }

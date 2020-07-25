@@ -2,13 +2,13 @@ import React from 'react';
 
 import './review.css';
 
-import {ShowsReviews} from '../ShowRevs/ShowRevs'
+import {ShowsReviews, Tester} from '../ShowRevs/ShowRevs'
 
 import * as firebase from 'firebase';
 
 
 export var firebaseConfig = {
- 
+
 };
 
 
@@ -81,21 +81,61 @@ function getCourses(){
 }
 
 
+
 export class Test extends React.Component{
     constructor(props){
         super(props);
         this.state = {
             term: 'Search for Course...',
             course: '',
-            tester: null,
-            courseName: ''
+            tester: this.getRecents(),
+            courseName: 'Recent Reviews'
             
         }
-       
+
 
         this.searchHandler = this.searchHandler.bind(this);
 
     }
+
+    showRecents(event){
+        event.preventDefault()
+        this.setState({
+            tester: this.getRecents()
+        })
+    }
+   
+    getRecents(){
+        let fbDir = firebase.database().ref("/Recent Reviews/")
+        let recentReviews = []
+
+        fbDir.on('value', function(snapshot) {
+
+            snapshot.forEach(function(recentRevs){
+                    let tempDict = {}
+
+                    tempDict["Difficulty"] = recentRevs.val().Course_Difficulty 
+                    tempDict["Name"] = recentRevs.val().Course_Name 
+                    tempDict["Rating"] = recentRevs.val().Course_Rating
+                    tempDict["Recommend"] = recentRevs.val().Course_Recommend
+                    tempDict["Review"] = recentRevs.val().Course_Review 
+                    tempDict["Syllabus"] = recentRevs.val().Course_Syllabus
+                    tempDict["Professor"] = recentRevs.val().Professor_Name  
+                    tempDict["Student"] = recentRevs.val().Student_Name
+                    tempDict["Tags"] = recentRevs.val().Course_Tags
+                    tempDict["Date"] = recentRevs.val().Submission_Date
+                
+                    recentReviews.push(<Tester student = {tempDict["Student"]} professor = {tempDict["Professor"]} course = {tempDict["Name"]} review = {tempDict["Review"]} syllabus = {tempDict["Syllabus"]} difficulty = {tempDict["Difficulty"]} rating = {tempDict["Rating"]} recommend = {tempDict["Recommend"]} coursetags = {tempDict["Tags"]} date = {tempDict["Date"]} />)
+
+            })
+        
+        })
+        console.log(recentReviews)     
+
+        return recentReviews
+    }
+
+    
 
 
     searchHandler(event){
@@ -125,18 +165,16 @@ export class Test extends React.Component{
         
     }
 
-    
+  
 
 
    
 
     render() {
         var selectedCourse = getCourses()
-        console.log(selectedCourse)
 
         const {term} = this.state;
-
-    
+ 
 
         return (
             <div>
@@ -153,15 +191,18 @@ export class Test extends React.Component{
                     </div>
 
                 </div>
-               
 
+                <div id = "recent-btn-div">
+                    <button id = "recent-revs-btn" className="example_c" onClick={(event) => this.showRecents(event)} ><b>View Recent Reviews</b></button>
+                </div>
 
+                <p id = "courses-header"><b><u>Courses</u></b></p>
 
                 <div id ='reviewSection'>
                    
 
+        
                     {
-                    
                     selectedCourse.filter(searchingFor(term)).map(selectedCourse => 
                         <div className = 'review-block-style' key = {selectedCourse.id} value = {String(selectedCourse.course)} onClick = {(event) => this.operation(event, String(selectedCourse.course))}>
                             <p value = {selectedCourse.course}><u><strong id = {selectedCourse.course}>{(selectedCourse.course).toUpperCase()}</strong></u></p>
@@ -185,10 +226,10 @@ export class Test extends React.Component{
                     <h1 style = {{ color: 'whitesmoke', textAlign: 'center'}}><u><em>{this.state.courseName}</em></u></h1>
                 </div>
 
+           
                 <div id = "reviews-pos">{this.state.tester}</div>
-                    
-                      
 
+                
             </div>
         );
     }

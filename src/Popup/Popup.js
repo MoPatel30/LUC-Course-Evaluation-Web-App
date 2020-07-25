@@ -25,6 +25,7 @@ export class PopUp extends React.Component{
             difficulty : 5,
             rating: 5,
             comp: [],
+            time:  String((new Date().getMonth() + 1) + '/' + new Date().getDate() + '/' + (new Date().getFullYear()))
          
         }
 
@@ -67,9 +68,48 @@ export class PopUp extends React.Component{
     }
 
 
+    
+
+    //This would give the values of the checklist if needed later on
+    getCheck = () =>{
+        var checks = document.getElementsByName('chk');
+        var str = '';
+
+    for ( var i = 0; i < 7; i++) {
+        if ( checks[i].checked === true ) {
+            str += checks[i].value + ", ";
+        }
+    }
+    
+    return str
+    } 
+ 
+
+     checkBoxLimit = () => {
+        var checkBoxGroup = document.forms['desc']['chk'];			
+        var limit = 3;
+        for (var i = 0; i < checkBoxGroup.length; i++) {
+            checkBoxGroup[i].onclick = function() {
+                var checkedcount = 0;
+                for (var i = 0; i < checkBoxGroup.length; i++) {
+                    checkedcount += (checkBoxGroup[i].checked) ? 1 : 0;
+                }
+                if (checkedcount > limit) {
+                    console.log("You can select maximum of " + limit + " checkboxes.");
+                    alert("You can select maximum of " + limit + " checkboxes.");						
+                    this.checked = false;
+                }
+            }
+        }
+    }
+
+
+
  
     mySubmit = (event) => {
-        event.preventDefault()
+      
+       // event.preventDefault()
+        
 
 
         this.setState({
@@ -79,13 +119,8 @@ export class PopUp extends React.Component{
 
        
         let recommend = document.getElementById("rec-drop").value
-        let textbook = document.getElementById("textbook-drop").value
+        let courseTags = this.getCheck()
         
-        console.log(recommend)
-        console.log(textbook)
-
-        console.log(this.state.course)
-        console.log(this.state.review)
 
 
 
@@ -93,6 +128,9 @@ export class PopUp extends React.Component{
         if(this.state.course === ""){
             errors.unshift("\n Course Name")
          
+        }
+        if(courseTags == ""){
+            errors.push("\n Please select up to three course tags further describing the course")
         }
         if(this.state.review === ""){
             errors.push("\n Course Review")
@@ -107,15 +145,14 @@ export class PopUp extends React.Component{
             errors.push("\n Course Recommendation")
          
         }
-        if(String(textbook) === "No Response"){
-            errors.push("\n Textbook Requirement")
-         
-        }
+    
 
 
         console.log(errors)
         if(errors.length !== 0){
+            event.preventDefault()
             alert("Missing Fields in Form:" + String(errors))
+            event.preventDefault()
             return
         }
 
@@ -124,26 +161,29 @@ export class PopUp extends React.Component{
       
 
         var num = database.ref("/Test Reviews/"  + String(this.state.course).toLowerCase() + "/Count")
-    
+        var currentCount = 0
         num.once("value", function(snapshot) {        
             var res = Number(snapshot.val()) + 1
-      
+            currentCount = String(res)
             num.set(String(res))
             
         })
+        console.log(currentCount)
+    
         
 
      
         let temp3 = database.ref("/Test Reviews/"  + String(this.state.course).toLowerCase() + "/Course")
         temp3.set((this.state.course).toLowerCase())
 
-        var rand = Math.floor(Math.random() * 100000000000)
 
-        let temp2 = database.ref("/Test Reviews/"  + String(this.state.course).toLowerCase() + "/" + String(rand))
+
+
+        // var rand = Math.floor(Math.random() * 100000000000)
+
+        let temp2 = database.ref("/Test Reviews/"  + String(this.state.course).toLowerCase() + "/" + String(currentCount))
         
    
-   
-
         temp2.child("Student_Name").set(this.state.student)
         temp2.child("Professor_Name").set(this.state.professor)
         temp2.child("Course_Name").set(this.state.course)
@@ -153,29 +193,40 @@ export class PopUp extends React.Component{
         temp2.child("Course_Syllabus").set(this.state.syllabus)
 
 
-        temp2.child("Textbook_Usage").set(textbook)
+        temp2.child("Course_Tags").set(courseTags)
         temp2.child("Course_Recommend").set(recommend)
 
         temp2.child("Course_Difficulty").set(this.state.difficulty)
         temp2.child("Course_Rating").set(this.state.rating)
 
-       
+        temp2.child("Submission_Date").set(this.state.time)
+
+    
+
+        let randomNum = Math.floor(Math.random() * 6)
+
+        var forRecents = database.ref("/Recent Reviews/" + String(randomNum))
+
+        forRecents.child("Student_Name").set(this.state.student)
+        forRecents.child("Professor_Name").set(this.state.professor)
+        forRecents.child("Course_Name").set(this.state.course)
+
+        forRecents.child("Course_Review").set(this.state.review)
         
-        
-
-/*
-        var temp = database.ref("/Test Reviews/" + String(this.state.course) + "/")
-
-        temp.child().ref("student").set(this.state.student)
-        temp.child().ref("professor").set(this.state.professor)
-        temp.child().ref("course").set(this.state.course)
-        temp.child().ref("review").set(this.state.review)
+        forRecents.child("Course_Syllabus").set(this.state.syllabus)
 
 
-*/
-        let currentReview = <Tester student = {this.state.student} course = {this.state.course} professor = {this.state.professor} review = {this.state.review} syllabus = {this.state.syllabus} difficulty = {this.state.difficulty} rating = {this.state.rating} recommend = {recommend} textbook = {textbook} /> 
-        
-        //this.state.comp.push(currentReview)
+        forRecents.child("Course_Tags").set(courseTags)
+        forRecents.child("Course_Recommend").set(recommend)
+
+        forRecents.child("Course_Difficulty").set(this.state.difficulty)
+        forRecents.child("Course_Rating").set(this.state.rating)
+
+        forRecents.child("Submission_Date").set(this.state.time)
+
+
+        let currentReview = <Tester student = {this.state.student} course = {this.state.course} professor = {this.state.professor} review = {this.state.review} syllabus = {this.state.syllabus} difficulty = {this.state.difficulty} rating = {this.state.rating} recommend = {recommend} coursetags = {courseTags} date = {this.state.time} /> 
+
         this.state.comp.unshift(currentReview)
 
         this.setState({
@@ -196,8 +247,9 @@ export class PopUp extends React.Component{
 
     render(){
         return(
-            <div>
-                
+            <div style = {{position: 'relative', top: "-210px"}}>
+           
+
                     <div style = {{marginLeft: '10px', marginRight: "25px"}}>
                     
                         <form id ='submissionForm' onSubmit={this.mySubmit}>
@@ -249,21 +301,11 @@ export class PopUp extends React.Component{
 
                             <p id = 'courseReviewTitle'><u><em>Course Review Form</em></u></p>
                             <div id= 'questionContainer'>
-        
-
-                            <div id = "textbook-pos">
-                                <p id = "question-text">New dropdown here</p>
-                                <select id = "textbook-drop" class = "select">
-                                    <option value = 'No Response'>Select</option>
-                                    <option value = 'Yes'>Yes</option>
-                                    <option value = "No">No</option>
-                                </select>
-                            </div>
-                        
+                                
 
                             <div id = "recommend-pos">
                                 <p id = "question-text">Would you recommend taking this course?</p>
-                                <select id = "rec-drop" class = "select">
+                                <select id = "rec-drop" className = "select">
                                     <option value = 'No Response'>Select</option>
                                     <option value = 'Yes'>Yes</option>
                                     <option value = "No">No</option>
@@ -273,24 +315,78 @@ export class PopUp extends React.Component{
 
                             <div id = "difficulty-bar">
                                 <label style = {{fontSize: '18px', color: 'black'}} for="customRange2">Course Difficulty Rating: </label>
-                                <input type="range" class="custom-range" min="0" max="5" id="customRange" onChange= {e => this.setState({difficulty: e.target.value})}></input>
+                                <input type="range" className="custom-range" min="0" max="5" id="customRange" onChange= {e => this.setState({difficulty: e.target.value})}></input>
                                 <p id = "difficulty-number">{this.state.difficulty}/5</p>
                             </div>
 
 
                             <div id = "rating-bar">
                                 <label style = {{fontSize: '18px', color: 'black'}} for="customRange2">Overall Experience Rating: </label>
-                                <input type="range" class="custom-range" min="0" max="5" id="customRange2" onChange= {e => this.setState({rating: e.target.value})}></input>
+                                <input type="range" className="custom-range" min="0" max="5" id="customRange2" onChange= {e => this.setState({rating: e.target.value})}></input>
                                 <p id = "difficulty-number">{this.state.rating}/5</p>
                             </div>
                             </div>
 
 
-                            <div class="button_cont" align="center"><button id="submit-pos-size" class="example_c"  type="submit" onclick={e => this.showone(e)}><b>Submit Review</b></button></div>
+                            <div className="button_cont" align="center"><button id="submit-pos-size" className="example_c"  type="submit" onclick={e => this.showone(e)}><b>Submit Review</b></button></div>
                            
                             <div className='exit-btn'>
-                                <i class="fa fa-times" aria-hidden="true" onClick={this.hideForm}></i>
+                                <i className="fa fa-times" aria-hidden="true" onClick={this.hideForm}></i>
                             </div>
+
+                            <form className = 'container' name ='desc'>
+
+                                <div>
+                                    <label>
+                                        <input type = 'checkbox' name="chk" value = 'Textbook Required' onClick ={this.checkBoxLimit}/>
+                                        <span>Textbook Required</span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <label>
+                                        <input type = 'checkbox' name="chk" value= 'Homework Heavy' onClick ={this.checkBoxLimit} />
+                                        <span>Homework Heavy</span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <label>
+                                        <input type = 'checkbox' name="chk" value = 'Attendance Required' onClick ={this.checkBoxLimit} />
+                                        <span>Attendance Required</span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <label>
+                                        <input type = 'checkbox' name="chk" value='Test/Quiz Heavy' onClick ={this.checkBoxLimit}/>
+                                        <span>Test/Quiz Heavy</span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <label>
+                                        <input type = 'checkbox' name="chk" value='Lecture Heavy' onClick ={this.checkBoxLimit}/>
+                                        <span>Lecture Heavy</span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <label>
+                                        <input type = 'checkbox' name="chk" value='Take Notes' onClick ={this.checkBoxLimit}/>
+                                        <span>Take Notes</span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <label>
+                                        <input type = 'checkbox' name="chk" value='Participation Matters' onClick ={this.checkBoxLimit}/>
+                                        <span>Participation Matters</span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <label>
+                                        <input type = 'checkbox' name="chk" value='Prepare to Read' onClick ={this.checkBoxLimit}/>
+                                        <span>Prepare to Read</span>
+                                    </label>
+                                </div>
+
+                            </form>
+
                         </form>
 
                     
