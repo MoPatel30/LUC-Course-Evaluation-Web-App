@@ -95,10 +95,10 @@
 
 /* For "review a course" button*/
 .example_c {
-    color: #494949 !important;
+    color: #981e4d !important;
     text-transform: uppercase;
     text-decoration: none;
-    background: #ffffff;
+    background: #b2b2b2;
     padding: 20px;
     border: 4px solid #494949 !important;
     display: inline-block;
@@ -109,22 +109,19 @@
 }
 
 .example_c:hover {
-    color: #ffffff !important;
-    background: lightslategray;
+    color: #434343 !important;
+    background: whitesmoke;
     border-color: #434343 !important;
     transition: all 0.4s ease 0s;
     border-radius: 50px;
     box-shadow: 5px 1px 5px 1px #434343;
 
 }
-
 #rev-btn{
     width: 200px; 
     height: 75px;
     position: relative;
-    left: -400px;
-   
-    
+    left: -363px;   
     display: block;
 }
 
@@ -191,6 +188,7 @@
     top: -150px;
     left: 36%; /*263*/
     width: 175px;
+    background-color: lightgrey;
     height: 75px;
 }
 #questionContainer{
@@ -205,6 +203,23 @@
     font-family: Open Sans Condensed;
     text-align: center;
     color: black;
+}
+#popup-header{
+    text-align: center;
+    font-size: 2rem;
+    color: gold;
+}
+.popup-font{
+    text-align: center;
+    font-size: 1.5rem;
+    color: whitesmoke;
+
+}
+#about-btn-pos{
+    position: absolute;
+    top: 120px;
+    left: 25px;
+    z-index: 1;
 }
 
 
@@ -339,6 +354,7 @@
         position: relative;
         top: 425px;
         left: 0px;
+     
         width: 150px;
         height: 75px;
         font-size: 12px;
@@ -374,6 +390,22 @@
         flex-wrap: wrap;
         
         left: 25px;
+    }
+
+    #about-btn-pos{
+        position: relative;
+        top: -650px;
+        left: 0px;
+    }     
+    #popup-header{
+        text-align: center;
+        font-size: 24px;
+        color: gold;
+    }
+    .popup-font{
+        text-align: center;
+        font-size: 18px;
+        color: whitesmoke;
     }
 
 }
@@ -430,7 +462,7 @@
         width: 150px; 
         height: 75px;
         position: relative;
-        left: 370px;
+        left: 382px;
         top: 0px;
         margin-bottom: 50px;
     }
@@ -505,10 +537,10 @@
     #submit-pos-size{
         position: relative;
         top: 425px;
-        left: -10px;
+        left: 0px;
         width: 150px;
         height: 75px;
-       font-size: 12px;
+        font-size: 12px;
     }       
     #questionContainer{
         width: 0px;
@@ -536,9 +568,27 @@
         max-width: 300px; /*285*/
         margin: 0 auto;
         display: flex;
-        flex-wrap: wrap;
-        
+        flex-wrap: wrap;    
         left: 15px;
+    }
+        
+    #about-btn-pos{
+        position: relative;
+        top: -650px;
+        left: 0px;
+   
+    }
+        
+    #popup-header{
+        text-align: center;
+        font-size: 24px;
+        color: gold;
+    }
+    .popup-font{
+        text-align: center;
+        font-size: 18px;
+        color: whitesmoke;
+
     }
 
 }

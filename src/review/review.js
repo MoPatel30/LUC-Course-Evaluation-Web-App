@@ -9,6 +9,7 @@ import * as firebase from 'firebase';
 
 export var firebaseConfig = {
 
+
 };
 
 
@@ -86,13 +87,16 @@ export class Test extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            term: 'Search for Course...',
+            term: '',
             course: '',
             tester: this.getRecents(),
-            courseName: 'Recent Reviews'
+            courseName: 'Recent Reviews',
+            welcome: true
             
         }
-
+        
+       
+      
 
         this.searchHandler = this.searchHandler.bind(this);
 
@@ -101,7 +105,9 @@ export class Test extends React.Component{
     showRecents(event){
         event.preventDefault()
         this.setState({
-            tester: this.getRecents()
+            welcome: false,
+            tester: this.getRecents(),
+            courseName: "Recent Reviews"
         })
     }
    
@@ -125,7 +131,7 @@ export class Test extends React.Component{
                     tempDict["Tags"] = recentRevs.val().Course_Tags
                     tempDict["Date"] = recentRevs.val().Submission_Date
                 
-                    recentReviews.push(<Tester student = {tempDict["Student"]} professor = {tempDict["Professor"]} course = {tempDict["Name"]} review = {tempDict["Review"]} syllabus = {tempDict["Syllabus"]} difficulty = {tempDict["Difficulty"]} rating = {tempDict["Rating"]} recommend = {tempDict["Recommend"]} coursetags = {tempDict["Tags"]} date = {tempDict["Date"]} />)
+                    recentReviews.push(<Tester student = {tempDict["Student"]} professor = {tempDict["Professor"]} course = {tempDict["Name"]} review = {tempDict["Review"]} syllabus = {tempDict["Syllabus"]} difficulty = {tempDict["Difficulty"]} rating = {tempDict["Rating"]} recommend = {tempDict["Recommend"]} coursetags = {String(tempDict["Tags"]).substring(0,tempDict["Tags"].length-2)} date = {tempDict["Date"]} />)
 
             })
         
@@ -136,7 +142,6 @@ export class Test extends React.Component{
     }
 
     
-
 
     searchHandler(event){
         this.setState({term: event.target.value})
@@ -164,20 +169,40 @@ export class Test extends React.Component{
         
         
     }
-
-  
-
-
-   
+    
 
     render() {
-        var selectedCourse = getCourses()
-
         const {term} = this.state;
- 
+        var selectedCourse = getCourses()
+       
 
         return (
             <div>
+                {
+                this.state.welcome?
+                       
+                    <div className = "modal">
+                        <div id = "pop-style">
+                            <h1 id = "popup-header"><u><b>Welcome to Loyola's Course Evaluation Website</b></u></h1>
+                            <p className = "popup-font">This website was created by Mo Patel and Kevin Guilluame for the students of Loyola University Chicago. We are sophomore computer science students with a passion for developing and creating products that benefit others.</p>
+                            <p className = "popup-font">Please contact us at Mopatel1214@gmail.com if you experience any visual or technical errors. </p>
+                            <p className = "popup-font"> Thank you all and we hope this serves the students well!</p>
+                            <br />
+                            <p className = "popup-font">Important Note: Leaving "Student Name" blank will make your review "Anonymous". Leaving "Professor Name" blank will set the professor's name to "Anonymous" in the review.</p>
+                              
+                                
+                            <button id = "popup-btn-pos" className="example_c" onClick={(event) => this.showRecents(event)} ><b>Continue to Site</b></button>
+                     
+                        </div>
+
+                     
+                    </div>
+                       
+                    :null
+                    
+                }
+
+
                 <div className ='searchBar'>
                     <input  className="searchText" 
                             type='text'
@@ -200,30 +225,28 @@ export class Test extends React.Component{
 
                 <div id ='reviewSection'>
                    
-
         
                     {
-                    selectedCourse.filter(searchingFor(term)).map(selectedCourse => 
-                        <div className = 'review-block-style' key = {selectedCourse.id} value = {String(selectedCourse.course)} onClick = {(event) => this.operation(event, String(selectedCourse.course))}>
-                            <p value = {selectedCourse.course}><u><strong id = {selectedCourse.course}>{(selectedCourse.course).toUpperCase()}</strong></u></p>
-                            
-                            <p style = {{textAlign: 'center'}}>Overall Difficulty </p>
-                            <p style = {{textAlign: 'center'}}><b>{selectedCourse.difficulty}</b></p>
-                            
-                            <p style = {{textAlign: 'center'}}>Overall Rating </p>
-                            <p style = {{textAlign: 'center'}}> <b>{selectedCourse.rating}</b></p>
-
-                            <p style = {{textAlign: 'center'}}> Total Reviews: <b>{selectedCourse.count}</b></p>
-                        </div>   
-                            
+                        selectedCourse.filter(searchingFor(term)).map(selectedCourse => 
+                            <div className = 'review-block-style' key = {selectedCourse.id} value = {String(selectedCourse.course)} onClick = {(event) => this.operation(event, String(selectedCourse.course))}>
+                                <p value = {selectedCourse.course}><u><strong id = {selectedCourse.course}>{(selectedCourse.course).toUpperCase()}</strong></u></p>
+                                
+                                <p style = {{textAlign: 'center'}}>Overall Difficulty </p>
+                                <p style = {{textAlign: 'center'}}><b>{selectedCourse.difficulty}</b></p>
+                                
+                                <p style = {{textAlign: 'center'}}>Overall Rating </p>
+                                <p style = {{textAlign: 'center'}}> <b>{selectedCourse.rating}</b></p>
+                
+                                <p style = {{textAlign: 'center'}}> Total Reviews: <b>{selectedCourse.count}</b></p>
+                            </div> 
                         )
-                    
                     } 
                     
                 </div>
+            
 
                 <div id = "course-tag">
-                    <h1 style = {{ color: 'whitesmoke', textAlign: 'center'}}><u><em>{this.state.courseName}</em></u></h1>
+                    <h1 style = {{ color: 'gold', textAlign: 'center'}}><u><em>{this.state.courseName}</em></u></h1>
                 </div>
 
            

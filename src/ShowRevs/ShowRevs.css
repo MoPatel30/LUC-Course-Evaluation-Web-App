@@ -26,10 +26,12 @@
 #review-box-name-tag{
     position: relative;
     font-size: 2rem;
+  
 }
 #review-box-course-tag{
-    position: absolute;
-    left: 415px; 
+    position: relative;
+    left: 425px; 
+    top: 0px;
     font-size: 2rem;
     width: 250px;
 }
@@ -75,8 +77,8 @@
     font-size: 32px;
     color: black;
     position: relative; 
-    left: 215px;
-    top: 50px;
+    left: 25px;
+    top: 75px;
 }
 
 
@@ -111,8 +113,8 @@
         font-size: 1rem;
     }
     #review-box-course-tag{
-        position: absolute;
-        left: 200px; 
+        position: relative;
+        left: 210px; 
         font-size: 1rem;
         width: 100px;
     } 
@@ -122,7 +124,7 @@
         top: 20px;
     } 
     #review-box-difficulty-tag{
-        width: 400px;
+        width: 200px;
         position: absolute; 
         left: 15px;
     }  
@@ -131,7 +133,7 @@
         left: 25px;
     } 
     #review-box-rating-tag{
-        width: 700px;
+        width: 180px;
         position: absolute;
         left: 130px;   
     }
@@ -158,11 +160,11 @@
     }
         
     #review-box-date-pos{
-        font-size: 24px;
+        font-size: 18px;
         color: black;
         position: relative; 
         width: 200px;
-        left: 75px;
+        left: 5px;
         top: 40px;
     }
 
@@ -199,8 +201,9 @@
         font-size: 1rem;
     }   
     #review-box-course-tag{
-        position: absolute;
-        left: 200px; 
+        position: relative;
+        left: 210px;
+        top: 0px; 
         font-size: 1rem;
         width: 250px;
     } 
@@ -249,10 +252,10 @@
     }
            
     #review-box-date-pos{
-        font-size: 24px;
+        font-size: 18px;
         color: black;
         position: relative; 
-        left: 80px;
+        left: 0px;
         width: 200px;
         top: 40px;
     }

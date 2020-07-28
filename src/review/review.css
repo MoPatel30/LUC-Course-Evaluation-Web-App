@@ -1,9 +1,9 @@
 /* For "review a course" button*/
 .example_c {
-    color: #494949 !important;
+    color: #981e4d !important;
     text-transform: uppercase;
     text-decoration: none;
-    background: #ffffff;
+    background: #b2b2b2;
     padding: 5px;
    
     border: 4px solid #494949 !important;
@@ -15,8 +15,8 @@
 }
 
 .example_c:hover {
-    color: #ffffff !important;
-    background: lightslategray;
+    color: #434343 !important;
+    background: whitesmoke;
     border-color: #434343 !important;
     transition: all 0.4s ease 0s;
     border-radius: 50px;
@@ -113,68 +113,68 @@
    }
 
    .searchBar:hover > .searchText {
-    width: 240px;
-    padding: 0 6px;
-   }
+        width: 240px;
+        padding: 0 6px;
+    }
 
    .searchBar:hover > .searchGlass {
-    background: maroon;
-    color: white;
-    top: 0px;
-   }
+        background: #981e4d;
+        color: white;
+        top: 0px;
+    }
 
    .searchGlass{
-    color: maroon;
-    float: right;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: 0.4s;
-    color: black;
-    cursor: pointer;
-   }
+        color: #981e4d;
+        float: right;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.4s;
+        color: black;
+        cursor: pointer;
+    }
 
    .searchGlass > i {
-    font-size: 30px;
-   }
+        font-size: 30px;
+    }
 
    .searchText {
-    border: none;
-    background: none;
-    outline: none;
-    float: left;
-    padding: 0;
-    color: black;
-    font-size: 16px;
-    transition: 0.4s;
-    line-height: 40px;
-    width: 0px;
-    font-weight: bold;
+        border: none;
+        background: none;
+        outline: none;
+        float: left;
+        padding: 0;
+        color: black;
+        font-size: 16px;
+        transition: 0.4s;
+        line-height: 40px;
+        width: 0px;
+        font-weight: bold;
    }
 
    #reviews-pos{
-    position: fixed;
-    top: 135px;
-    left: 700px;
-    height: 760px;
-    width: 800px;
+        position: fixed;
+        top: 135px;
+        left: 700px;
+        height: 760px;
+        width: 800px;
 
-    overflow-x: hidden;
+        overflow-x: hidden;
    }
    #course-tag{
-    position: absolute;
-    left: 825px;
-    top: 9px;
-    width: 600px;
-    font-size: 32px;
-    z-index: 10;
+        position: absolute;
+        left: 825px;
+        top: 9px;
+        width: 600px;
+        font-size: 32px;
+        z-index: 10;
     }
     #courses-header{
-        color: white;
+        color: gold;
         font-family: Open Sans Condensed;
         font-size: 48px;
         text-align: center;
@@ -190,8 +190,43 @@
         top: 450px;
 
     }
+/* welcome popup */
+    .modal{
+        position: fixed;
+        z-index: 100;
+        background-color: rgba(0, 0, 0, 0.25);
+        width: 1525px;
+        height: 900px;
+    }
+    
+    #pop-style{
+        background-color: lightslategrey;
+        width: 1504px;
+        height: 900px;
 
-
+    }
+    #popup-header{
+        font-family: Open Sans Condensed;
+        text-align: center;
+        font-size: 32px;
+        color: gold;
+      
+    }
+    .popup-font{
+        text-align: center;
+        font-family: Open Sans Condensed;
+        font-size: 24px;
+        color: whitesmoke;
+        width: 800px;
+        position: relative;
+        left: 352px;
+    }
+    #popup-btn-pos{
+        position: relative;
+        left: 675px;
+        top: 100px;
+    }
+   
 /*Iphone X */
 /*@media only screen and (device-width : 375px) and (device-height : 812px) and (-webkit-device-pixel-ratio : 3) {*/
 @media only screen and (min-width : 370px) and (max-width: 380px){
@@ -229,14 +264,14 @@
     }
 
     .searchBar:hover > .searchGlass {
-        background: maroon;
+        background: #981e4d;
         color: white;
         position: relative;
         top: -40px;
     }
 
     .searchGlass{
-        color: maroon;
+        color: #981e4d;
         float: right;
         width: 40px;
         height: 40px;
@@ -351,7 +386,7 @@
         overflow-x: hidden;
     } 
     #courses-header{
-        color: white;
+        color: gold;
         font-family: Open Sans Condensed;
         font-size: 48px;
         text-align: center;
@@ -369,6 +404,53 @@
         width: 150px;
 
     }
+  
+       /* welcome popup */
+    .modal{
+        position: fixed;
+        z-index: 100;
+        top: -16px;
+        background-color: rgba(0, 0, 0, 0.25);
+        width: 414px;
+        height: 900px;
+    }
+
+    #pop-style{
+        background-color: lightslategrey;
+        width: 414px;
+        height: 900px;
+
+
+    }
+    #popup-header{
+        font-family: Open Sans Condensed;
+        text-align: center;
+        font-size: 32px;
+        color: gold;
+        width: 200px;
+        position: relative;
+        left: 87.5px;
+    
+    }
+    .popup-font{
+        text-align: center;
+        font-family: Open Sans Condensed;
+        font-size: 24px;
+        color: whitesmoke;
+        width: 300px;
+        position: relative;
+        left: 37.5px;
+        
+    }
+    #popup-btn-pos{
+        position: relative;
+        left: 125px;
+        top: 75px;  
+        height: 75px;
+        width: 125px;
+   
+    }
+
      
    
 }
@@ -408,14 +490,14 @@
     }
 
     .searchBar:hover > .searchGlass {
-        background: maroon;
+        background: #981e4d;
         color: white;
         position: relative;
         top: -40px; 
     }
 
     .searchGlass{
-        color: maroon;
+        color: #981e4d;
         float: right;
         width: 40px;
         height: 40px;
@@ -472,7 +554,7 @@
     }
     #course-tag{
         position: relative;
-        left: 100px;
+        left: 107px;
         top: -175px;
         width: 200px;
         font-size: 18px;
@@ -531,24 +613,71 @@
         overflow-x: hidden;
     }
     #courses-header{
-        color: white;
+        color: gold;
         font-family: Open Sans Condensed;
         font-size: 48px;
         text-align: center;
         width: 200px;
         position: relative;
         top: -75px;
-        left: 100px;
+        left: 115px;
     }
     #recent-revs-btn{
         position: relative;
         top: 370px;
-        left: 125px;
+        left: 132px;
         font-size: 12px;
         height: 75px;
         width: 150px;
 
     }
+        
+    /* welcome popup */
+    .modal{
+        position: fixed;
+        z-index: 100;
+        top: -16px;
+        background-color: rgba(0, 0, 0, 0.25);
+        width: 414px;
+        height: 900px;
+    }
+
+    #pop-style{
+        background-color: lightslategrey;
+        width: 414px;
+        height: 900px;
+
+
+    }
+    #popup-header{
+        font-family: Open Sans Condensed;
+        text-align: center;
+        font-size: 32px;
+        color: gold;
+        width: 200px;
+        position: relative;
+        left: 107px;
+    
+    }
+    .popup-font{
+        text-align: center;
+        font-family: Open Sans Condensed;
+        font-size: 24px;
+        color: whitesmoke;
+        width: 300px;
+        position: relative;
+        left: 57px;
+        
+    }
+    #popup-btn-pos{
+        position: relative;
+        left: 144.5px;
+        top: 50px;  
+        height: 75px;
+        width: 125px;
+   
+    }
+
   
 }
 

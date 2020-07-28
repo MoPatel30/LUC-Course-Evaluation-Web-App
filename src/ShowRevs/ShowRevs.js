@@ -48,7 +48,7 @@ export class ShowsReviews extends React.Component{
 
                 let curDate = childRevs.val().Submission_Date
                 
-                temp.unshift(<Tester student = {curStudent} professor = {curProfessor} course = {curCourse} review = {curReview} syllabus = {curSyllabus} difficulty = {curDifficulty} rating = {curRating} recommend = {curRecommend} coursetags = {curTags} date = {curDate} />)
+                temp.unshift(<Tester student = {curStudent} professor = {curProfessor} course = {curCourse} review = {curReview} syllabus = {curSyllabus} difficulty = {curDifficulty} rating = {curRating} recommend = {curRecommend} coursetags = {String(curTags).substring(0,String(curTags).length-2)} date = {curDate} />)
             
             })
         })
@@ -83,7 +83,7 @@ export class Tester extends React.Component{
             <div className = "review-box-style">
 
                 <label id = "review-box-name-tag"><b>Name: {this.props.student}</b></label>
-                <label id = "review-box-course-tag"><b>{this.props.course.toUpperCase()}</b></label>
+          
 
 
                 <div id = "review-box-numbers">
@@ -103,7 +103,9 @@ export class Tester extends React.Component{
                 <p id = "review-box-small-form-pos"><b>Would you recommend taking this course?: </b> {this.props.recommend}</p>
                 <p id = "review-box-small-form-pos"><b>Additional Course Insight: </b> {this.props.coursetags}</p>
 
+           
                 <p id = "review-box-date-pos">{this.props.date}</p>
+                <label id = "review-box-course-tag"><b>{this.props.course.toUpperCase()}</b></label>
                 <br />
                 
             </div>

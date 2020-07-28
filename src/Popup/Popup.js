@@ -2,6 +2,7 @@ import React from 'react';
 import {Tester} from '../ShowRevs/ShowRevs';
 import './Popup.css';
 
+import Popup from "reactjs-popup";
 
 
 var firebase = require('firebase/app');
@@ -145,6 +146,8 @@ export class PopUp extends React.Component{
             errors.push("\n Course Recommendation")
          
         }
+
+        
     
 
 
@@ -183,9 +186,23 @@ export class PopUp extends React.Component{
 
         let temp2 = database.ref("/Test Reviews/"  + String(this.state.course).toLowerCase() + "/" + String(currentCount))
         
+
+        if(this.state.student === ""){
+            temp2.child("Student_Name").set("Anonymous")
+        }
+        else{
+            temp2.child("Student_Name").set(this.state.student)
+        }
+
+
+        if(this.state.professor === ""){
+            temp2.child("Professor_Name").set("Anonymous")        
+        }
+        else{
+            temp2.child("Professor_Name").set(this.state.professor)         
+        }
    
-        temp2.child("Student_Name").set(this.state.student)
-        temp2.child("Professor_Name").set(this.state.professor)
+      
         temp2.child("Course_Name").set(this.state.course)
 
         temp2.child("Course_Review").set(this.state.review)
@@ -207,8 +224,23 @@ export class PopUp extends React.Component{
 
         var forRecents = database.ref("/Recent Reviews/" + String(randomNum))
 
-        forRecents.child("Student_Name").set(this.state.student)
-        forRecents.child("Professor_Name").set(this.state.professor)
+
+        if(this.state.student === ""){
+            forRecents.child("Student_Name").set("Anonymous")
+        }
+        else{
+            forRecents.child("Student_Name").set(this.state.student)
+        }
+
+        
+        if(this.state.professor === ""){
+            forRecents.child("Professor_Name").set("Anonymous")        
+        }
+        else{
+            forRecents.child("Professor_Name").set(this.state.professor)         
+        }
+
+
         forRecents.child("Course_Name").set(this.state.course)
 
         forRecents.child("Course_Review").set(this.state.review)
@@ -401,6 +433,32 @@ export class PopUp extends React.Component{
         )
     }
 
+}
+
+
+export class About extends React.Component{
+    constructor(){
+        super()
+
+    }
+
+   
+    render(){
+        return(
+            <div>
+                <Popup modal trigger={<div class="button_cont" align="center" id = "about-btn-pos"><button style = {{width: "100px", height: "75px"}} class="example_c"><b>About</b></button></div>} position="bottom center">
+                    <div style = {{backgroundColor: "#981e4d"}}>
+                        <h1 id = "popup-header">Welcome to Loyola's Course Evaluation Website</h1>
+                        <p className = "popup-font">This website was created by Mo Patel and Kevin Guilluame for the students of Loyola University Chicago. We are sophomore computer science students with a passion for developing and creating products that benefit others.</p>
+                        <p className = "popup-font">Please contact us at Mopatel1214@gmail.com if you experience any visual or technical errors. </p>
+                        <p className = "popup-font"> Thank you all and we hope this serves the students well!</p>
+                    </div>
+
+                </Popup>
+
+            </div>
+        )
+    }
 }
 
 
