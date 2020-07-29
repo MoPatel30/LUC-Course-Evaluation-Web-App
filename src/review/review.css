@@ -196,7 +196,8 @@
         z-index: 100;
         background-color: rgba(0, 0, 0, 0.25);
         width: 1525px;
-        height: 900px;
+        top: -21px;
+        height: 1000px;
     }
     
     #pop-style{
@@ -224,7 +225,7 @@
     #popup-btn-pos{
         position: relative;
         left: 675px;
-        top: 100px;
+   
     }
    
 /*Iphone X */
@@ -445,7 +446,7 @@
     #popup-btn-pos{
         position: relative;
         left: 125px;
-        top: 75px;  
+        top: 0px;  
         height: 75px;
         width: 125px;
    
@@ -672,7 +673,7 @@
     #popup-btn-pos{
         position: relative;
         left: 144.5px;
-        top: 50px;  
+        top: 0px;  
         height: 75px;
         width: 125px;
    

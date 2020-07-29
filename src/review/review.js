@@ -8,7 +8,7 @@ import * as firebase from 'firebase';
 
 
 export var firebaseConfig = {
-
+   
 
 };
 
@@ -186,13 +186,13 @@ export class Test extends React.Component{
                             <h1 id = "popup-header"><u><b>Welcome to Loyola's Course Evaluation Website</b></u></h1>
                             <p className = "popup-font">This website was created by Mo Patel and Kevin Guilluame for the students of Loyola University Chicago. We are sophomore computer science students with a passion for developing and creating products that benefit others.</p>
                             <p className = "popup-font">Please contact us at Mopatel1214@gmail.com if you experience any visual or technical errors. </p>
-                            <p className = "popup-font"> Thank you all and we hope this serves the students well!</p>
-                            <br />
-                            <p className = "popup-font">Important Note: Leaving "Student Name" blank will make your review "Anonymous". Leaving "Professor Name" blank will set the professor's name to "Anonymous" in the review.</p>
-                              
-                                
+                            <p className = "popup-font"> Thank you all and we hope this serves the students well!</p>  
+                            <br />  
                             <button id = "popup-btn-pos" className="example_c" onClick={(event) => this.showRecents(event)} ><b>Continue to Site</b></button>
-                     
+                            <br />  
+                            <p className = "popup-font">Important Note: Leaving "Student Name" and "Professor's Name" blank will set their values to "Anonymous" on your review "Anonymous".</p>
+                              
+                            
                         </div>
 
                      
