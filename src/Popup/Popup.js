@@ -130,7 +130,7 @@ export class PopUp extends React.Component{
             errors.unshift("\n Course Name")
          
         }
-        if(courseTags == ""){
+        if(courseTags === ""){
             errors.push("\n Please select up to three course tags further describing the course")
         }
         if(this.state.review === ""){
@@ -279,7 +279,7 @@ export class PopUp extends React.Component{
 
     render(){
         return(
-            <div style = {{position: 'relative', top: "-210px"}}>
+            <div style = {{position: 'relative', top: "-215px"}}>
            
 
                     <div style = {{marginLeft: '10px', marginRight: "25px"}}>
@@ -436,13 +436,7 @@ export class PopUp extends React.Component{
 }
 
 
-export class About extends React.Component{
-    constructor(){
-        super()
-
-    }
-
-   
+export class About extends React.Component{   
     render(){
         return(
             <div>

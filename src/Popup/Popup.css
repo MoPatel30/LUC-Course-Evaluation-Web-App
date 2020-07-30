@@ -1,3 +1,4 @@
+
 .container{
     position: relative;
     top: -495px;
@@ -226,7 +227,7 @@
 
 /*Iphone X */
 /*@media only screen and (device-width : 375px) and (device-height : 812px) and (-webkit-device-pixel-ratio : 3) {*/
-@media only screen and (min-width : 370px) and (max-width: 380px){
+@media only screen and (min-width : 0px) and (max-width: 380px){
     /* Reviews displayed at bottom of screen */
     .reviewSection{
         position: fixed; /* fixed */
@@ -278,7 +279,7 @@
         height: 75px;
         position: relative;
         left: 362.5px;
-        top: 0px;
+        top: 50px;
         margin-bottom: 50px;
     }
      /* pop up */  
@@ -377,8 +378,8 @@
     #submissionForm{
         width: 350px;
         height: 1050px; 
-        positon: relative;
-        top: 125px;   
+        position: relative;
+        top: 175px;   
     }   
  
     .container{
@@ -387,8 +388,7 @@
         max-width: 300px; /*285*/
         margin: 0 auto;
         display: flex;
-        flex-wrap: wrap;
-        
+        flex-wrap: wrap;      
         left: 25px;
     }
 
@@ -412,7 +412,7 @@
 
 
 /* Iphone 6/7/8 */
-@media only screen and (min-width : 410px) and (max-width: 420px){
+@media only screen and (min-width : 381px) and (max-width: 767px){
      /*Reviews displayed at bottom of screen */
     .reviewSection{
         position: fixed; /* fixed */
@@ -462,8 +462,8 @@
         width: 150px; 
         height: 75px;
         position: relative;
-        left: 382px;
-        top: 0px;
+        left: 92%;
+        top: 100px;
         margin-bottom: 50px;
     }
      /* pop up */
@@ -559,8 +559,9 @@
     #submissionForm{
         width: 385px;
         height: 1050px;
-        positon: relative;
-        top: 125px;   
+        position: relative;
+        top: 200px;   
+        left: 0px;
     }
     .container{
         position: relative;
@@ -594,8 +595,19 @@
 }
 
 
+@media only screen and (min-width : 1025px) and (max-width: 1599px){
+    #submissionForm{
+        min-width: 747px;
+        max-width: 748px;
+    }
+
+
+}
+
+
+
 /*desktop*/
-@media only screen and (min-width : 1920px){
+@media only screen and (min-width : 1600px){
     #popup-size{
         position: relative;
         background-color: maroon;
@@ -604,31 +616,36 @@
         height: 1000px;
         width: 750px;    
     }
+    #submissionForm{
+        width: 60%;
+        max-width: 945px;
+    }
     #rev-btn{
-        width: 200px; 
-        height: 75px;
+        width: 225px; 
+        height: 100px;
         position: relative;
-        left: -400px;
+        top: -750px;
+        left: -300px;
     }  
     #difficulty-bar{
         height: 50px;
         position: relative;
-        left: 175px;
+        left: 200px;
         margin-bottom: 25px;
-        top: -125px; 
+        top: -510px; 
     }  
     #difficulty-number{
         font-size: 24px;
         position: relative;
         left: 355px;
-        top: -58px;
-        color: white;
+        top: -54px;
+        color: black;
     } 
     #rating-bar{
         height: 50px;
         position: relative;
-        left: 175px;
-        top: -125px;
+        left: 200px;
+        top: -525px;
     }
     #recommend-pos{
         position: relative;
@@ -650,10 +667,10 @@
         position: relative;
         border: 2px solid #434343;
         padding: 4px 5px;
-        left: 282px;
-        top: 10px
+        left: 60px;
+        top: 40px
     }
-      
+       
     #course-review-pos{
         position: relative;
         left: 172px;
@@ -663,9 +680,184 @@
     }
     #submit-pos-size{
         position: relative;
-        top: 100px;
+        top: 125px;
         width: 175px;
         height: 75px;
     }
-   
+    .reviewSection{
+        top: 1100px;
+        height: 400px;
+        min-width: 939px;
+        margin-top: 200px;
+        max-width: 940px;
+    }
+    .example_c {
+        font-size: 18px;
+    }
+    .container{
+        top: -425px;
+        left: 160px;
+    }
+    #courseReviewTitle{
+        top: -400px; 
+        left: 225px;
+        width: 550px;
+        font-size: 48px;
+    }
+    .exit-btn{
+        bottom: 900px;
+        width: 14px;
+        top: -580px; /*-595*/
+        left: 900px; /*700*/
+    }
+    #question-text{
+        font-size: 20px;
+        font-family: Open Sans Condensed;
+        text-indent: 175px;
+        color: black;
+    }
+    #recommend-pos{
+        width: 700px;
+        position: relative; 
+        left: -150px; /*150*/
+        top: -115px; /*-110*/
+    }
+    #submit-pos-size{
+        position: relative;
+        top: -132px;
+        left: 360px;
+        width: 150px;
+        height: 75px;
+        font-size: 12px;
+
+    } 
+    .popup-font{
+        text-align: center;
+        font-size: 2.5rem;
+        color: whitesmoke;
+
+    }
+    #popup-header{
+        text-align: center;
+        font-size: 3rem;
+        color: gold;
+    }
+
+    #rec-drop {
+        left: 625px;
+        top: -52px;
+    }
+}
+
+
+/*Ipad */
+@media only screen and (min-width : 768px) and (max-width: 1024px){
+    .example_c {
+        font-size: 25px;
+        padding: 30px;
+    }
+
+    #rev-btn{
+        width: 225px; 
+        height: 115px;
+        position: relative;
+        
+    }
+    #submissionForm{
+        width: 100%;
+        max-width: 748px;
+        height: 900px; 
+        top: 120px;  
+        left: 25px; 
+    }
+    .course-review-pos{
+        position: relative;
+        left: 25px;
+        top: 60px;
+        border: 2px solid #434343;
+        height: 188px;
+        width: 503px;
+        font-size: 20px;
+    }   
+    .small-field-pos{
+        padding: 6px 10px;
+        left: 25px;
+        top: 70px;
+        font-size: 20px;
+    }
+    .container{
+        max-width: 75%;
+        top: -181px;
+        left: -75px
+    }
+    .container div label span {
+        font-size: 18px;
+    }
+    #submit-pos-size{
+        top: 50px;
+        left: 225px;
+        width: 200px;
+        height: 110px;
+    }
+    #courseReviewTitle{
+        top: -590px; 
+        left: 20px;
+    }
+    .exit-btn{
+       top:-785px;
+    }
+    #recommend-pos{
+        width: 600px;
+        left: -150px; /*150*/
+        top: -88px; /*-110*/
+    }
+    #question-text{
+        font-size: 24px;
+    }
+    #rec-drop {
+        left: 615px;
+        top: -56px;
+    }
+    #difficulty-bar {
+        height: 50px;
+        position: relative;
+        left: 75px;
+        top: -29em;
+        bottom: 465px;
+        width: 500px;
+        margin-left: 241px;
+    }
+    #rating-bar {
+        height: 50px;
+        position: relative;
+        left: 75px;
+        top: -28.5em;
+        bottom: 438px;
+        width: 500px;
+        margin-left: 241px;
+    }
+    .popup-font{
+        text-align: center;
+        font-size: 2.5rem;
+        color: whitesmoke;
+
+    }
+    #popup-header{
+        text-align: center;
+        font-size: 4rem;
+        color: gold;
+    }
+}
+
+@media only screen and (min-width : 768px) and (max-width: 850px){
+    #submissionForm{
+        width: 100%;
+        max-width: 753px;
+        height: 900px; 
+        top: 120px;   
+    }
+    .exit-btn{
+        top:-805px;
+     }
+
 }

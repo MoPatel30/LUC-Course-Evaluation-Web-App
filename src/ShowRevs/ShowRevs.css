@@ -66,12 +66,14 @@
     left: 50px;
     font-size: 1rem;
     width: 500px;
+    text-indent: 0px;
 }
 #review-box-big-form-pos{
     position: relative;
     left: 50px;
     font-size: 1rem;
     width: 500px;
+    text-indent: 0px;
 }
 #review-box-date-pos{
     font-size: 32px;
@@ -84,7 +86,7 @@
 
 
 /*iPhone X*/
-@media only screen and (min-width : 370px) and (max-width: 380px){   
+@media only screen and (min-width : 0px) and (max-width: 380px){   
     .review-box-style{
         font-size: 12px;
         background-color: whitesmoke;
@@ -173,7 +175,7 @@
 
 
 /*iPhone plus. big ones.*/
-@media only screen and (min-width : 410px) and (max-width: 420px){     
+@media only screen and (min-width : 381px) and (max-width: 767px){     
     .review-box-style{
         font-size: 12px;
         background-color: whitesmoke;

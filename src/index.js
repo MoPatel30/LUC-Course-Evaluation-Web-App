@@ -5,7 +5,7 @@ import {App} from './App/App';
 
 import {Test} from './review/review'
 
-import {PopUp, About} from './Popup/Popup'
+import {PopUp} from './Popup/Popup'
 
 import * as serviceWorker from './serviceWorker';
 

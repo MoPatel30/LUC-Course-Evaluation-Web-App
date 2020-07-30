@@ -120,7 +120,7 @@ li.dropdown {
 
 
 /*Iphone X */
-@media only screen and (min-width : 370px) and (max-width: 380px){
+@media only screen and (min-width : 0px) and (max-width: 380px){
   .siteTitle{
     animation-name: introFade;
     animation-duration: 3s;
@@ -169,7 +169,7 @@ li.dropdown {
 
 
 /* Iphone 6/7/8 */
-@media only screen and (min-width : 410px) and (max-width: 420px){
+@media only screen and (min-width : 381px) and (max-width: 767px){
   .siteTitle{
     animation-name: introFade;
     animation-duration: 3s;
@@ -195,7 +195,7 @@ li.dropdown {
   .mainHeader{
     position: relative;
     height: 225px;
-    width: 414px;
+    width: 100%;
     z-index: 8; 
   }
     
@@ -214,5 +214,39 @@ li.dropdown {
     100%{
       color:#434343;
     }
+  }
+}
+
+
+@media only screen and (min-width : 1025px) and (max-width: 1599px){
+
+
+}
+
+
+/*desktop*/
+@media only screen and (min-width : 1600px){
+  .mainHeader{
+    height: 100px;
+  }
+  .siteTitle{
+    font-size: 50px;
+    top: -115px;
+    left: 180px;
+    text-indent: 20px;
+    bottom:176px;
+  }
+}
+
+
+/*Ipad */
+@media only screen and (min-width : 768px) and (max-width: 1024px){
+  .mainHeader{
+    height: 165px;
+  }
+  .siteTitle{
+    font-size: 72px;
+    bottom: 175px;
+    left: 200px;
   }
 }

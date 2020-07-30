@@ -102,8 +102,8 @@
 /* Search Bar */
 .searchBar {
     position: absolute;
-    top: 32px;
-    left: 50%;
+    top: 34px;
+    left: 52%;
     transform: translate(-50%, -50%);
     background: white;
     height: 40px;
@@ -170,6 +170,7 @@
         left: 825px;
         top: 9px;
         width: 600px;
+        height: 10px;
         font-size: 32px;
         z-index: 10;
     }
@@ -230,7 +231,7 @@
    
 /*Iphone X */
 /*@media only screen and (device-width : 375px) and (device-height : 812px) and (-webkit-device-pixel-ratio : 3) {*/
-@media only screen and (min-width : 370px) and (max-width: 380px){
+@media only screen and (min-width : 0px) and (max-width: 380px){
     #searchBar{
         position: relative;
         text-indent: 10px;
@@ -381,7 +382,7 @@
     }   
     #reviews-pos{
         position: relative;
-        top: -200px;
+        top: -100px;
         left: 10px;
         width: 365px;
         overflow-x: hidden;
@@ -458,7 +459,7 @@
 
 
 /* Iphone 6/7/8 plus */
-@media only screen and (min-width : 410px) and (max-width: 420px){
+@media only screen and (min-width : 381px) and (max-width: 767px){
     #searchBar{
         position: relative;
         text-indent: 10px;
@@ -555,7 +556,7 @@
     }
     #course-tag{
         position: relative;
-        left: 107px;
+        left: 24%;
         top: -175px;
         width: 200px;
         font-size: 18px;
@@ -569,7 +570,6 @@
         height: 40px;
         border-radius: 25px;
     }
-
 
     /* design of each review box */
     .review-block-style{
@@ -600,7 +600,7 @@
         top: -300px;
         left: 0px;
         height: 250px;
-        width: 414px;
+        width: 100%;
         margin-top: 200px;
         overflow-x: scroll;
         overflow-y: hidden;
@@ -608,8 +608,8 @@
     }   
     #reviews-pos{
         position: relative;
-        top: -175px;
-        left: 30px;
+        top: -75px;
+        left: 7%;
         width: 365px;
         overflow-x: hidden;
     }
@@ -621,18 +621,16 @@
         width: 200px;
         position: relative;
         top: -75px;
-        left: 115px;
+        left: 24%;
     }
     #recent-revs-btn{
         position: relative;
         top: 370px;
-        left: 132px;
+        left: 30%;
         font-size: 12px;
         height: 75px;
         width: 150px;
-
     }
-        
     /* welcome popup */
     .modal{
         position: fixed;
@@ -647,9 +645,8 @@
         background-color: lightslategrey;
         width: 414px;
         height: 900px;
-
-
     }
+
     #popup-header{
         font-family: Open Sans Condensed;
         text-align: center;
@@ -658,8 +655,8 @@
         width: 200px;
         position: relative;
         left: 107px;
-    
     }
+
     .popup-font{
         text-align: center;
         font-family: Open Sans Condensed;
@@ -667,37 +664,222 @@
         color: whitesmoke;
         width: 300px;
         position: relative;
-        left: 57px;
-        
+        left: 57px;     
     }
+
     #popup-btn-pos{
         position: relative;
         left: 144.5px;
         top: 0px;  
         height: 75px;
-        width: 125px;
-   
+        width: 125px; 
     }
-
   
 }
 
 
+@media only screen and (min-width : 1025px) and (max-width: 1599px){
+    #reviewSection{
+        min-width: 752px;
+        max-width: 753px;
+    }
+    .searchBar {
+        position: absolute;
+        top: 35px;
+        left: 785px;
+    }
+    #submissionForm{
+        top: 75px;
+    }
+}
+
+
 /*Desktop*/
-@media only screen and (min-width : 1920px){
+@media only screen and (min-width : 1600px){
     #reviews-pos{
         position: relative;
-        top: -50px;
-        left: 1000px;
+        top: -25px;
+        left: 1075px;
         width: 800px;
         overflow-x: hidden;
     }
     #course-tag{
         position: relative;
-        left: 1125px;
-        top: -25px;
+        left: 1200px;
+        top: -125px;
         width: 600px;
         font-size: 32px;
+        z-index: -1;
     }
+    #submissionForm{
+        top: -640px;
+        height: 488px;
+    }
+    #reviewSection{
+        position: absolute;
+        top: 425px;
+        height: 400px;
+        min-width:950px;
+        max-width: 951px;
+        width: 50%;
+        margin-top: 200px;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        white-space: nowrap;
+    }
+    .searchBar {
+        position: fixed;
+        top: 50px;
+        left: 1500px;
+        transform: translate(-50%, -50%);
+        background: white;
+        height: 45px;
+        border-radius: 50px;
+        padding: 10px;
+        z-index: 10;
+    }  
+    .searchGlass{
+        color: #981e4d;
+        float: right;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        background: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.4s;
+        color: black;
+        cursor: pointer;
+    } 
+    .searchText {
 
+        border: none;
+        background: none;
+        outline: none;
+        float: left;
+        padding: 0;
+        color: black;
+        font-size: 24px;
+        transition: 0.4s;
+        line-height: 40px;
+        width: 0px;
+        font-weight: bold;
+    }
+    #courses-header{
+        color: gold;
+        font-family: Open Sans Condensed;
+        font-size: 48px;
+        text-align: center;
+        width: 200px;
+        position: relative;
+        top: 450px;
+        left: 375px;
+    }
+    #recent-revs-btn{
+        position: relative; 
+        left: 25px;
+        width: 200px;
+        top: 555px;
+    }
+    #pop-style{
+        background-color: lightslategrey;
+        width: 1930px;
+        height: 1300px;
+    }
+    #popup-header{
+        font-size:2rem;
+    }
+    #popup-btn-pos{
+        left: 852px;
+
+    }
+    .popup-font{
+        left: 560px;
+        font-size: 1rem;
+    }
+    .modal{
+        top:-32px;
+    }
+}
+
+
+
+/*Ipad */
+@media only screen and (min-width : 768px) and (max-width: 1024px){
+    .searchBar {
+        position: fixed;
+        top: 87.5px;
+        left: 1150px;
+        transform: translate(-50%, -50%);
+        background: white;
+        height: 40px;
+        border-radius: 40px;
+        padding: 10px;
+        z-index: 3;
+    }
+    #reviewSection{
+        position: fixed;
+        top: 1175px;
+        height: 575px;
+        width: 100%;
+        margin-top: 200px;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        white-space: nowrap;
+    }
+    .review-block-style{
+        font-size: 34px;
+        height: 500px;
+        min-width: 375px;
+        top: 31px;
+    }
+    #reviews-pos{
+        height:978px;
+        top:260px;
+        left: 715px;
+        position: absolute;
+       
+    }
+    #course-tag{
+       font-size: 35px;
+       top: 115px;
+       z-index: -1;
+    }
+    #courses-header{
+        font-size: 82px;
+        top: 1075px;
+        left: 620px;
+    }
+    #recent-btn-div{
+        position: relative;
+        left: 25px;
+        width: 200px;
+        top: 1200px;
+    }
+    #recent-revs-btn{
+        top: 40px;
+        width: 265px;
+    }
+    #pop-style{
+        background-color: lightslategrey;
+        width: 1504px;
+        height: 1900px;
+    } 
+    .popup-font{
+        text-align: center;
+        font-family: Open Sans Condensed;
+        font-size: 24px;
+        color: whitesmoke;
+        width: 800px;
+        position: relative;
+        left: 352px;
+    }
+    #popup-btn-pos{
+        position: relative;
+        left: 605px;
+    }
+   .modal{
+       top:-43px;
+   }
 }
