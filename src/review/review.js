@@ -8,14 +8,7 @@ import * as firebase from 'firebase';
 
 
 export var firebaseConfig = {
-    apiKey: "AIzaSyDQEmKGVgFd77Kq3FbycSOkXUzeC4YN4G4",
-    authDomain: "luc-course-evaluator.firebaseapp.com",
-    databaseURL: "https://luc-course-evaluator.firebaseio.com",
-    projectId: "luc-course-evaluator",
-    storageBucket: "luc-course-evaluator.appspot.com",
-    messagingSenderId: "672982640052",
-    appId: "1:672982640052:web:c28d1bf9e1eca8657bbee1",
-    measurementId: "G-TMXZ2Q01VV"
+
 
 };
 
