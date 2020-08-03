@@ -278,7 +278,7 @@
         width: 150px; 
         height: 75px;
         position: relative;
-        left: 362.5px;
+        left: 360px;
         top: 50px;
         margin-bottom: 50px;
     }
@@ -599,6 +599,7 @@
     #submissionForm{
         min-width: 747px;
         max-width: 748px;
+        top: 60px;
     }
 
 
@@ -760,6 +761,7 @@
     #rev-btn{
         width: 225px; 
         height: 115px;
+        left: -275px;
         position: relative;
         
     }
@@ -767,7 +769,7 @@
         width: 100%;
         max-width: 748px;
         height: 900px; 
-        top: 120px;  
+        top: 75px;  
         left: 25px; 
     }
     .course-review-pos{
@@ -813,6 +815,7 @@
     }
     #question-text{
         font-size: 24px;
+        width: 700px;
     }
     #rec-drop {
         left: 615px;
