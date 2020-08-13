@@ -116,7 +116,7 @@ export class Test extends React.Component{
         let recentReviews = []
 
         fbDir.on('value', function(snapshot) {
-
+            
             snapshot.forEach(function(recentRevs){
                     let tempDict = {}
 
@@ -180,7 +180,7 @@ export class Test extends React.Component{
             <div>
                 {
                 this.state.welcome?
-                       
+                   
                     <div className = "modal">
                         <div id = "pop-style">
                             <h1 id = "popup-header"><u><b>Welcome to Loyola's Course Evaluation Website</b></u></h1>

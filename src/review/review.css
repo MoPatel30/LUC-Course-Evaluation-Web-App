@@ -269,7 +269,7 @@
         background: #981e4d;
         color: white;
         position: relative;
-        top: -40px;
+        top: -45px;
     }
 
     .searchGlass{
@@ -285,10 +285,12 @@
         transition: 0.4s;
         color: black;
         cursor: pointer;
+        top: -40px;
     }
 
     .searchGlass > i {
         font-size: 30px;
+       
     }
 
    .searchText {
