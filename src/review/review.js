@@ -186,7 +186,7 @@ export class Test extends React.Component{
                             <h1 id = "popup-header"><u><b>Welcome to Loyola's Course Evaluation Website</b></u></h1>
                             <p className = "popup-font">This website was created for the students of Loyola University Chicago to rate/review Loyola classes.  </p>
                             <br />
-                            <p className = "popup-font">Important Note: Leaving "Student Name" and "Professor's Name" blank will set their values to "Anonymous" on your review.</p>
+                            <p className = "popup-font">Important Note: Leaving "Student Name" and "Professor's Name" blank will set their values to "Anonymous" on your review. Disabling bookmarks may increase review visibility.</p>
                             <p className = "popup-font"> Thank you all and we hope this serves the students well!</p>  
                             <br />  
                             <button id = "popup-btn-pos" className="example_c" onClick={(event) => this.showRecents(event)} ><b>Continue to Site</b></button>
