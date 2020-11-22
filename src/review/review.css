@@ -81,15 +81,18 @@
 }
 
 .review-block-style:hover{
-    transform: scale(1.1);
+    transform: scale(1.05);
     background-color: lightslategray;
     color: #434343;
+
 }
+
+
 
 /* Reviews displayed at bottom of screen */
 #reviewSection{
     position: fixed;
-    top: 295px;
+    top: 287px;
     height: 420px;
     width: 50%;
     margin-top: 200px;
@@ -158,17 +161,23 @@
 
    #reviews-pos{
         position: fixed;
-        top: 135px;
-        left: 700px;
+        top: 135px; 
+        left: 705px;
         height: 760px;
         width: 800px;
-
         overflow-x: hidden;
    }
+
+   #reviews-on-display{
+        margin-top: 30px;
+        margin-bottom: 100px;
+   }
+
+ 
    #course-tag{
         position: absolute;
         left: 825px;
-        top: 9px;
+        top: 10px;
         width: 600px;
         height: 10px;
         font-size: 32px;

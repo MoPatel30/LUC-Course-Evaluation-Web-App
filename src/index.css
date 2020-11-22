@@ -6,11 +6,17 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #981e4d;
-  
+  overflow-y: hidden;
+  overflow-x: hidden;
   font-size: 24px;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+#pop-up{
+  position: relative;
+
 }

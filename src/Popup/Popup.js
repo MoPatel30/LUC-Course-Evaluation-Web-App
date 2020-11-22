@@ -1,17 +1,14 @@
 import React from 'react';
 import {Tester} from '../ShowRevs/ShowRevs';
 import './Popup.css';
-
 import Popup from "reactjs-popup";
 
-
-var firebase = require('firebase/app');
 require('firebase/auth');
 require('firebase/database');
 
+
+var firebase = require('firebase/app');
 const database = firebase.database()
-
-
 
 
 export class PopUp extends React.Component{
@@ -69,8 +66,6 @@ export class PopUp extends React.Component{
     }
 
 
-    
-
     //This would give the values of the checklist if needed later on
     getCheck = () =>{
         var checks = document.getElementsByName('chk');
@@ -86,7 +81,7 @@ export class PopUp extends React.Component{
     } 
  
 
-     checkBoxLimit = () => {
+    checkBoxLimit = () => {
         var checkBoxGroup = document.forms['desc']['chk'];			
         var limit = 3;
         for (var i = 0; i < checkBoxGroup.length; i++) {
@@ -105,24 +100,16 @@ export class PopUp extends React.Component{
     }
 
 
-
- 
     mySubmit = (event) => {
       
        // event.preventDefault()
-        
-
 
         this.setState({
             rating: document.getElementById("customRange2").value
         })
-    
-
        
         let recommend = document.getElementById("rec-drop").value
         let courseTags = this.getCheck()
-        
-
 
 
         var errors = []
@@ -147,11 +134,8 @@ export class PopUp extends React.Component{
          
         }
 
-        
-    
 
-
-        console.log(errors)
+        // console.log(errors)
         if(errors.length !== 0){
             event.preventDefault()
             alert("Missing Fields in Form:" + String(errors))
@@ -159,9 +143,6 @@ export class PopUp extends React.Component{
             return
         }
 
-
-
-      
 
         var num = database.ref("/Test Reviews/"  + String(this.state.course).toLowerCase() + "/Count")
         var currentCount = 0
@@ -171,15 +152,11 @@ export class PopUp extends React.Component{
             num.set(String(res))
             
         })
-        console.log(currentCount)
+        // console.log(currentCount)
     
-        
-
      
         let temp3 = database.ref("/Test Reviews/"  + String(this.state.course).toLowerCase() + "/Course")
         temp3.set((this.state.course).toLowerCase())
-
-
 
 
         // var rand = Math.floor(Math.random() * 100000000000)
@@ -274,8 +251,8 @@ export class PopUp extends React.Component{
 
         return
     
-
     }
+    
 
     render(){
         return(

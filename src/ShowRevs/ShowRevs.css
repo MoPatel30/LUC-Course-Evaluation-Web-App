@@ -17,7 +17,7 @@
 }
 
 .review-box-style:hover{
-    transform: scale(1.1); 
+    transform: scale(1.05); 
     z-index: 2;
     color: #434343;
     background-color: lightslategray; 

@@ -1,15 +1,11 @@
 import React from 'react';
-
 import './ShowRevs.css';
 
-
-
-var firebase = require('firebase/app');
 require('firebase/auth');
 require('firebase/database');
 
 
-
+var firebase = require('firebase/app');
 
 export class ShowsReviews extends React.Component{
     constructor(props){
@@ -17,11 +13,9 @@ export class ShowsReviews extends React.Component{
        this.state = {
            comps : []
        }
-    
-    
+      
     }
-        
-
+       
 
     render(){ 
         var temp = this.state.comps
@@ -58,21 +52,12 @@ export class ShowsReviews extends React.Component{
            
         return(
          
-            <div style = {{fontSize: "30px", position: 'relative', height: '800px', marginBottom: '-50px',  marginTop: '20px'}}>{this.state.comps}</div>
-                
-
-           
+            <div style = {{fontSize: "30px", position: 'relative', height: '800px', marginBottom: '-50px',  marginTop: '20px'}}>{this.state.comps}</div>       
 
         )
     }
 
-
-
 }
-
-
-
-
 
 
 
@@ -84,7 +69,6 @@ export class Tester extends React.Component{
 
                 <label id = "review-box-name-tag"><b>Name: {this.props.student}</b></label>
           
-
 
                 <div id = "review-box-numbers">
                     <label id = "review-box-difficulty-tag">Course Difficulty</label>
@@ -119,9 +103,7 @@ export class Tester extends React.Component{
 
 
 
-
 /*
-
 
 const database = firebase.database()
 

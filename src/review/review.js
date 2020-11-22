@@ -1,9 +1,6 @@
 import React from 'react';
-
 import './review.css';
-
 import {ShowsReviews, Tester} from '../ShowRevs/ShowRevs'
-
 import * as firebase from 'firebase';
 
 
@@ -76,7 +73,7 @@ function getCourses(){
    
       
     })
-    console.log(courseInfo)
+    //console.log(courseInfo)
     return courseInfo
 
 }
@@ -95,12 +92,10 @@ export class Test extends React.Component{
             
         }
         
-       
-      
-
         this.searchHandler = this.searchHandler.bind(this);
 
     }
+
 
     showRecents(event){
         event.preventDefault()
@@ -110,6 +105,7 @@ export class Test extends React.Component{
             courseName: "Recent Reviews"
         })
     }
+
    
     getRecents(){
         let fbDir = firebase.database().ref("/Recent Reviews/")
@@ -136,17 +132,15 @@ export class Test extends React.Component{
             })
         
         })
-        console.log(recentReviews)     
+        // console.log(recentReviews)     
 
         return recentReviews
     }
 
     
-
     searchHandler(event){
         this.setState({term: event.target.value})
     }
-
 
 
     showClass(event, course){
@@ -155,6 +149,7 @@ export class Test extends React.Component{
             course: course
         })
     }
+
 
     operation(event, id){
         event.preventDefault()
@@ -177,7 +172,7 @@ export class Test extends React.Component{
        
 
         return (
-            <div>
+            <div id = "content-display-pos">
                 {
                 this.state.welcome?
                    
@@ -253,7 +248,11 @@ export class Test extends React.Component{
                 </div>
 
            
-                <div id = "reviews-pos">{this.state.tester}</div>
+                <div id = "reviews-pos">
+                    <div id = "reviews-on-display">
+                        {this.state.tester}
+                    </div>
+                </div>
 
                 
             </div>
